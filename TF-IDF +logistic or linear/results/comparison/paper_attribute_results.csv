@@ -1,0 +1,16 @@
+﻿reported_head,reported_average_f1,pdf_page,note
+change-type,0.76,18,
+notification-type,0.71,18,
+identifiability,0.77,18,
+do-not-track-policy,1.0,19,
+security-measure,0.74,19,
+personal-information-type,0.81,19,
+purpose,0.83,19,
+choice-type,0.73,19,
+third-party-entity,0.73,19,Published heading retained; third-party-entity table lists action-like values
+access-type,0.62,19,
+audience-type,0.97,19,
+choice-scope,0.59,19,
+action-first-party,0.65,19,
+does-does-not,0.86,19,
+retention-period,0.73,19,

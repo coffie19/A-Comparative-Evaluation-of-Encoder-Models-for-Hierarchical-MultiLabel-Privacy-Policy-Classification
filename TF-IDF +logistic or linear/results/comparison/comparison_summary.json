@@ -1,0 +1,145 @@
+{
+  "totals": [
+    {
+      "model": "TF-IDF + logistic regression",
+      "condition": "original",
+      "n": 1440,
+      "category_macro_f1": 0.7281876381163155,
+      "fine_macro_f1": 0.4498786393035731,
+      "oracle_fine_macro_f1": 0.4771660313548957,
+      "paper_style_nine_category_macro": 0.8416199118264056
+    },
+    {
+      "model": "TF-IDF + logistic regression",
+      "condition": "duplicate_filtered",
+      "n": 1418,
+      "category_macro_f1": 0.7304794994073756,
+      "fine_macro_f1": 0.4474370270123506,
+      "oracle_fine_macro_f1": 0.4748448803191006,
+      "paper_style_nine_category_macro": 0.8430187328548272
+    },
+    {
+      "model": "BERT",
+      "condition": "original",
+      "n": 1440,
+      "category_macro_f1": 0.7435055355773489,
+      "fine_macro_f1": 0.17585693896341742,
+      "oracle_fine_macro_f1": 0.1939776095676466,
+      "paper_style_nine_category_macro": 0.8526326621976292
+    },
+    {
+      "model": "BERT",
+      "condition": "duplicate_filtered",
+      "n": 1418,
+      "category_macro_f1": 0.7433679042452999,
+      "fine_macro_f1": 0.1740060665768582,
+      "oracle_fine_macro_f1": 0.1929271351241254,
+      "paper_style_nine_category_macro": 0.852560871153028
+    },
+    {
+      "model": "RoBERTa",
+      "condition": "original",
+      "n": 1440,
+      "category_macro_f1": 0.7649561152992751,
+      "fine_macro_f1": 0.19843872711332522,
+      "oracle_fine_macro_f1": 0.21375777151605077,
+      "paper_style_nine_category_macro": 0.863844049297256
+    },
+    {
+      "model": "RoBERTa",
+      "condition": "duplicate_filtered",
+      "n": 1418,
+      "category_macro_f1": 0.7650867311250976,
+      "fine_macro_f1": 0.19714703691331312,
+      "oracle_fine_macro_f1": 0.2128606822646863,
+      "paper_style_nine_category_macro": 0.8639609614079046
+    },
+    {
+      "model": "LegalBERT",
+      "condition": "original",
+      "n": 1440,
+      "category_macro_f1": 0.7613918739439379,
+      "fine_macro_f1": 0.19262976491964406,
+      "oracle_fine_macro_f1": 0.2029903821391736,
+      "paper_style_nine_category_macro": 0.8625198007910871
+    },
+    {
+      "model": "LegalBERT",
+      "condition": "duplicate_filtered",
+      "n": 1418,
+      "category_macro_f1": 0.7611086816979189,
+      "fine_macro_f1": 0.1909083236040211,
+      "oracle_fine_macro_f1": 0.20194960509821475,
+      "paper_style_nine_category_macro": 0.8623726804797718
+    },
+    {
+      "model": "PrivBERT",
+      "condition": "original",
+      "n": 1440,
+      "category_macro_f1": 0.7946853405035017,
+      "fine_macro_f1": 0.2267622589692955,
+      "oracle_fine_macro_f1": 0.24955032861133017,
+      "paper_style_nine_category_macro": 0.8814633219679345
+    },
+    {
+      "model": "PrivBERT",
+      "condition": "duplicate_filtered",
+      "n": 1418,
+      "category_macro_f1": 0.7954369017641671,
+      "fine_macro_f1": 0.22592209195691876,
+      "oracle_fine_macro_f1": 0.2490218836611913,
+      "paper_style_nine_category_macro": 0.8819289451375418
+    }
+  ],
+  "gains": [
+    {
+      "model": "BERT",
+      "condition": "original",
+      "category_gain": 0.015317897461033403,
+      "fine_gain": -0.27402170034015566
+    },
+    {
+      "model": "BERT",
+      "condition": "duplicate_filtered",
+      "category_gain": 0.012888404837924305,
+      "fine_gain": -0.2734309604354924
+    },
+    {
+      "model": "RoBERTa",
+      "condition": "original",
+      "category_gain": 0.036768477182959614,
+      "fine_gain": -0.25143991219024786
+    },
+    {
+      "model": "RoBERTa",
+      "condition": "duplicate_filtered",
+      "category_gain": 0.034607231717722065,
+      "fine_gain": -0.2502899900990375
+    },
+    {
+      "model": "LegalBERT",
+      "condition": "original",
+      "category_gain": 0.03320423582762244,
+      "fine_gain": -0.257248874383929
+    },
+    {
+      "model": "LegalBERT",
+      "condition": "duplicate_filtered",
+      "category_gain": 0.030629182290543344,
+      "fine_gain": -0.2565287034083295
+    },
+    {
+      "model": "PrivBERT",
+      "condition": "original",
+      "category_gain": 0.06649770238718622,
+      "fine_gain": -0.22311638033427758
+    },
+    {
+      "model": "PrivBERT",
+      "condition": "duplicate_filtered",
+      "category_gain": 0.0649574023567916,
+      "fine_gain": -0.22151493505543185
+    }
+  ],
+  "all_models_have_identical_eval_rows_and_targets": true
+}

@@ -1,0 +1,22 @@
+﻿paper_table,label,reported_f1,support,pdf_page
+Table 1 query classifier,First Party Collection/Use,0.8,1267,7
+Table 1 query classifier,Third Party Sharing/Collection,0.81,963,7
+Table 1 query classifier,User Choice/Control,0.75,455,7
+Table 1 query classifier,Data Security,0.87,202,7
+Table 1 query classifier,International and Specific Audiences,0.95,156,7
+Table 1 query classifier,"Access, Edit and Deletion",0.82,134,7
+Table 1 query classifier,Policy Change,0.92,120,7
+Table 1 query classifier,Data Retention,0.71,93,7
+Table 1 query classifier,Do Not Track,0.97,16,7
+Appendix segment classifier,Data Retention,0.71,88,18
+Appendix segment classifier,Data Security,0.85,201,18
+Appendix segment classifier,Do Not Track,0.95,16,18
+Appendix segment classifier,First Party Collection/Use,0.79,1211,18
+Appendix segment classifier,International and Specific Audiences,0.95,156,18
+Appendix segment classifier,Introductory/Generic,0.7,369,18
+Appendix segment classifier,Policy Change,0.88,112,18
+Appendix segment classifier,Non-covered Practice,0.7,280,18
+Appendix segment classifier,Privacy Contact Info,0.87,137,18
+Appendix segment classifier,Third Party Sharing/Collection,0.79,908,18
+Appendix segment classifier,"Access, Edit and Deletion",0.8,133,18
+Appendix segment classifier,User Choice/Control,0.74,433,18

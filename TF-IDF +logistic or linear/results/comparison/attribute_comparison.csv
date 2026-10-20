@@ -1,0 +1,201 @@
+﻿model,condition,head,macro_f1,oracle_macro_f1,n
+TF-IDF + logistic regression,original,does_does_not,0.7258169934640523,0.8036910069940091,850
+TF-IDF + logistic regression,original,collection_mode,0.6338328908985674,0.6885039382986222,594
+TF-IDF + logistic regression,original,action_first_party,0.34980342468822817,0.37077338162201434,594
+TF-IDF + logistic regression,original,identifiability,0.6298137634911052,0.6413924197264383,850
+TF-IDF + logistic regression,original,personal_information_type,0.5671163651779525,0.5782593118481874,984
+TF-IDF + logistic regression,original,purpose,0.6671259357628441,0.6864351338555066,972
+TF-IDF + logistic regression,original,user_type,0.44630520861503126,0.4864385473042016,1020
+TF-IDF + logistic regression,original,choice_type,0.5447642316191071,0.5599824240569978,972
+TF-IDF + logistic regression,original,choice_scope,0.4454499890385078,0.46072585262030136,972
+TF-IDF + logistic regression,original,third_party_entity,0.49568007176334944,0.5217500730825791,452
+TF-IDF + logistic regression,original,action_third_party,0.5153306230296449,0.5657238212691001,452
+TF-IDF + logistic regression,original,access_type,0.18939794773128107,0.19223099805624078,89
+TF-IDF + logistic regression,original,access_scope,0.33858106206694866,0.36525809020412786,89
+TF-IDF + logistic regression,original,retention_period,0.2600954600954601,0.31684149184149185,65
+TF-IDF + logistic regression,original,retention_purpose,0.27551485710563295,0.3200645459454968,65
+TF-IDF + logistic regression,original,security_measure,0.3695744263545269,0.377784308650122,149
+TF-IDF + logistic regression,original,change_type,0.480262658689625,0.5547474747474748,64
+TF-IDF + logistic regression,original,notification_type,0.36599326599326604,0.43584350964912577,64
+TF-IDF + logistic regression,original,do_not_track_policy,0.20588235294117646,0.225,11
+TF-IDF + logistic regression,original,audience_type,0.625985886259859,0.6497580812927384,129
+TF-IDF + logistic regression,duplicate_filtered,does_does_not,0.7292021325732082,0.8078717861592479,839
+TF-IDF + logistic regression,duplicate_filtered,collection_mode,0.631609366642528,0.6881384510194591,584
+TF-IDF + logistic regression,duplicate_filtered,action_first_party,0.342167356767187,0.36395096595760423,584
+TF-IDF + logistic regression,duplicate_filtered,identifiability,0.6295841771276919,0.6413025006024569,839
+TF-IDF + logistic regression,duplicate_filtered,personal_information_type,0.5648872956108306,0.5761673892478271,973
+TF-IDF + logistic regression,duplicate_filtered,purpose,0.6670011516195283,0.6865682748278034,961
+TF-IDF + logistic regression,duplicate_filtered,user_type,0.4460746700611446,0.4863184067704996,1009
+TF-IDF + logistic regression,duplicate_filtered,choice_type,0.5465823838971835,0.561893110002575,961
+TF-IDF + logistic regression,duplicate_filtered,choice_scope,0.43720557726041376,0.45269473056316223,961
+TF-IDF + logistic regression,duplicate_filtered,third_party_entity,0.49501532554102023,0.5217578557532578,446
+TF-IDF + logistic regression,duplicate_filtered,action_third_party,0.5173948642857967,0.5682792116744646,446
+TF-IDF + logistic regression,duplicate_filtered,access_type,0.18939794773128107,0.19223099805624078,89
+TF-IDF + logistic regression,duplicate_filtered,access_scope,0.33858106206694866,0.36525809020412786,89
+TF-IDF + logistic regression,duplicate_filtered,retention_period,0.2600954600954601,0.31684149184149185,65
+TF-IDF + logistic regression,duplicate_filtered,retention_purpose,0.27551485710563295,0.3200645459454968,65
+TF-IDF + logistic regression,duplicate_filtered,security_measure,0.36508115016886944,0.37171680642925864,147
+TF-IDF + logistic regression,duplicate_filtered,change_type,0.480262658689625,0.5547474747474748,64
+TF-IDF + logistic regression,duplicate_filtered,notification_type,0.36599326599326604,0.43584350964912577,64
+TF-IDF + logistic regression,duplicate_filtered,do_not_track_policy,0.20588235294117646,0.225,11
+TF-IDF + logistic regression,duplicate_filtered,audience_type,0.5989837217576943,0.6229236154489847,126
+BERT,original,does_does_not,0.688002342911067,0.7488075912806345,850
+BERT,original,collection_mode,0.5619056142282649,0.588028595747836,594
+BERT,original,action_first_party,0.1476539855602855,0.15171738915528424,594
+BERT,original,identifiability,0.22290385046761269,0.23473339702830284,850
+BERT,original,personal_information_type,0.06566413661228451,0.06947696905765469,984
+BERT,original,purpose,0.06648852903461014,0.07405245512675164,972
+BERT,original,user_type,0.3283522091722595,0.3575534334675351,1020
+BERT,original,choice_type,0.16224015874008188,0.1655318919738827,972
+BERT,original,choice_scope,0.17374007242804465,0.17589351199275735,972
+BERT,original,third_party_entity,0.180816426202153,0.17958948044232814,452
+BERT,original,action_third_party,0.13610683102208526,0.1469577640685635,452
+BERT,original,access_type,0.09466344864574953,0.14789367227566216,89
+BERT,original,access_scope,0.2344009920454889,0.2615125120850312,89
+BERT,original,retention_period,0.15875,0.2512449799196787,65
+BERT,original,retention_purpose,0.04880952380952381,0.09027964959568734,65
+BERT,original,security_measure,0.07651515151515151,0.08051750380517504,149
+BERT,original,change_type,0.30196078431372547,0.3009812667261374,64
+BERT,original,notification_type,0.23672883787661406,0.27675556554731234,64
+BERT,original,do_not_track_policy,0.23684210526315788,0.225,11
+BERT,original,audience_type,0.5450467811758134,0.5819352740282973,129
+BERT,duplicate_filtered,does_does_not,0.6918408546073938,0.7534019139463681,839
+BERT,duplicate_filtered,collection_mode,0.5617779248047522,0.5877235387741289,584
+BERT,duplicate_filtered,action_first_party,0.14780905752753978,0.15200500908240216,584
+BERT,duplicate_filtered,identifiability,0.2231680348856192,0.23516024726423296,839
+BERT,duplicate_filtered,personal_information_type,0.06566386714989843,0.0695264230483052,973
+BERT,duplicate_filtered,purpose,0.06683848048438544,0.07450707616489317,961
+BERT,duplicate_filtered,user_type,0.3282178480475382,0.3574950292537751,1009
+BERT,duplicate_filtered,choice_type,0.16247718993778498,0.16578839178278174,961
+BERT,duplicate_filtered,choice_scope,0.17373867654979397,0.17592563621193158,961
+BERT,duplicate_filtered,third_party_entity,0.17949907235621523,0.1784929616666963,446
+BERT,duplicate_filtered,action_third_party,0.13584117032392895,0.14675130212214613,446
+BERT,duplicate_filtered,access_type,0.09466344864574953,0.14789367227566216,89
+BERT,duplicate_filtered,access_scope,0.2344009920454889,0.2615125120850312,89
+BERT,duplicate_filtered,retention_period,0.15875,0.2512449799196787,65
+BERT,duplicate_filtered,retention_purpose,0.04880952380952381,0.09027964959568734,65
+BERT,duplicate_filtered,security_measure,0.07670454545454546,0.08083496412263536,147
+BERT,duplicate_filtered,change_type,0.30196078431372547,0.3009812667261374,64
+BERT,duplicate_filtered,notification_type,0.23672883787661406,0.27675556554731234,64
+BERT,duplicate_filtered,do_not_track_policy,0.23684210526315788,0.225,11
+BERT,duplicate_filtered,audience_type,0.4926807563959955,0.5498939303590467,126
+RoBERTa,original,does_does_not,0.6421486147700401,0.6980264719550398,850
+RoBERTa,original,collection_mode,0.6356699134448726,0.6528220163707146,594
+RoBERTa,original,action_first_party,0.1486730343837009,0.15342978766938256,594
+RoBERTa,original,identifiability,0.25151825028271696,0.2551801801801802,850
+RoBERTa,original,personal_information_type,0.0861873338814193,0.08859618630678967,984
+RoBERTa,original,purpose,0.08179312846148985,0.08887390176098524,972
+RoBERTa,original,user_type,0.3461793251923484,0.36322320904170036,1020
+RoBERTa,original,choice_type,0.23924936099291422,0.23921685105648235,972
+RoBERTa,original,choice_scope,0.20188577559175044,0.20275376547863494,972
+RoBERTa,original,third_party_entity,0.20711193568336425,0.20522840135670917,452
+RoBERTa,original,action_third_party,0.16940917336097436,0.19013691963267365,452
+RoBERTa,original,access_type,0.09478991596638656,0.10858312266762972,89
+RoBERTa,original,access_scope,0.24272070812951316,0.2791854508196721,89
+RoBERTa,original,retention_period,0.2685858585858586,0.31419989367357787,65
+RoBERTa,original,retention_purpose,0.09895833333333333,0.13579545454545455,65
+RoBERTa,original,security_measure,0.09352904285500971,0.11707277587588891,149
+RoBERTa,original,change_type,0.31087378640776697,0.39228070175438595,64
+RoBERTa,original,notification_type,0.2194231471339905,0.2289631799199171,64
+RoBERTa,original,do_not_track_policy,0.23684210526315788,0.225,11
+RoBERTa,original,audience_type,0.5209659621424327,0.5345907541985974,129
+RoBERTa,duplicate_filtered,does_does_not,0.6448336699398751,0.7014340647224213,839
+RoBERTa,duplicate_filtered,collection_mode,0.6358322884279076,0.6529590647831779,584
+RoBERTa,duplicate_filtered,action_first_party,0.14883269671504964,0.15373492323279558,584
+RoBERTa,duplicate_filtered,identifiability,0.25193067794271296,0.255639903483846,839
+RoBERTa,duplicate_filtered,personal_information_type,0.0863022049587071,0.08875114383504396,973
+RoBERTa,duplicate_filtered,purpose,0.08176512441836677,0.08888508587151449,961
+RoBERTa,duplicate_filtered,user_type,0.34607927057857435,0.36316480482794045,1009
+RoBERTa,duplicate_filtered,choice_type,0.2397201514441898,0.23969281207267257,961
+RoBERTa,duplicate_filtered,choice_scope,0.20190953834948183,0.2027947470924551,961
+RoBERTa,duplicate_filtered,third_party_entity,0.2065870467219215,0.20475831748803536,446
+RoBERTa,duplicate_filtered,action_third_party,0.16913959613696225,0.19002404265755615,446
+RoBERTa,duplicate_filtered,access_type,0.09478991596638656,0.10858312266762972,89
+RoBERTa,duplicate_filtered,access_scope,0.24272070812951316,0.2791854508196721,89
+RoBERTa,duplicate_filtered,retention_period,0.2685858585858586,0.31419989367357787,65
+RoBERTa,duplicate_filtered,retention_purpose,0.09895833333333333,0.13579545454545455,65
+RoBERTa,duplicate_filtered,security_measure,0.09407424111449368,0.11810600444773907,147
+RoBERTa,duplicate_filtered,change_type,0.31087378640776697,0.39228070175438595,64
+RoBERTa,duplicate_filtered,notification_type,0.2194231471339905,0.2289631799199171,64
+RoBERTa,duplicate_filtered,do_not_track_policy,0.23684210526315788,0.225,11
+RoBERTa,duplicate_filtered,audience_type,0.4823511613834194,0.5047388414055082,126
+LegalBERT,original,does_does_not,0.6810800948731983,0.7416167664670659,850
+LegalBERT,original,collection_mode,0.57761279468974,0.6002776146718587,594
+LegalBERT,original,action_first_party,0.14721611721611721,0.15072632864656246,594
+LegalBERT,original,identifiability,0.21553753138917325,0.22113050946002893,850
+LegalBERT,original,personal_information_type,0.08742149403494538,0.09136693037274238,984
+LegalBERT,original,purpose,0.07229330215331048,0.0804349579114255,972
+LegalBERT,original,user_type,0.3204900801471554,0.3328444211629125,1020
+LegalBERT,original,choice_type,0.22452250696343168,0.22341661889857908,972
+LegalBERT,original,choice_scope,0.1772188564399791,0.1788578391794465,972
+LegalBERT,original,third_party_entity,0.15999077247255158,0.16880952120422954,452
+LegalBERT,original,action_third_party,0.14157610835498857,0.14938246744529468,452
+LegalBERT,original,access_type,0.11340192374675133,0.12234184159876244,89
+LegalBERT,original,access_scope,0.22352235223522351,0.23888423435341152,89
+LegalBERT,original,retention_period,0.24381280505311514,0.2738073807380738,65
+LegalBERT,original,retention_purpose,0.1358678086619263,0.175592409587889,65
+LegalBERT,original,security_measure,0.08804232804232803,0.0995978120978121,149
+LegalBERT,original,change_type,0.2997142857142857,0.30561403508771934,64
+LegalBERT,original,notification_type,0.25753968253968257,0.27233603407768486,64
+LegalBERT,original,do_not_track_policy,0.23684210526315788,0.225,11
+LegalBERT,original,audience_type,0.5460925039872409,0.5545983055799006,129
+LegalBERT,duplicate_filtered,does_does_not,0.684864289880932,0.7461632394620997,839
+LegalBERT,duplicate_filtered,collection_mode,0.5766366577813543,0.5987054714725414,584
+LegalBERT,duplicate_filtered,action_first_party,0.14767925500588927,0.15099783479983414,584
+LegalBERT,duplicate_filtered,identifiability,0.21559682459858473,0.22126042378673957,839
+LegalBERT,duplicate_filtered,personal_information_type,0.08751832104249405,0.09149708447115715,973
+LegalBERT,duplicate_filtered,purpose,0.07149799502617586,0.07975869188070019,961
+LegalBERT,duplicate_filtered,user_type,0.3203793381759483,0.33278601694915255,1009
+LegalBERT,duplicate_filtered,choice_type,0.22517245450273204,0.22407527749327733,961
+LegalBERT,duplicate_filtered,choice_scope,0.1772388139123085,0.1788969221459863,961
+LegalBERT,duplicate_filtered,third_party_entity,0.15892342964283324,0.16799033757612844,446
+LegalBERT,duplicate_filtered,action_third_party,0.14129858170935553,0.14916402765008344,446
+LegalBERT,duplicate_filtered,access_type,0.11340192374675133,0.12234184159876244,89
+LegalBERT,duplicate_filtered,access_scope,0.22352235223522351,0.23888423435341152,89
+LegalBERT,duplicate_filtered,retention_period,0.24381280505311514,0.2738073807380738,65
+LegalBERT,duplicate_filtered,retention_purpose,0.1358678086619263,0.175592409587889,65
+LegalBERT,duplicate_filtered,security_measure,0.08892365456821026,0.10100313079036483,147
+LegalBERT,duplicate_filtered,change_type,0.2997142857142857,0.30561403508771934,64
+LegalBERT,duplicate_filtered,notification_type,0.25753968253968257,0.27233603407768486,64
+LegalBERT,duplicate_filtered,do_not_track_policy,0.23684210526315788,0.225,11
+LegalBERT,duplicate_filtered,audience_type,0.4970702618615504,0.5228188569583467,126
+PrivBERT,original,does_does_not,0.7704599056603774,0.8081542445088314,850
+PrivBERT,original,collection_mode,0.6677604041640809,0.680074949797883,594
+PrivBERT,original,action_first_party,0.151677890024478,0.15270394003565968,594
+PrivBERT,original,identifiability,0.3147022135205857,0.31587310324581197,850
+PrivBERT,original,personal_information_type,0.10157131865645598,0.10355363733456291,984
+PrivBERT,original,purpose,0.1286294735954564,0.1367709019561865,972
+PrivBERT,original,user_type,0.36473534875553376,0.4067120169817278,1020
+PrivBERT,original,choice_type,0.27506715605245535,0.27836768121070693,972
+PrivBERT,original,choice_scope,0.2101842490408466,0.21124677375845233,972
+PrivBERT,original,third_party_entity,0.2953099386185466,0.2959088161733412,452
+PrivBERT,original,action_third_party,0.28667981881784477,0.29714384141793404,452
+PrivBERT,original,access_type,0.10243933588761174,0.1518470766399098,89
+PrivBERT,original,access_scope,0.24364801864801863,0.2773267963759704,89
+PrivBERT,original,retention_period,0.17767923133776792,0.2619393939393939,65
+PrivBERT,original,retention_purpose,0.13664596273291924,0.17506410256410254,65
+PrivBERT,original,security_measure,0.10280324467081683,0.11414355157163307,149
+PrivBERT,original,change_type,0.3113725490196078,0.45547201336675014,64
+PrivBERT,original,notification_type,0.27583043722120004,0.310233918128655,64
+PrivBERT,original,do_not_track_policy,0.225,0.225,11
+PrivBERT,original,audience_type,0.6049571135898445,0.6464385155165296,129
+PrivBERT,duplicate_filtered,does_does_not,0.7748015873015872,0.8128148321961536,839
+PrivBERT,duplicate_filtered,collection_mode,0.6667081916272245,0.679826211973085,584
+PrivBERT,duplicate_filtered,action_first_party,0.15187879257421893,0.1529959217876121,584
+PrivBERT,duplicate_filtered,identifiability,0.3107007627445867,0.3118976369228602,839
+PrivBERT,duplicate_filtered,personal_information_type,0.10171883253180289,0.10371457481760657,973
+PrivBERT,duplicate_filtered,purpose,0.12937270905097306,0.13757289511431636,961
+PrivBERT,duplicate_filtered,user_type,0.3646589749822875,0.40665361276796785,1009
+PrivBERT,duplicate_filtered,choice_type,0.2758143562343903,0.27909698768285485,961
+PrivBERT,duplicate_filtered,choice_scope,0.21026023668169697,0.2113329347303556,961
+PrivBERT,duplicate_filtered,third_party_entity,0.29476272771025586,0.2954351231789216,446
+PrivBERT,duplicate_filtered,action_third_party,0.28659851621808147,0.2971447964182131,446
+PrivBERT,duplicate_filtered,access_type,0.10243933588761174,0.1518470766399098,89
+PrivBERT,duplicate_filtered,access_scope,0.24364801864801863,0.2773267963759704,89
+PrivBERT,duplicate_filtered,retention_period,0.17767923133776792,0.2619393939393939,65
+PrivBERT,duplicate_filtered,retention_purpose,0.13664596273291924,0.17506410256410254,65
+PrivBERT,duplicate_filtered,security_measure,0.10361549232516976,0.11535426731078906,147
+PrivBERT,duplicate_filtered,change_type,0.3113725490196078,0.45547201336675014,64
+PrivBERT,duplicate_filtered,notification_type,0.27583043722120004,0.310233918128655,64
+PrivBERT,duplicate_filtered,do_not_track_policy,0.225,0.225,11
+PrivBERT,duplicate_filtered,audience_type,0.5791890735803185,0.627292174053115,126

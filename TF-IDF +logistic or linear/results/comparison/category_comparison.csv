@@ -1,0 +1,101 @@
+﻿model,condition,category,positive_f1,presence_absence_macro_f1,support
+TF-IDF + logistic regression,original,First Party Collection/Use,0.7714033539276258,0.8115746019781231,594
+TF-IDF + logistic regression,original,Third Party Sharing/Collection,0.7756482525366404,0.8378993896902971,452
+TF-IDF + logistic regression,original,User Choice/Control,0.6493506493506493,0.7911765653701137,237
+TF-IDF + logistic regression,original,Data Retention,0.5391304347826087,0.7599811305920277,65
+TF-IDF + logistic regression,original,Data Security,0.740484429065744,0.8557690381530958,149
+TF-IDF + logistic regression,original,International and Specific Audiences,0.8535564853556485,0.9201519647527958,129
+TF-IDF + logistic regression,original,Do Not Track,0.8421052631578947,0.9205283393734248,11
+TF-IDF + logistic regression,original,Policy Change,0.706766917293233,0.8462848055705335,64
+TF-IDF + logistic regression,original,"Access, Edit and Deletion",0.6823529411764706,0.831213370957239,89
+TF-IDF + logistic regression,original,Other,0.7210776545166403,0.7517625602620284,674
+TF-IDF + logistic regression,duplicate_filtered,First Party Collection/Use,0.7684021543985637,0.8092881852132192,584
+TF-IDF + logistic regression,duplicate_filtered,Third Party Sharing/Collection,0.7725714285714286,0.8355462956217673,446
+TF-IDF + logistic regression,duplicate_filtered,User Choice/Control,0.6506550218340611,0.7916857951895284,236
+TF-IDF + logistic regression,duplicate_filtered,Data Retention,0.543859649122807,0.7623780244144527,65
+TF-IDF + logistic regression,duplicate_filtered,Data Security,0.743859649122807,0.8576217100964878,147
+TF-IDF + logistic regression,duplicate_filtered,International and Specific Audiences,0.8497854077253219,0.9181696919533255,126
+TF-IDF + logistic regression,duplicate_filtered,Do Not Track,0.8421052631578947,0.920520150215795,11
+TF-IDF + logistic regression,duplicate_filtered,Policy Change,0.734375,0.8609098042836041,64
+TF-IDF + logistic regression,duplicate_filtered,"Access, Edit and Deletion",0.6823529411764706,0.8310489387052646,89
+TF-IDF + logistic regression,duplicate_filtered,Other,0.7168284789644013,0.7490392394822006,661
+BERT,original,First Party Collection/Use,0.8058925476603119,0.8380563549425546,594
+BERT,original,Third Party Sharing/Collection,0.8028673835125448,0.8610519002731594,452
+BERT,original,User Choice/Control,0.6441441441441441,0.7896418586073759,237
+BERT,original,Data Retention,0.5,0.7402597402597403,65
+BERT,original,Data Security,0.717391304347826,0.8437186936485674,149
+BERT,original,International and Specific Audiences,0.8661417322834646,0.9265971418462258,129
+BERT,original,Do Not Track,0.9523809523809523,0.9760155898665868,11
+BERT,original,Policy Change,0.7313432835820896,0.8591166527160266,64
+BERT,original,"Access, Edit and Deletion",0.6976744186046512,0.8392360276184261,89
+BERT,original,Other,0.717219589257504,0.7477052097464719,674
+BERT,duplicate_filtered,First Party Collection/Use,0.8045774647887324,0.8369946147473073,584
+BERT,duplicate_filtered,Third Party Sharing/Collection,0.8,0.8589756340129289,446
+BERT,duplicate_filtered,User Choice/Control,0.6455981941309256,0.7899950853646688,236
+BERT,duplicate_filtered,Data Retention,0.5046728971962616,0.742625931925357,65
+BERT,duplicate_filtered,Data Security,0.7205882352941176,0.8454735248233458,147
+BERT,duplicate_filtered,International and Specific Audiences,0.8629032258064516,0.9248828339233186,126
+BERT,duplicate_filtered,Do Not Track,0.9523809523809523,0.976012856297048,11
+BERT,duplicate_filtered,Policy Change,0.7313432835820896,0.8590099097407117,64
+BERT,duplicate_filtered,"Access, Edit and Deletion",0.6976744186046512,0.8390774495425659,89
+BERT,duplicate_filtered,Other,0.7139403706688154,0.7456849188767274,661
+RoBERTa,original,First Party Collection/Use,0.8222811671087533,0.8536791770363663,594
+RoBERTa,original,Third Party Sharing/Collection,0.8223463687150838,0.8711228065237888,452
+RoBERTa,original,User Choice/Control,0.6382978723404256,0.7838792266266443,237
+RoBERTa,original,Data Retention,0.6818181818181818,0.833267169511711,65
+RoBERTa,original,Data Security,0.7142857142857143,0.8409015578389128,149
+RoBERTa,original,International and Specific Audiences,0.8549019607843137,0.9204033613445378,129
+RoBERTa,original,Do Not Track,0.9523809523809523,0.9760155898665868,11
+RoBERTa,original,Policy Change,0.7194244604316546,0.8525980383150612,64
+RoBERTa,original,"Access, Edit and Deletion",0.7058823529411765,0.8427295166116948,89
+RoBERTa,original,Other,0.7379421221864951,0.7693378092595067,674
+RoBERTa,duplicate_filtered,First Party Collection/Use,0.821203953279425,0.852853862884634,584
+RoBERTa,duplicate_filtered,Third Party Sharing/Collection,0.8208616780045351,0.8700009515918274,446
+RoBERTa,duplicate_filtered,User Choice/Control,0.6410256410256411,0.7850398475398476,236
+RoBERTa,duplicate_filtered,Data Retention,0.6818181818181818,0.8331428187197418,65
+RoBERTa,duplicate_filtered,Data Security,0.7172413793103448,0.8425169975891865,147
+RoBERTa,duplicate_filtered,International and Specific Audiences,0.856,0.9210394431554525,126
+RoBERTa,duplicate_filtered,Do Not Track,0.9523809523809523,0.976012856297048,11
+RoBERTa,duplicate_filtered,Policy Change,0.7194244604316546,0.8524819743760053,64
+RoBERTa,duplicate_filtered,"Access, Edit and Deletion",0.7058823529411765,0.8425599005173984,89
+RoBERTa,duplicate_filtered,Other,0.7350287120590648,0.767638041867504,661
+LegalBERT,original,First Party Collection/Use,0.8196428571428571,0.8524350649350649,594
+LegalBERT,original,Third Party Sharing/Collection,0.7887640449438202,0.8471458415673875,452
+LegalBERT,original,User Choice/Control,0.6532438478747203,0.7947682453512526,237
+LegalBERT,original,Data Retention,0.671875,0.8283066860465116,65
+LegalBERT,original,Data Security,0.7231270358306189,0.8450458342775325,149
+LegalBERT,original,International and Specific Audiences,0.8688524590163934,0.9283564267767854,129
+LegalBERT,original,Do Not Track,0.9523809523809523,0.9760155898665868,11
+LegalBERT,original,Policy Change,0.734375,0.8610101744186047,64
+LegalBERT,original,"Access, Edit and Deletion",0.6810810810810811,0.8295943438800581,89
+LegalBERT,original,Other,0.7205764611689351,0.753298653637809,674
+LegalBERT,duplicate_filtered,First Party Collection/Use,0.8195829555757026,0.8523765903094901,584
+LegalBERT,duplicate_filtered,Third Party Sharing/Collection,0.785876993166287,0.8449303249794663,446
+LegalBERT,duplicate_filtered,User Choice/Control,0.651685393258427,0.7934294804016937,236
+LegalBERT,duplicate_filtered,Data Retention,0.6771653543307087,0.83101530913287,65
+LegalBERT,duplicate_filtered,Data Security,0.7260726072607261,0.8466525689284286,147
+LegalBERT,duplicate_filtered,International and Specific Audiences,0.865546218487395,0.9266145257179084,126
+LegalBERT,duplicate_filtered,Do Not Track,0.9523809523809523,0.976012856297048,11
+LegalBERT,duplicate_filtered,Policy Change,0.734375,0.8609098042836041,64
+LegalBERT,duplicate_filtered,"Access, Edit and Deletion",0.6810810810810811,0.8294126642674361,89
+LegalBERT,duplicate_filtered,Other,0.7173202614379085,0.7513400314633711,661
+PrivBERT,original,First Party Collection/Use,0.8531468531468531,0.878186329799233,594
+PrivBERT,original,Third Party Sharing/Collection,0.8584686774941995,0.8990063902832741,452
+PrivBERT,original,User Choice/Control,0.6575963718820862,0.7978428763879475,237
+PrivBERT,original,Data Retention,0.7107438016528925,0.8490290229721512,65
+PrivBERT,original,Data Security,0.7631578947368421,0.8676037920889179,149
+PrivBERT,original,International and Specific Audiences,0.888,0.9386768060836501,129
+PrivBERT,original,Do Not Track,1.0,1.0,11
+PrivBERT,original,Policy Change,0.7050359712230215,0.8450389633568591,64
+PrivBERT,original,"Access, Edit and Deletion",0.7325581395348837,0.8577857167393769,89
+PrivBERT,original,Other,0.7781456953642384,0.8089293070122627,674
+PrivBERT,duplicate_filtered,First Party Collection/Use,0.8525754884547069,0.877749732531447,584
+PrivBERT,duplicate_filtered,Third Party Sharing/Collection,0.8564705882352941,0.8975202890824003,446
+PrivBERT,duplicate_filtered,User Choice/Control,0.6605922551252847,0.7992156102493341,236
+PrivBERT,duplicate_filtered,Data Retention,0.7166666666666667,0.8520741286205205,65
+PrivBERT,duplicate_filtered,Data Security,0.7692307692307693,0.8710166459476669,147
+PrivBERT,duplicate_filtered,International and Specific Audiences,0.8852459016393442,0.9372217162517709,126
+PrivBERT,duplicate_filtered,Do Not Track,1.0,1.0,11
+PrivBERT,duplicate_filtered,Policy Change,0.7050359712230215,0.8449169474209286,64
+PrivBERT,duplicate_filtered,"Access, Edit and Deletion",0.7325581395348837,0.8576454361338082,89
+PrivBERT,duplicate_filtered,Other,0.775993237531699,0.807839328989685,661

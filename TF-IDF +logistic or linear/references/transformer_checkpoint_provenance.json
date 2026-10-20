@@ -1,0 +1,194 @@
+[
+  {
+    "model": "BERT",
+    "archive": "C:\\Users\\AI\\Downloads\\section 10\\bert 22\\bert-opp115-hierarchy-classifier-20260907T232315Z-1-001.zip",
+    "files": [
+      {
+        "path": "bert_opp115_hierarchy_classification_results.json",
+        "sha256": "0f21bc6b520564eb99096f093f70dcf11a933147617edfc7e60edd653c87882e"
+      },
+      {
+        "path": "classifier_config.json",
+        "sha256": "996ec8b83640cd4c375e2923cdb156696f8899f965463c711265c258b47faed1"
+      },
+      {
+        "path": "hierarchy_heads.safetensors",
+        "sha256": "8d069f076a20a6bbdd409de57a1d8c83348faf53797b0e63ba445b8968e5f6b5"
+      },
+      {
+        "path": "hierarchy_schema.json",
+        "sha256": "b9a1bd2f837a4a002a9fd45a4a1b44a704f74f1e24a070637515942694d89f97"
+      },
+      {
+        "path": "special_tokens_map.json",
+        "sha256": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a"
+      },
+      {
+        "path": "tokenizer.json",
+        "sha256": "c571f1b1973291370192db62060efdfb564c9a11865c568693ac7420e857cf55"
+      },
+      {
+        "path": "tokenizer_config.json",
+        "sha256": "1f92c93d2e31974acffab86d48e80a9357acb18c68346c5472ef1d12c72d5d77"
+      },
+      {
+        "path": "vocab.txt",
+        "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+      },
+      {
+        "path": "encoder\\config.json",
+        "sha256": "5a6a418ca1f69b5a98076cd8394f6328c31fb9bdda3db317e243168007070bdb"
+      },
+      {
+        "path": "encoder\\model.safetensors",
+        "sha256": "b827c9d996cb04016a0398efa6af4da5b459fbb7116a1d817ba628af4a7fa503"
+      }
+    ]
+  },
+  {
+    "model": "LegalBERT",
+    "archive": "C:\\Users\\AI\\Downloads\\section 10\\legal bert 22\\legal-bert-opp115-hierarchy-classifier-20260907T232652Z-1-001.zip",
+    "files": [
+      {
+        "path": "classifier_config.json",
+        "sha256": "5d5324254afff6b10113315704241f73c2293769ff459c02949c7ff8e079b000"
+      },
+      {
+        "path": "hierarchy_heads.safetensors",
+        "sha256": "f46cb4fc23043a41bf79c52ee6e3e18ebbe051f7539f64d777ced957d0d5bc30"
+      },
+      {
+        "path": "hierarchy_schema.json",
+        "sha256": "b9a1bd2f837a4a002a9fd45a4a1b44a704f74f1e24a070637515942694d89f97"
+      },
+      {
+        "path": "legal_bert_opp115_hierarchy_classification_results.json",
+        "sha256": "2bac5bbad89f70d3a00559aa2a3c182e7d1c63c270413980184f4482d309bbd6"
+      },
+      {
+        "path": "special_tokens_map.json",
+        "sha256": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a"
+      },
+      {
+        "path": "tokenizer.json",
+        "sha256": "1a92dd6f8948778d5726effe4bb3caf36dd32da7396aad5c139fa5b228a351af"
+      },
+      {
+        "path": "tokenizer_config.json",
+        "sha256": "7b082b48a08a0b5c5939d99472e33addce3d96202155e33f7928cecd171186a0"
+      },
+      {
+        "path": "vocab.txt",
+        "sha256": "3aaa02f2e3a397eee0f813caa567c87cddab1045a4a6b8ac6261f0cc799efb8f"
+      },
+      {
+        "path": "encoder\\config.json",
+        "sha256": "e0759cae5e369f0c2d156c7f0da07cb311eb600938904e9b937a20d67a3b78f3"
+      },
+      {
+        "path": "encoder\\model.safetensors",
+        "sha256": "5a4ab7221cc5cdb8405722d19065a17ecbf764c1e2732c0cffc262f35fa85aca"
+      }
+    ]
+  },
+  {
+    "model": "PrivBERT",
+    "archive": "C:\\Users\\AI\\Downloads\\section 10\\Privbert 22\\privbert-opp115-hierarchy-classifier-20260907T233638Z-1-001.zip",
+    "files": [
+      {
+        "path": "bert_opp115_hierarchy_classification_results.json",
+        "sha256": "505bdcf57c6589b7206adde5d1811e391cb7037eed8f66591aec79847ae76bfc"
+      },
+      {
+        "path": "classifier_config.json",
+        "sha256": "b1d223361c9ad282fbae42f0a854eddd2469e547a41d602b0a6e88649c866c5a"
+      },
+      {
+        "path": "hierarchy_heads.safetensors",
+        "sha256": "a30232b8b4bd72e7a70fca85ab2fffbd97f05d365cb39593fd62f2fa594e4ee3"
+      },
+      {
+        "path": "hierarchy_schema.json",
+        "sha256": "b9a1bd2f837a4a002a9fd45a4a1b44a704f74f1e24a070637515942694d89f97"
+      },
+      {
+        "path": "merges.txt",
+        "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5"
+      },
+      {
+        "path": "special_tokens_map.json",
+        "sha256": "8293ae960b0a0852d4d3813118030a1149a3ed9fe37bc2e1e7b3c2e62eb2d4b7"
+      },
+      {
+        "path": "tokenizer.json",
+        "sha256": "b037554518baeebee26defb4045d6f41a502d3b393df6afcf03a39d6631e35da"
+      },
+      {
+        "path": "tokenizer_config.json",
+        "sha256": "3e524fcbb3d446afb921a867d6f354e1873d142f4a597aecda076f730361616a"
+      },
+      {
+        "path": "vocab.json",
+        "sha256": "ed19656ea1707df69134c4af35c8ceda2cc9860bf2c3495026153a133670ab5e"
+      },
+      {
+        "path": "encoder\\config.json",
+        "sha256": "4186df0c3876f50d8ce7f02f47d67dbeead05ba97869091fedac23c93fb2cc8f"
+      },
+      {
+        "path": "encoder\\model.safetensors",
+        "sha256": "f9ea47ccc84ed872a13b105e9fbacd491c832d1b030b40c001ab4cd0d87d14bf"
+      }
+    ]
+  },
+  {
+    "model": "RoBERTa",
+    "archive": "C:\\Users\\AI\\Downloads\\section 10\\roberta 22\\roberta-opp115-hierarchy-classifier-20260907T233223Z-1-001.zip",
+    "files": [
+      {
+        "path": "classifier_config.json",
+        "sha256": "78d92b0c713fd8f684c26384ec468ee25a20c68fe63d4b1b171b5287f2585ec7"
+      },
+      {
+        "path": "hierarchy_heads.safetensors",
+        "sha256": "a095110744e5fbbf2ff1c345522f0b50bb96cdf7b9ea48a4df2eeba8b0bb5420"
+      },
+      {
+        "path": "hierarchy_schema.json",
+        "sha256": "b9a1bd2f837a4a002a9fd45a4a1b44a704f74f1e24a070637515942694d89f97"
+      },
+      {
+        "path": "merges.txt",
+        "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5"
+      },
+      {
+        "path": "roberta_opp115_hierarchy_classification_results.json",
+        "sha256": "32c4bf333cf5d039b81f953c1100a28fd66a899aef888ca4f781d7807ed65d39"
+      },
+      {
+        "path": "special_tokens_map.json",
+        "sha256": "f23c8e6099631c233c16d9bf8dab198f610826cdd1b358f270f6d55c1863e857"
+      },
+      {
+        "path": "tokenizer.json",
+        "sha256": "35969af628893a598733be04949e7ba6b85480894522e15b26f546f65a2fd4e4"
+      },
+      {
+        "path": "tokenizer_config.json",
+        "sha256": "4ea8648e4067230942ac6b32dd61328675bc99ae0a9f4cc665c30a95f0f68712"
+      },
+      {
+        "path": "vocab.json",
+        "sha256": "ed19656ea1707df69134c4af35c8ceda2cc9860bf2c3495026153a133670ab5e"
+      },
+      {
+        "path": "encoder\\config.json",
+        "sha256": "5f7c4de20eef45300375b2dae398bf3f3b3c66e068e61458f5eac9d3f77b8477"
+      },
+      {
+        "path": "encoder\\model.safetensors",
+        "sha256": "a18147749a689115be966622749d5f0751e314e3597e2d766edff56869e822ab"
+      }
+    ]
+  }
+]

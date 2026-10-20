@@ -1,0 +1,7 @@
+{
+  "saved_model_roundtrip_all_1440_rows": true,
+  "max_probability_error": 0.0,
+  "independent_sklearn_category_and_fine_f1_match": true,
+  "training_policy_cv": true,
+  "held_out_used_for_selection": false
+}

@@ -1,0 +1,83 @@
+[
+  {
+    "fold": 1,
+    "C": 1.0,
+    "category_macro": 0.7170988502605969,
+    "fine_macro": 0.41794676375274137,
+    "selection_score": 0.5675228070066691,
+    "train_policies": 43,
+    "validation_policies": 22
+  },
+  {
+    "fold": 1,
+    "C": 4.0,
+    "category_macro": 0.7134645574646882,
+    "fine_macro": 0.4042405368568594,
+    "selection_score": 0.5588525471607738,
+    "train_policies": 43,
+    "validation_policies": 22
+  },
+  {
+    "fold": 1,
+    "C": 16.0,
+    "category_macro": 0.7136000180009112,
+    "fine_macro": 0.3931060258392077,
+    "selection_score": 0.5533530219200594,
+    "train_policies": 43,
+    "validation_policies": 22
+  },
+  {
+    "fold": 2,
+    "C": 1.0,
+    "category_macro": 0.7235220414491528,
+    "fine_macro": 0.41423483794851984,
+    "selection_score": 0.5688784396988363,
+    "train_policies": 44,
+    "validation_policies": 21
+  },
+  {
+    "fold": 2,
+    "C": 4.0,
+    "category_macro": 0.7310943736034297,
+    "fine_macro": 0.40472676468690305,
+    "selection_score": 0.5679105691451664,
+    "train_policies": 44,
+    "validation_policies": 21
+  },
+  {
+    "fold": 2,
+    "C": 16.0,
+    "category_macro": 0.7274986311639816,
+    "fine_macro": 0.390572258074055,
+    "selection_score": 0.5590354446190183,
+    "train_policies": 44,
+    "validation_policies": 21
+  },
+  {
+    "fold": 3,
+    "C": 1.0,
+    "category_macro": 0.7420816215764686,
+    "fine_macro": 0.4575763569855088,
+    "selection_score": 0.5998289892809887,
+    "train_policies": 43,
+    "validation_policies": 22
+  },
+  {
+    "fold": 3,
+    "C": 4.0,
+    "category_macro": 0.74377812980848,
+    "fine_macro": 0.4287640879444189,
+    "selection_score": 0.5862711088764494,
+    "train_policies": 43,
+    "validation_policies": 22
+  },
+  {
+    "fold": 3,
+    "C": 16.0,
+    "category_macro": 0.737385074452581,
+    "fine_macro": 0.4136749730783496,
+    "selection_score": 0.5755300237654652,
+    "train_policies": 43,
+    "validation_policies": 22
+  }
+]

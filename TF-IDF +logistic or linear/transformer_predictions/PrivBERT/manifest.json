@@ -1,0 +1,690 @@
+{
+  "model": "PrivBERT",
+  "checkpoint": "C:\\Users\\AI\\Documents\\Codex\\2026-09-06\\c\\work\\error_analysis\\checkpoints\\PrivBERT",
+  "threshold": 0.5,
+  "max_length": 384,
+  "seed_runs": 1,
+  "train_policy_ids": [
+    "1017_sci-news.com",
+    "1028_redorbit.com",
+    "1034_aol.com",
+    "1050_honda.com",
+    "105_amazon.com",
+    "1070_wnep.com",
+    "1083_highgearmedia.com",
+    "1089_freep.com",
+    "1099_enthusiastnetwork.com",
+    "1106_allstate.com",
+    "1164_acbj.com",
+    "1205_opensecrets.org",
+    "1206_dcccd.edu",
+    "1221_gwdocs.com",
+    "1224_austincc.edu",
+    "1252_cincymuseum.org",
+    "1259_fool.com",
+    "1261_zacks.com",
+    "1264_citizen.org",
+    "1300_bankofamerica.com",
+    "1306_chasepaymentech.com",
+    "133_fortune.com",
+    "135_instagram.com",
+    "1360_thehill.com",
+    "1361_yahoo.com",
+    "1419_miaminewtimes.com",
+    "144_style.com",
+    "1468_rockstargames.com",
+    "1470_steampowered.com",
+    "1498_ticketmaster.com",
+    "1510_jibjab.com",
+    "1539_geocaching.com",
+    "1545_taylorswift.com",
+    "1582_msn.com",
+    "1610_post-gazette.com",
+    "1618_sltrib.com",
+    "1636_sidearmsports.com",
+    "1637_dailyillini.com",
+    "164_adweek.com",
+    "1666_wsmv.com",
+    "1673_tulsaworld.com",
+    "1683_dailynews.com",
+    "1694_lids.com",
+    "1703_sports-reference.com",
+    "1708_foxsports.com",
+    "1713_latinpost.com",
+    "175_mlb.mlb.com",
+    "186_abcnews.com",
+    "200_washingtonpost.com",
+    "202_foodallergy.org",
+    "207_reference.com",
+    "20_theatlantic.com",
+    "21_imdb.com",
+    "228_gawker.com",
+    "26_nytimes.com",
+    "303_reddit.com",
+    "320_timeinc.com",
+    "325_ocregister.com",
+    "32_voxmedia.com",
+    "331_tgifridays.com",
+    "33_nbcuniversal.com",
+    "348_walmart.com",
+    "359_vikings.com",
+    "394_newsbusters.org",
+    "414_washingtonian.com"
+  ],
+  "eval_policy_ids": [
+    "453_barnesandnoble.com",
+    "456_boardgamegeek.com",
+    "481_fredericknewspost.com",
+    "503_buffalowildwings.com",
+    "517_kaleidahealth.org",
+    "523_usa.gov",
+    "531_archives.gov",
+    "541_ifsa-butler.org",
+    "559_www.loc.gov",
+    "571_abita.com",
+    "581_coffeereview.com",
+    "584_communitycoffee.com",
+    "586_cariboucoffee.com",
+    "58_esquire.com",
+    "591_google.com",
+    "59_liquor.com",
+    "627_dairyqueen.com",
+    "635_playstation.com",
+    "640_gamestop.com",
+    "641_cbsinteractive.com",
+    "642_thefreedictionary.com",
+    "652_randomhouse.com",
+    "676_restaurantnews.com",
+    "686_military.com",
+    "701_tangeroutlet.com",
+    "70_meredith.com",
+    "723_dogbreedinfo.com",
+    "744_minecraft.gamepedia.com",
+    "745_eatchicken.com",
+    "746_kraftrecipes.com",
+    "760_si.edu",
+    "777_education.jlab.org",
+    "807_lodgemfg.com",
+    "817_ironhorsevineyards.com",
+    "82_sheknows.com",
+    "856_sciencemag.org",
+    "862_disinfo.com",
+    "883_ted.com",
+    "884_naturalnews.com",
+    "891_everydayhealth.com",
+    "898_uptodate.com",
+    "907_earthkam.org",
+    "919_uh.edu",
+    "928_stlouisfed.org",
+    "93_pbs.org",
+    "940_internetbrands.com",
+    "962_lynda.com",
+    "988_solarviews.com",
+    "98_neworleansonline.com",
+    "995_mohegansun.com"
+  ],
+  "eval_segments": 1440,
+  "category_metrics": {
+    "First Party Collection/Use": {
+      "precision": 0.8872727272727273,
+      "recall": 0.8215488215488216,
+      "f1": 0.8531468531468531,
+      "support": 594
+    },
+    "Third Party Sharing/Collection": {
+      "precision": 0.9024390243902439,
+      "recall": 0.8185840707964602,
+      "f1": 0.8584686774941995,
+      "support": 452
+    },
+    "User Choice/Control": {
+      "precision": 0.7107843137254902,
+      "recall": 0.6118143459915611,
+      "f1": 0.6575963718820862,
+      "support": 237
+    },
+    "Data Retention": {
+      "precision": 0.7678571428571429,
+      "recall": 0.6615384615384615,
+      "f1": 0.7107438016528925,
+      "support": 65
+    },
+    "Data Security": {
+      "precision": 0.7483870967741936,
+      "recall": 0.7785234899328859,
+      "f1": 0.7631578947368421,
+      "support": 149
+    },
+    "International and Specific Audiences": {
+      "precision": 0.9173553719008265,
+      "recall": 0.8604651162790697,
+      "f1": 0.888,
+      "support": 129
+    },
+    "Do Not Track": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 11
+    },
+    "Policy Change": {
+      "precision": 0.6533333333333333,
+      "recall": 0.765625,
+      "f1": 0.7050359712230215,
+      "support": 64
+    },
+    "Access, Edit and Deletion": {
+      "precision": 0.7590361445783133,
+      "recall": 0.7078651685393258,
+      "f1": 0.7325581395348837,
+      "support": 89
+    },
+    "Other": {
+      "precision": 0.8801498127340824,
+      "recall": 0.6973293768545994,
+      "f1": 0.7781456953642384,
+      "support": 674
+    }
+  },
+  "macro_f1": 0.7946853405035017,
+  "prediction_sha256": "ecd10bc620fdcd87d0f80c95869ce72205bfadbb334997c86a1e4ee0139732e0",
+  "torch_version": "2.14.0+cpu",
+  "original_classifier_metadata": {
+    "attribute_heads": [
+      "does_does_not",
+      "collection_mode",
+      "action_first_party",
+      "identifiability",
+      "personal_information_type",
+      "purpose",
+      "user_type",
+      "choice_type",
+      "choice_scope",
+      "third_party_entity",
+      "action_third_party",
+      "access_type",
+      "access_scope",
+      "retention_period",
+      "retention_purpose",
+      "security_measure",
+      "change_type",
+      "notification_type",
+      "do_not_track_policy",
+      "audience_type"
+    ],
+    "category_labels": [
+      "First Party Collection/Use",
+      "Third Party Sharing/Collection",
+      "User Choice/Control",
+      "Data Retention",
+      "Data Security",
+      "International and Specific Audiences",
+      "Do Not Track",
+      "Policy Change",
+      "Access, Edit and Deletion",
+      "Other"
+    ],
+    "checkpoint_serialization": "safetensors",
+    "classifier_dropout": 0.15,
+    "classifier_format_version": 3,
+    "hierarchy_schema": {
+      "attribute_head_count": 20,
+      "attribute_heads": [
+        "does_does_not",
+        "collection_mode",
+        "action_first_party",
+        "identifiability",
+        "personal_information_type",
+        "purpose",
+        "user_type",
+        "choice_type",
+        "choice_scope",
+        "third_party_entity",
+        "action_third_party",
+        "access_type",
+        "access_scope",
+        "retention_period",
+        "retention_purpose",
+        "security_measure",
+        "change_type",
+        "notification_type",
+        "do_not_track_policy",
+        "audience_type"
+      ],
+      "attribute_slices": {
+        "access_scope": [
+          89,
+          95
+        ],
+        "access_type": [
+          80,
+          89
+        ],
+        "action_first_party": [
+          5,
+          15
+        ],
+        "action_third_party": [
+          74,
+          80
+        ],
+        "audience_type": [
+          133,
+          138
+        ],
+        "change_type": [
+          118,
+          123
+        ],
+        "choice_scope": [
+          59,
+          67
+        ],
+        "choice_type": [
+          50,
+          59
+        ],
+        "collection_mode": [
+          2,
+          5
+        ],
+        "do_not_track_policy": [
+          129,
+          133
+        ],
+        "does_does_not": [
+          0,
+          2
+        ],
+        "identifiability": [
+          15,
+          19
+        ],
+        "notification_type": [
+          123,
+          129
+        ],
+        "personal_information_type": [
+          19,
+          35
+        ],
+        "purpose": [
+          35,
+          46
+        ],
+        "retention_period": [
+          95,
+          100
+        ],
+        "retention_purpose": [
+          100,
+          108
+        ],
+        "security_measure": [
+          108,
+          118
+        ],
+        "third_party_entity": [
+          67,
+          74
+        ],
+        "user_type": [
+          46,
+          50
+        ]
+      },
+      "attribute_value_vocabulary": {
+        "access_scope": [
+          "other",
+          "other_data_about_user",
+          "profile_data",
+          "transactional_data",
+          "unspecified",
+          "user_account_data"
+        ],
+        "access_type": [
+          "deactivate_account",
+          "delete_account_full",
+          "delete_account_partial",
+          "edit_information",
+          "export",
+          "none",
+          "other",
+          "unspecified",
+          "view"
+        ],
+        "action_first_party": [
+          "collect_from_user_on_other_websites",
+          "collect_in_mobile_app",
+          "collect_on_mobile_website",
+          "collect_on_website",
+          "other",
+          "receive_from_other_parts_of_company_affiliates",
+          "receive_from_other_service_third_party_named",
+          "receive_from_other_service_third_party_unnamed",
+          "track_user_on_other_websites",
+          "unspecified"
+        ],
+        "action_third_party": [
+          "collect_on_first_party_website_app",
+          "other",
+          "receive_shared_with",
+          "see",
+          "track_on_first_party_website_app",
+          "unspecified"
+        ],
+        "audience_type": [
+          "californians",
+          "children",
+          "citizens_from_other_countries",
+          "europeans",
+          "other"
+        ],
+        "change_type": [
+          "in_case_of_merger_or_acquisition",
+          "non_privacy_relevant_change",
+          "other",
+          "privacy_relevant_change",
+          "unspecified"
+        ],
+        "choice_scope": [
+          "both",
+          "collection",
+          "first_party_collection",
+          "first_party_use",
+          "third_party_sharing_collection",
+          "third_party_use",
+          "unspecified",
+          "use"
+        ],
+        "choice_type": [
+          "browser_device_privacy_controls",
+          "dont_use_service_feature",
+          "first_party_privacy_controls",
+          "opt_in",
+          "opt_out_link",
+          "opt_out_via_contacting_company",
+          "other",
+          "third_party_privacy_controls",
+          "unspecified"
+        ],
+        "collection_mode": [
+          "explicit",
+          "implicit",
+          "unspecified"
+        ],
+        "do_not_track_policy": [
+          "mentioned_but_unclear_if_honored",
+          "not_honored",
+          "not_mentioned",
+          "other"
+        ],
+        "does_does_not": [
+          "does",
+          "does_not"
+        ],
+        "identifiability": [
+          "aggregated_or_anonymized",
+          "identifiable",
+          "other",
+          "unspecified"
+        ],
+        "notification_type": [
+          "general_notice_in_privacy_policy",
+          "general_notice_on_website",
+          "no_notification",
+          "other",
+          "personal_notice",
+          "unspecified"
+        ],
+        "personal_information_type": [
+          "computer_information",
+          "contact",
+          "cookies_and_tracking_elements",
+          "demographic",
+          "financial",
+          "generic_personal_information",
+          "health",
+          "ip_address_and_device_ids",
+          "location",
+          "other",
+          "personal_identifier",
+          "social_media_data",
+          "survey_data",
+          "unspecified",
+          "user_online_activities",
+          "user_profile"
+        ],
+        "purpose": [
+          "additional_service_feature",
+          "advertising",
+          "analytics_research",
+          "basic_service_feature",
+          "legal_requirement",
+          "marketing",
+          "merger_acquisition",
+          "other",
+          "personalization_customization",
+          "service_operation_and_security",
+          "unspecified"
+        ],
+        "retention_period": [
+          "indefinitely",
+          "limited",
+          "other",
+          "stated_period",
+          "unspecified"
+        ],
+        "retention_purpose": [
+          "advertising",
+          "analytics_research",
+          "legal_requirement",
+          "marketing",
+          "other",
+          "perform_service",
+          "service_operation_and_security",
+          "unspecified"
+        ],
+        "security_measure": [
+          "data_access_limitation",
+          "generic",
+          "other",
+          "privacy_review_audit",
+          "privacy_security_program",
+          "privacy_training",
+          "secure_data_storage",
+          "secure_data_transfer",
+          "secure_user_authentication",
+          "unspecified"
+        ],
+        "third_party_entity": [
+          "named_third_party",
+          "other",
+          "other_part_of_company_affiliate",
+          "other_users",
+          "public",
+          "unnamed_third_party",
+          "unspecified"
+        ],
+        "user_type": [
+          "other",
+          "unspecified",
+          "user_with_account",
+          "user_without_account"
+        ]
+      },
+      "category_count": 10,
+      "category_to_attributes": {
+        "Access, Edit and Deletion": [
+          "user_type",
+          "access_type",
+          "access_scope"
+        ],
+        "Data Retention": [
+          "personal_information_type",
+          "retention_period",
+          "retention_purpose"
+        ],
+        "Data Security": [
+          "security_measure"
+        ],
+        "Do Not Track": [
+          "do_not_track_policy"
+        ],
+        "First Party Collection/Use": [
+          "does_does_not",
+          "collection_mode",
+          "action_first_party",
+          "identifiability",
+          "personal_information_type",
+          "purpose",
+          "user_type",
+          "choice_type",
+          "choice_scope"
+        ],
+        "International and Specific Audiences": [
+          "audience_type"
+        ],
+        "Other": [],
+        "Policy Change": [
+          "change_type",
+          "notification_type"
+        ],
+        "Third Party Sharing/Collection": [
+          "does_does_not",
+          "identifiability",
+          "personal_information_type",
+          "purpose",
+          "user_type",
+          "choice_type",
+          "choice_scope",
+          "third_party_entity",
+          "action_third_party"
+        ],
+        "User Choice/Control": [
+          "personal_information_type",
+          "purpose",
+          "user_type",
+          "choice_type",
+          "choice_scope"
+        ]
+      },
+      "excluded_attribute_heads": [
+        "other_type",
+        "user_choice"
+      ],
+      "flattened_attribute_value_count": 138,
+      "high_level_categories": [
+        "First Party Collection/Use",
+        "Third Party Sharing/Collection",
+        "User Choice/Control",
+        "Data Retention",
+        "Data Security",
+        "International and Specific Audiences",
+        "Do Not Track",
+        "Policy Change",
+        "Access, Edit and Deletion",
+        "Other"
+      ],
+      "normalization_version": "opp115-slug-v1",
+      "raw_attribute_names": {
+        "access_scope": "Access Scope",
+        "access_type": "Access Type",
+        "action_first_party": "Action First-Party",
+        "action_third_party": "Action Third Party",
+        "audience_type": "Audience Type",
+        "change_type": "Change Type",
+        "choice_scope": "Choice Scope",
+        "choice_type": "Choice Type",
+        "collection_mode": "Collection Mode",
+        "do_not_track_policy": "Do Not Track policy",
+        "does_does_not": "Does/Does Not",
+        "identifiability": "Identifiability",
+        "notification_type": "Notification Type",
+        "personal_information_type": "Personal Information Type",
+        "purpose": "Purpose",
+        "retention_period": "Retention Period",
+        "retention_purpose": "Retention Purpose",
+        "security_measure": "Security Measure",
+        "third_party_entity": "Third Party Entity",
+        "user_type": "User Type"
+      },
+      "schema_sha256": "90627a25efe47a217e03a2f09431b3256bc254867cd8f9aee675a1eafbb93b9b",
+      "schema_version": "opp115-polisis-hierarchy-v1",
+      "training_policy_ids": [
+        "1017_sci-news.com",
+        "1028_redorbit.com",
+        "1034_aol.com",
+        "1050_honda.com",
+        "105_amazon.com",
+        "1070_wnep.com",
+        "1083_highgearmedia.com",
+        "1089_freep.com",
+        "1099_enthusiastnetwork.com",
+        "1106_allstate.com",
+        "1164_acbj.com",
+        "1205_opensecrets.org",
+        "1206_dcccd.edu",
+        "1221_gwdocs.com",
+        "1224_austincc.edu",
+        "1252_cincymuseum.org",
+        "1259_fool.com",
+        "1261_zacks.com",
+        "1264_citizen.org",
+        "1300_bankofamerica.com",
+        "1306_chasepaymentech.com",
+        "133_fortune.com",
+        "135_instagram.com",
+        "1360_thehill.com",
+        "1361_yahoo.com",
+        "1419_miaminewtimes.com",
+        "144_style.com",
+        "1468_rockstargames.com",
+        "1470_steampowered.com",
+        "1498_ticketmaster.com",
+        "1510_jibjab.com",
+        "1539_geocaching.com",
+        "1545_taylorswift.com",
+        "1582_msn.com",
+        "1610_post-gazette.com",
+        "1618_sltrib.com",
+        "1636_sidearmsports.com",
+        "1637_dailyillini.com",
+        "164_adweek.com",
+        "1666_wsmv.com",
+        "1673_tulsaworld.com",
+        "1683_dailynews.com",
+        "1694_lids.com",
+        "1703_sports-reference.com",
+        "1708_foxsports.com",
+        "1713_latinpost.com",
+        "175_mlb.mlb.com",
+        "186_abcnews.com",
+        "200_washingtonpost.com",
+        "202_foodallergy.org",
+        "207_reference.com",
+        "20_theatlantic.com",
+        "21_imdb.com",
+        "228_gawker.com",
+        "26_nytimes.com",
+        "303_reddit.com",
+        "320_timeinc.com",
+        "325_ocregister.com",
+        "32_voxmedia.com",
+        "331_tgifridays.com",
+        "33_nbcuniversal.com",
+        "348_walmart.com",
+        "359_vikings.com",
+        "394_newsbusters.org",
+        "414_washingtonian.com"
+      ]
+    },
+    "model_type": "roberta",
+    "pooling_strategy": "roberta_first_token_dense_tanh",
+    "source_model": "/content/drive/MyDrive/BERT_OPP115_Colab/runs/opp115_privbert_hierarchy_v1_20260904_125736/privbert-opp115-dapt",
+    "source_revision": null,
+    "task": "opp115_hierarchical_fine_grained_classification",
+    "threshold": 0.5
+  },
+  "validation_status": "Pending comparison with original saved run metrics"
+}

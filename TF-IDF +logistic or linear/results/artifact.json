@@ -1,0 +1,1476 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "A simple baseline changes the transformer comparison",
+    "generatedAt": "2026-09-09T16:43:08.558822+00:00",
+    "blocks": [
+      {
+        "id": "title",
+        "type": "markdown",
+        "body": "# A simple baseline changes the transformer comparison"
+      },
+      {
+        "id": "summary",
+        "type": "markdown",
+        "body": "## Technical summary\n\nThe trained TF-IDF + logistic regression baseline obtains **0.7282 category Macro-F1 and 0.4499 fine-grained Macro-F1** on the same 1,440 evaluation segments as the four transformer replications. PrivBERT leads at category classification (0.7947), but the simple baseline exceeds PrivBERT's fine-grained score (0.2268) by 0.2231 and leads on 17 of twenty attribute heads.\n\nAfter the previously defined 22-segment duplicate/near-match exclusion, the baseline retains 0.4474 fine-grained Macro-F1 versus PrivBERT's 0.2259. The simple baseline therefore changes the substantive conclusion: transformers help category recognition in these implementations, but the current transformer fine-grained results do not establish a benefit over sparse linear modelling.\n\nThe original Polisis paper reports 0.84 for its query-category classifier and 0.81 for its segment-category classifier under different label and scoring conventions. Its results are included below as historical reference, with a metric-aligned diagnostic rather than an asserted like-for-like reproduction."
+      },
+      {
+        "id": "scope",
+        "type": "markdown",
+        "body": "## Matched evaluation contract\n\nAll five locally evaluated models use the original 65 training / 50 evaluation policy split, 2,352 training segments, 1,440 evaluation segments, ten parent categories and 138 attribute values across twenty heads. Annotation rows are unioned into the original segment targets. Category Macro-F1 here is the mean positive-label F1 over ten categories. Fine-grained Macro-F1 is the mean over all 138 values, scoring each head only on reference-applicable segments and setting zero-denominator F1 to zero.\n\nPredicted categories gate attribute heads using the same shared-head mapping as rematch. Attribute classifiers are trained only on applicable training segments. Label vocabulary is frozen from the outer training policies. The original and filtered evaluation rows and reference targets are identical across all five local models; no reported paper score enters this matched comparison.\n\nThe baseline uses full segment text. Transformers use their original 384-token limits; one evaluation segment per model is truncated. This small input-policy difference is disclosed rather than silently changing checkpoint inference."
+      },
+      {
+        "id": "method",
+        "type": "markdown",
+        "body": "## A trained baseline with selection confined to training policies\n\nFeatures combine word unigrams/bigrams and character-within-word 3\u20135 grams, with sublinear term frequency, minimum document frequency two, and at most 60,000 features per branch. Each branch uses its own L2 normalization. The final feature matrix has 48,269 columns.\n\nEach label has an independent L2-regularized logistic regression using liblinear and balanced binary class weights. Constant predictors handle any training subset with only one class. Three GroupKFold splits partition the 65 training policies; validation documents never contribute to the corresponding feature vocabulary or IDF. The outer training-derived output vocabulary is held fixed across these folds.\n\nRegularization C was selected from 1, 4 and 16 by the mean of category and fine-grained Macro-F1, averaged across the three policy folds. **C=1** was selected, then fitted on all 65 training policies. The evaluation set was not used for selection. The probability threshold stays at 0.5; no test-set threshold tuning was performed. Logistic solver seed is 1729; this is one final baseline fit, not a multi-seed experiment.\n\nThe baseline and transformers have different training procedures: balanced logistic weights and independent fits versus the saved joint transformer training with smoothed positive weights. Therefore this experiment compares these complete implementations; it does not isolate the encoder architecture as the cause of the difference."
+      },
+      {
+        "id": "cv_table",
+        "type": "table",
+        "tableId": "cv"
+      },
+      {
+        "id": "overall",
+        "type": "markdown",
+        "body": "## Transformers improve categories, but lose on attributes\n\nRelative to the baseline, category Macro-F1 gains are +0.0153 for BERT, +0.0368 for RoBERTa, +0.0332 for LegalBERT and +0.0665 for PrivBERT. Fine-grained Macro-F1 changes are negative for all four: the strongest transformer checkpoint, PrivBERT, is 0.2231 below the baseline.\n\nRead the following plots separately: category and attribute Macro-F1 average different output vocabularies. The evidence supports a category-level advantage for these transformer checkpoints and a strong sparse-linear result for attribute prediction. It does not support claiming that this benchmark requires a transformer."
+      },
+      {
+        "id": "overall_table",
+        "type": "table",
+        "tableId": "overall"
+      },
+      {
+        "id": "chart_category_macro_f1_block",
+        "type": "chart",
+        "chartId": "chart_category_macro_f1"
+      },
+      {
+        "id": "chart_category_macro_f1_reading",
+        "type": "markdown",
+        "body": "PrivBERT has the highest category score; the baseline supplies a meaningful lower-complexity reference."
+      },
+      {
+        "id": "chart_fine_macro_f1_block",
+        "type": "chart",
+        "chartId": "chart_fine_macro_f1"
+      },
+      {
+        "id": "chart_fine_macro_f1_reading",
+        "type": "markdown",
+        "body": "The baseline has the highest fine-grained score by a large margin; evaluating only transformer-to-transformer differences would miss this result."
+      },
+      {
+        "id": "heads",
+        "type": "markdown",
+        "body": "## The fine-grained advantage spans most attribute heads\n\nThe baseline exceeds PrivBERT on seventeen of twenty heads. Examples include purpose (0.6671 versus 0.1286), personal-information type (0.5671 versus 0.1016), security measure (0.3696 versus 0.1028) and choice type (0.5448 versus 0.2751). PrivBERT retains advantages on does/does not, collection mode and do-not-track policy.\n\nThis strengthens the need to diagnose transformer attribute training, class weighting and threshold behaviour rather than treating the low fine-grained score as evidence of unavoidable task difficulty. The baseline still performs poorly on some detailed heads, so the result does not imply that the hierarchy is solved."
+      },
+      {
+        "id": "heads_table",
+        "type": "table",
+        "tableId": "heads"
+      },
+      {
+        "id": "categories_table",
+        "type": "table",
+        "tableId": "categories"
+      },
+      {
+        "id": "duplicates",
+        "type": "markdown",
+        "body": "## The result survives duplicate filtering\n\nThe shared sensitivity cohort excludes exact and normalized cross-split matches, collapses the remaining normalized duplicate within evaluation, and excludes near candidates at the audit's 0.90 cosine cutoff. It contains 1,418 segments. The baseline's fine-grained score is 0.4474, still 0.2215 above PrivBERT. The overall local rankings remain unchanged.\n\nThese are post-hoc exclusion results using frozen predictions, not retraining on deduplicated data. Near candidates include shared templates whose meanings can differ, so this cohort is a robustness check rather than an adjudicated clean benchmark."
+      },
+      {
+        "id": "filtered_table",
+        "type": "table",
+        "tableId": "filtered"
+      },
+      {
+        "id": "paper",
+        "type": "markdown",
+        "body": "## The original paper uses different metrics and label sets\n\nHarkous et al., *Polisis: Automated Analysis and Presentation of Privacy Policies Using Deep Learning*, USENIX Security 2018, reports CNN classifiers with privacy-specific word embeddings. Table 1 (PDF page 7; proceedings page 536) reports average F1 **0.84** for the nine-label query-category classifier. The appendix (PDF page 18; proceedings page 547) reports **0.81** for a twelve-label segment classifier, including three distinct Other-related labels.\n\nFootnote 3 on PDF page 6 defines F1 by averaging performance on both the presence and absence of each label. Our previous rematch headline metric averages positive-label F1. The paper's 0.84 and 0.81 must therefore not be directly subtracted from rematch's positive-label Macro-F1.\n\nBoth workflows name a 65/50 policy split, but matching counts do not establish matching policy identities or aggregation. Published positive supports also differ substantially: for example, First Party Collection has support 1,267 in Table 1 and 1,211 in the appendix, versus 594 in our held-out targets. The supplied paper does not establish an identical split/target contract for these runs. The local transformer checkpoint evaluations are rematch replications; they are **not an exact reimplementation of Polisis's original CNN**."
+      },
+      {
+        "id": "paper_categories_table",
+        "type": "table",
+        "tableId": "paper_categories"
+      },
+      {
+        "id": "aligned",
+        "type": "markdown",
+        "body": "## A metric-aligned diagnostic is useful, but not an exact paper replication\n\nFor each local model, I recomputed the mean of positive-class and negative-class F1 for each of the nine non-Other categories, then averaged across those categories. This follows the presence/absence averaging described in the paper's footnote. The resulting means are **0.8416 baseline, 0.8526 BERT, 0.8638 RoBERTa, 0.8625 LegalBERT and 0.8815 PrivBERT**, alongside the paper's reported Table 1 average of 0.84.\n\nThe table aligns category names and the averaging operation, while displaying different positive supports. It does not retrain our ten-label segment classifiers as the paper's nine-label query classifier, recover its original policy identities, or resolve aggregation differences. Similar scores are therefore not evidence of successful exact replication or superiority over the original paper."
+      },
+      {
+        "id": "aligned_table",
+        "type": "table",
+        "tableId": "aligned"
+      },
+      {
+        "id": "paper_attributes",
+        "type": "markdown",
+        "body": "## Published attribute results are retained without inventing a global score\n\nThe appendix gives averages for fifteen selected attribute classifiers, not a directly comparable global Macro-F1 over our 138 values. Their reported values are preserved below. The vocabularies differ: for example, the paper shows two change-type values while rematch has five. The paper's table headed third-party-entity lists action-like values; that heading is retained with an explicit note rather than silently remapped.\n\nConsequently, these historical averages document the original findings but cannot serve as a matched measure of transformer gain or loss. The local head-by-head table above is the valid matched comparison."
+      },
+      {
+        "id": "paper_attributes_table",
+        "type": "table",
+        "tableId": "paper_attributes"
+      },
+      {
+        "id": "validation",
+        "type": "markdown",
+        "body": "## Validation and limits\n\nReloading the saved logistic model reproduces all 1,440 exported probability vectors within 1e-12. Independent scikit-learn F1 calculations reproduce the baseline's category and fine-grained results. All five local exports have identical evaluation keys and reference labels. CV fold policies are disjoint, and the original transformer metrics reproduce their saved summaries.\n\nThe experiment does not estimate multi-seed variability or causal architectural effects. Baseline hyperparameter selection and class weighting differ from the original transformer runs. External base-model pretraining contamination, template dependence across policies and historical manual model selection remain unresolved. Training-policy CV prevents using the fifty held-out policies for this baseline's parameter selection, but does not make the pre-existing test set newly independent of the research process."
+      },
+      {
+        "id": "next",
+        "type": "markdown",
+        "body": "## Revised conclusion and next experiment\n\nThe simple baseline materially changes the conclusion: PrivBERT is strongest among the tested systems for coarse categories, while TF-IDF + logistic regression is strongest for the implemented fine-grained task. A blanket claim that transformers are needed, or that their overall capability follows from their category ranking, is unsupported.\n\nNext, compare class weights, per-head fitting and validation-selected thresholds under matched policy folds; then repeat all methods on duplicate-grouped splits and matched seeds. An exact Polisis replication would additionally require its original split identities, annotation aggregation, twelve-category targets, attribute vocabularies and CNN training procedure."
+      },
+      {
+        "id": "questions",
+        "type": "markdown",
+        "body": "## Further questions\n\nDoes the sparse model's attribute advantage persist when transformer loss weighting and validation tuning are matched? Which baseline gains come from explicit lexical cues versus repeated templates? Can the original Polisis evaluation contract be recovered well enough for an exact replication?"
+      }
+    ],
+    "charts": [
+      {
+        "id": "chart_category_macro_f1",
+        "title": "Category Macro-F1",
+        "type": "bar",
+        "intent": "comparison",
+        "question": "How much do transformer checkpoints gain over a simple fitted baseline?",
+        "rationale": "Five models share identical evaluation examples and scoring rules; separate bars avoid mixing output vocabularies.",
+        "dataset": "overall",
+        "sourceId": "overall",
+        "encodings": {
+          "x": {
+            "field": "model",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "category_macro_f1",
+            "type": "quantitative"
+          }
+        },
+        "valueFormat": "number",
+        "layout": "full"
+      },
+      {
+        "id": "chart_fine_macro_f1",
+        "title": "Fine-grained Macro-F1",
+        "type": "bar",
+        "intent": "comparison",
+        "question": "How much do transformer checkpoints gain over a simple fitted baseline?",
+        "rationale": "Five models share identical evaluation examples and scoring rules; separate bars avoid mixing output vocabularies.",
+        "dataset": "overall",
+        "sourceId": "overall",
+        "encodings": {
+          "x": {
+            "field": "model",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "fine_macro_f1",
+            "type": "quantitative"
+          }
+        },
+        "valueFormat": "number",
+        "layout": "full"
+      }
+    ],
+    "tables": [
+      {
+        "id": "cv",
+        "title": "Training-policy cross-validation",
+        "dataset": "cv",
+        "sourceId": "cv",
+        "columns": [
+          {
+            "field": "fold",
+            "label": "fold",
+            "type": "number"
+          },
+          {
+            "field": "C",
+            "label": "C",
+            "type": "number"
+          },
+          {
+            "field": "category_macro",
+            "label": "category macro",
+            "type": "number"
+          },
+          {
+            "field": "fine_macro",
+            "label": "fine macro",
+            "type": "number"
+          },
+          {
+            "field": "selection_score",
+            "label": "selection score",
+            "type": "number"
+          },
+          {
+            "field": "train_policies",
+            "label": "train policies",
+            "type": "number"
+          },
+          {
+            "field": "validation_policies",
+            "label": "validation policies",
+            "type": "number"
+          }
+        ]
+      },
+      {
+        "id": "overall",
+        "title": "Matched original evaluation scores",
+        "dataset": "overall",
+        "sourceId": "overall",
+        "columns": [
+          {
+            "field": "model",
+            "label": "model",
+            "type": "text"
+          },
+          {
+            "field": "n",
+            "label": "n",
+            "type": "number"
+          },
+          {
+            "field": "category_macro_f1",
+            "label": "category macro f1",
+            "type": "number"
+          },
+          {
+            "field": "fine_macro_f1",
+            "label": "fine macro f1",
+            "type": "number"
+          },
+          {
+            "field": "oracle_fine_macro_f1",
+            "label": "oracle fine macro f1",
+            "type": "number"
+          }
+        ]
+      },
+      {
+        "id": "heads",
+        "title": "Attribute-head comparison",
+        "dataset": "heads",
+        "sourceId": "heads",
+        "columns": [
+          {
+            "field": "head",
+            "label": "head",
+            "type": "text"
+          },
+          {
+            "field": "TF-IDF + logistic regression",
+            "label": "TF-IDF + logistic regression",
+            "type": "number"
+          },
+          {
+            "field": "BERT",
+            "label": "BERT",
+            "type": "number"
+          },
+          {
+            "field": "RoBERTa",
+            "label": "RoBERTa",
+            "type": "number"
+          },
+          {
+            "field": "LegalBERT",
+            "label": "LegalBERT",
+            "type": "number"
+          },
+          {
+            "field": "PrivBERT",
+            "label": "PrivBERT",
+            "type": "number"
+          }
+        ]
+      },
+      {
+        "id": "categories",
+        "title": "Positive-label F1 by category",
+        "dataset": "categories",
+        "sourceId": "categories",
+        "columns": [
+          {
+            "field": "category",
+            "label": "category",
+            "type": "text"
+          },
+          {
+            "field": "TF-IDF + logistic regression",
+            "label": "TF-IDF + logistic regression",
+            "type": "number"
+          },
+          {
+            "field": "BERT",
+            "label": "BERT",
+            "type": "number"
+          },
+          {
+            "field": "RoBERTa",
+            "label": "RoBERTa",
+            "type": "number"
+          },
+          {
+            "field": "LegalBERT",
+            "label": "LegalBERT",
+            "type": "number"
+          },
+          {
+            "field": "PrivBERT",
+            "label": "PrivBERT",
+            "type": "number"
+          }
+        ]
+      },
+      {
+        "id": "filtered",
+        "title": "Matched duplicate-filtered evaluation",
+        "dataset": "filtered",
+        "sourceId": "filtered",
+        "columns": [
+          {
+            "field": "model",
+            "label": "model",
+            "type": "text"
+          },
+          {
+            "field": "n",
+            "label": "n",
+            "type": "number"
+          },
+          {
+            "field": "category_macro_f1",
+            "label": "category macro f1",
+            "type": "number"
+          },
+          {
+            "field": "fine_macro_f1",
+            "label": "fine macro f1",
+            "type": "number"
+          }
+        ]
+      },
+      {
+        "id": "paper_categories",
+        "title": "Original paper category results",
+        "dataset": "paper_categories",
+        "sourceId": "paper_categories",
+        "columns": [
+          {
+            "field": "paper_table",
+            "label": "paper table",
+            "type": "text"
+          },
+          {
+            "field": "label",
+            "label": "label",
+            "type": "text"
+          },
+          {
+            "field": "reported_f1",
+            "label": "reported f1",
+            "type": "number"
+          },
+          {
+            "field": "support",
+            "label": "support",
+            "type": "number"
+          },
+          {
+            "field": "pdf_page",
+            "label": "pdf page",
+            "type": "number"
+          }
+        ]
+      },
+      {
+        "id": "aligned",
+        "title": "Paper Table 1 and metric-aligned local diagnostic",
+        "dataset": "aligned",
+        "sourceId": "aligned",
+        "columns": [
+          {
+            "field": "category",
+            "label": "category",
+            "type": "text"
+          },
+          {
+            "field": "paper_table1_f1",
+            "label": "paper table1 f1",
+            "type": "number"
+          },
+          {
+            "field": "paper_support",
+            "label": "paper support",
+            "type": "number"
+          },
+          {
+            "field": "TF-IDF + logistic regression",
+            "label": "TF-IDF + logistic regression",
+            "type": "number"
+          },
+          {
+            "field": "replication_support",
+            "label": "replication support",
+            "type": "number"
+          },
+          {
+            "field": "BERT",
+            "label": "BERT",
+            "type": "number"
+          },
+          {
+            "field": "RoBERTa",
+            "label": "RoBERTa",
+            "type": "number"
+          },
+          {
+            "field": "LegalBERT",
+            "label": "LegalBERT",
+            "type": "number"
+          },
+          {
+            "field": "PrivBERT",
+            "label": "PrivBERT",
+            "type": "number"
+          }
+        ]
+      },
+      {
+        "id": "paper_attributes",
+        "title": "Original paper selected attribute averages",
+        "dataset": "paper_attributes",
+        "sourceId": "paper_attributes",
+        "columns": [
+          {
+            "field": "reported_head",
+            "label": "reported head",
+            "type": "text"
+          },
+          {
+            "field": "reported_average_f1",
+            "label": "reported average f1",
+            "type": "number"
+          },
+          {
+            "field": "pdf_page",
+            "label": "pdf page",
+            "type": "number"
+          },
+          {
+            "field": "note",
+            "label": "note",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "cv",
+        "label": "Training-policy cross-validation",
+        "path": "comparison/cv_report.csv",
+        "query": {
+          "sql": "SELECT * FROM results",
+          "language": "sql",
+          "engine": "SQLite",
+          "tables_used": [
+            "results"
+          ],
+          "description": "Exact retrieval of comparison rows. Local metrics are recomputed from actual predictions; paper rows are transcribed from the supplied Harkous et al. PDF, pages 7, 18 and 19, visually checked against the tables."
+        }
+      },
+      {
+        "id": "overall",
+        "label": "Matched original evaluation scores",
+        "path": "comparison/overall_report.csv",
+        "query": {
+          "sql": "SELECT * FROM results",
+          "language": "sql",
+          "engine": "SQLite",
+          "tables_used": [
+            "results"
+          ],
+          "description": "Exact retrieval of comparison rows. Local metrics are recomputed from actual predictions; paper rows are transcribed from the supplied Harkous et al. PDF, pages 7, 18 and 19, visually checked against the tables."
+        }
+      },
+      {
+        "id": "heads",
+        "label": "Attribute-head comparison",
+        "path": "comparison/heads_report.csv",
+        "query": {
+          "sql": "SELECT * FROM results",
+          "language": "sql",
+          "engine": "SQLite",
+          "tables_used": [
+            "results"
+          ],
+          "description": "Exact retrieval of comparison rows. Local metrics are recomputed from actual predictions; paper rows are transcribed from the supplied Harkous et al. PDF, pages 7, 18 and 19, visually checked against the tables."
+        }
+      },
+      {
+        "id": "categories",
+        "label": "Positive-label F1 by category",
+        "path": "comparison/categories_report.csv",
+        "query": {
+          "sql": "SELECT * FROM results",
+          "language": "sql",
+          "engine": "SQLite",
+          "tables_used": [
+            "results"
+          ],
+          "description": "Exact retrieval of comparison rows. Local metrics are recomputed from actual predictions; paper rows are transcribed from the supplied Harkous et al. PDF, pages 7, 18 and 19, visually checked against the tables."
+        }
+      },
+      {
+        "id": "filtered",
+        "label": "Matched duplicate-filtered evaluation",
+        "path": "comparison/filtered_report.csv",
+        "query": {
+          "sql": "SELECT * FROM results",
+          "language": "sql",
+          "engine": "SQLite",
+          "tables_used": [
+            "results"
+          ],
+          "description": "Exact retrieval of comparison rows. Local metrics are recomputed from actual predictions; paper rows are transcribed from the supplied Harkous et al. PDF, pages 7, 18 and 19, visually checked against the tables."
+        }
+      },
+      {
+        "id": "paper_categories",
+        "label": "Original paper category results",
+        "path": "comparison/paper_categories_report.csv",
+        "query": {
+          "sql": "SELECT * FROM results",
+          "language": "sql",
+          "engine": "SQLite",
+          "tables_used": [
+            "results"
+          ],
+          "description": "Exact retrieval of comparison rows. Local metrics are recomputed from actual predictions; paper rows are transcribed from the supplied Harkous et al. PDF, pages 7, 18 and 19, visually checked against the tables."
+        }
+      },
+      {
+        "id": "aligned",
+        "label": "Paper Table 1 and metric-aligned local diagnostic",
+        "path": "comparison/aligned_report.csv",
+        "query": {
+          "sql": "SELECT * FROM results",
+          "language": "sql",
+          "engine": "SQLite",
+          "tables_used": [
+            "results"
+          ],
+          "description": "Exact retrieval of comparison rows. Local metrics are recomputed from actual predictions; paper rows are transcribed from the supplied Harkous et al. PDF, pages 7, 18 and 19, visually checked against the tables."
+        }
+      },
+      {
+        "id": "paper_attributes",
+        "label": "Original paper selected attribute averages",
+        "path": "comparison/paper_attributes_report.csv",
+        "query": {
+          "sql": "SELECT * FROM results",
+          "language": "sql",
+          "engine": "SQLite",
+          "tables_used": [
+            "results"
+          ],
+          "description": "Exact retrieval of comparison rows. Local metrics are recomputed from actual predictions; paper rows are transcribed from the supplied Harkous et al. PDF, pages 7, 18 and 19, visually checked against the tables."
+        }
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "generatedAt": "2026-09-09T16:43:08.558822+00:00",
+    "status": "ready",
+    "datasets": {
+      "overall": [
+        {
+          "model": "TF-IDF + logistic regression",
+          "condition": "original",
+          "n": 1440,
+          "category_macro_f1": 0.7281876381163155,
+          "fine_macro_f1": 0.4498786393035731,
+          "oracle_fine_macro_f1": 0.4771660313548957,
+          "paper_style_nine_category_macro": 0.8416199118264056
+        },
+        {
+          "model": "BERT",
+          "condition": "original",
+          "n": 1440,
+          "category_macro_f1": 0.7435055355773489,
+          "fine_macro_f1": 0.17585693896341742,
+          "oracle_fine_macro_f1": 0.1939776095676466,
+          "paper_style_nine_category_macro": 0.8526326621976292
+        },
+        {
+          "model": "RoBERTa",
+          "condition": "original",
+          "n": 1440,
+          "category_macro_f1": 0.7649561152992751,
+          "fine_macro_f1": 0.19843872711332522,
+          "oracle_fine_macro_f1": 0.21375777151605077,
+          "paper_style_nine_category_macro": 0.863844049297256
+        },
+        {
+          "model": "LegalBERT",
+          "condition": "original",
+          "n": 1440,
+          "category_macro_f1": 0.7613918739439379,
+          "fine_macro_f1": 0.19262976491964406,
+          "oracle_fine_macro_f1": 0.2029903821391736,
+          "paper_style_nine_category_macro": 0.8625198007910871
+        },
+        {
+          "model": "PrivBERT",
+          "condition": "original",
+          "n": 1440,
+          "category_macro_f1": 0.7946853405035017,
+          "fine_macro_f1": 0.2267622589692955,
+          "oracle_fine_macro_f1": 0.24955032861133017,
+          "paper_style_nine_category_macro": 0.8814633219679345
+        }
+      ],
+      "filtered": [
+        {
+          "model": "TF-IDF + logistic regression",
+          "condition": "duplicate_filtered",
+          "n": 1418,
+          "category_macro_f1": 0.7304794994073756,
+          "fine_macro_f1": 0.4474370270123506,
+          "oracle_fine_macro_f1": 0.4748448803191006,
+          "paper_style_nine_category_macro": 0.8430187328548272
+        },
+        {
+          "model": "BERT",
+          "condition": "duplicate_filtered",
+          "n": 1418,
+          "category_macro_f1": 0.7433679042452999,
+          "fine_macro_f1": 0.1740060665768582,
+          "oracle_fine_macro_f1": 0.1929271351241254,
+          "paper_style_nine_category_macro": 0.852560871153028
+        },
+        {
+          "model": "RoBERTa",
+          "condition": "duplicate_filtered",
+          "n": 1418,
+          "category_macro_f1": 0.7650867311250976,
+          "fine_macro_f1": 0.19714703691331312,
+          "oracle_fine_macro_f1": 0.2128606822646863,
+          "paper_style_nine_category_macro": 0.8639609614079046
+        },
+        {
+          "model": "LegalBERT",
+          "condition": "duplicate_filtered",
+          "n": 1418,
+          "category_macro_f1": 0.7611086816979189,
+          "fine_macro_f1": 0.1909083236040211,
+          "oracle_fine_macro_f1": 0.20194960509821475,
+          "paper_style_nine_category_macro": 0.8623726804797718
+        },
+        {
+          "model": "PrivBERT",
+          "condition": "duplicate_filtered",
+          "n": 1418,
+          "category_macro_f1": 0.7954369017641671,
+          "fine_macro_f1": 0.22592209195691876,
+          "oracle_fine_macro_f1": 0.2490218836611913,
+          "paper_style_nine_category_macro": 0.8819289451375418
+        }
+      ],
+      "cv": [
+        {
+          "fold": 1,
+          "C": 1.0,
+          "category_macro": 0.7170988502605969,
+          "fine_macro": 0.41794676375274137,
+          "selection_score": 0.5675228070066691,
+          "train_policies": 43,
+          "validation_policies": 22
+        },
+        {
+          "fold": 1,
+          "C": 4.0,
+          "category_macro": 0.7134645574646882,
+          "fine_macro": 0.4042405368568594,
+          "selection_score": 0.5588525471607738,
+          "train_policies": 43,
+          "validation_policies": 22
+        },
+        {
+          "fold": 1,
+          "C": 16.0,
+          "category_macro": 0.7136000180009112,
+          "fine_macro": 0.3931060258392077,
+          "selection_score": 0.5533530219200594,
+          "train_policies": 43,
+          "validation_policies": 22
+        },
+        {
+          "fold": 2,
+          "C": 1.0,
+          "category_macro": 0.7235220414491528,
+          "fine_macro": 0.41423483794851984,
+          "selection_score": 0.5688784396988363,
+          "train_policies": 44,
+          "validation_policies": 21
+        },
+        {
+          "fold": 2,
+          "C": 4.0,
+          "category_macro": 0.7310943736034297,
+          "fine_macro": 0.40472676468690305,
+          "selection_score": 0.5679105691451664,
+          "train_policies": 44,
+          "validation_policies": 21
+        },
+        {
+          "fold": 2,
+          "C": 16.0,
+          "category_macro": 0.7274986311639816,
+          "fine_macro": 0.390572258074055,
+          "selection_score": 0.5590354446190183,
+          "train_policies": 44,
+          "validation_policies": 21
+        },
+        {
+          "fold": 3,
+          "C": 1.0,
+          "category_macro": 0.7420816215764686,
+          "fine_macro": 0.4575763569855088,
+          "selection_score": 0.5998289892809887,
+          "train_policies": 43,
+          "validation_policies": 22
+        },
+        {
+          "fold": 3,
+          "C": 4.0,
+          "category_macro": 0.74377812980848,
+          "fine_macro": 0.4287640879444189,
+          "selection_score": 0.5862711088764494,
+          "train_policies": 43,
+          "validation_policies": 22
+        },
+        {
+          "fold": 3,
+          "C": 16.0,
+          "category_macro": 0.737385074452581,
+          "fine_macro": 0.4136749730783496,
+          "selection_score": 0.5755300237654652,
+          "train_policies": 43,
+          "validation_policies": 22
+        }
+      ],
+      "paper_categories": [
+        {
+          "paper_table": "Table 1 query classifier",
+          "label": "First Party Collection/Use",
+          "reported_f1": 0.8,
+          "support": 1267.0,
+          "pdf_page": 7.0
+        },
+        {
+          "paper_table": "Table 1 query classifier",
+          "label": "Third Party Sharing/Collection",
+          "reported_f1": 0.81,
+          "support": 963.0,
+          "pdf_page": 7.0
+        },
+        {
+          "paper_table": "Table 1 query classifier",
+          "label": "User Choice/Control",
+          "reported_f1": 0.75,
+          "support": 455.0,
+          "pdf_page": 7.0
+        },
+        {
+          "paper_table": "Table 1 query classifier",
+          "label": "Data Security",
+          "reported_f1": 0.87,
+          "support": 202.0,
+          "pdf_page": 7.0
+        },
+        {
+          "paper_table": "Table 1 query classifier",
+          "label": "International and Specific Audiences",
+          "reported_f1": 0.95,
+          "support": 156.0,
+          "pdf_page": 7.0
+        },
+        {
+          "paper_table": "Table 1 query classifier",
+          "label": "Access, Edit and Deletion",
+          "reported_f1": 0.82,
+          "support": 134.0,
+          "pdf_page": 7.0
+        },
+        {
+          "paper_table": "Table 1 query classifier",
+          "label": "Policy Change",
+          "reported_f1": 0.92,
+          "support": 120.0,
+          "pdf_page": 7.0
+        },
+        {
+          "paper_table": "Table 1 query classifier",
+          "label": "Data Retention",
+          "reported_f1": 0.71,
+          "support": 93.0,
+          "pdf_page": 7.0
+        },
+        {
+          "paper_table": "Table 1 query classifier",
+          "label": "Do Not Track",
+          "reported_f1": 0.97,
+          "support": 16.0,
+          "pdf_page": 7.0
+        },
+        {
+          "paper_table": "Appendix segment classifier",
+          "label": "Data Retention",
+          "reported_f1": 0.71,
+          "support": 88.0,
+          "pdf_page": 18.0
+        },
+        {
+          "paper_table": "Appendix segment classifier",
+          "label": "Data Security",
+          "reported_f1": 0.85,
+          "support": 201.0,
+          "pdf_page": 18.0
+        },
+        {
+          "paper_table": "Appendix segment classifier",
+          "label": "Do Not Track",
+          "reported_f1": 0.95,
+          "support": 16.0,
+          "pdf_page": 18.0
+        },
+        {
+          "paper_table": "Appendix segment classifier",
+          "label": "First Party Collection/Use",
+          "reported_f1": 0.79,
+          "support": 1211.0,
+          "pdf_page": 18.0
+        },
+        {
+          "paper_table": "Appendix segment classifier",
+          "label": "International and Specific Audiences",
+          "reported_f1": 0.95,
+          "support": 156.0,
+          "pdf_page": 18.0
+        },
+        {
+          "paper_table": "Appendix segment classifier",
+          "label": "Introductory/Generic",
+          "reported_f1": 0.7,
+          "support": 369.0,
+          "pdf_page": 18.0
+        },
+        {
+          "paper_table": "Appendix segment classifier",
+          "label": "Policy Change",
+          "reported_f1": 0.88,
+          "support": 112.0,
+          "pdf_page": 18.0
+        },
+        {
+          "paper_table": "Appendix segment classifier",
+          "label": "Non-covered Practice",
+          "reported_f1": 0.7,
+          "support": 280.0,
+          "pdf_page": 18.0
+        },
+        {
+          "paper_table": "Appendix segment classifier",
+          "label": "Privacy Contact Info",
+          "reported_f1": 0.87,
+          "support": 137.0,
+          "pdf_page": 18.0
+        },
+        {
+          "paper_table": "Appendix segment classifier",
+          "label": "Third Party Sharing/Collection",
+          "reported_f1": 0.79,
+          "support": 908.0,
+          "pdf_page": 18.0
+        },
+        {
+          "paper_table": "Appendix segment classifier",
+          "label": "Access, Edit and Deletion",
+          "reported_f1": 0.8,
+          "support": 133.0,
+          "pdf_page": 18.0
+        },
+        {
+          "paper_table": "Appendix segment classifier",
+          "label": "User Choice/Control",
+          "reported_f1": 0.74,
+          "support": 433.0,
+          "pdf_page": 18.0
+        }
+      ],
+      "paper_attributes": [
+        {
+          "reported_head": "change-type",
+          "reported_average_f1": 0.76,
+          "pdf_page": 18.0,
+          "note": ""
+        },
+        {
+          "reported_head": "notification-type",
+          "reported_average_f1": 0.71,
+          "pdf_page": 18.0,
+          "note": ""
+        },
+        {
+          "reported_head": "identifiability",
+          "reported_average_f1": 0.77,
+          "pdf_page": 18.0,
+          "note": ""
+        },
+        {
+          "reported_head": "do-not-track-policy",
+          "reported_average_f1": 1.0,
+          "pdf_page": 19.0,
+          "note": ""
+        },
+        {
+          "reported_head": "security-measure",
+          "reported_average_f1": 0.74,
+          "pdf_page": 19.0,
+          "note": ""
+        },
+        {
+          "reported_head": "personal-information-type",
+          "reported_average_f1": 0.81,
+          "pdf_page": 19.0,
+          "note": ""
+        },
+        {
+          "reported_head": "purpose",
+          "reported_average_f1": 0.83,
+          "pdf_page": 19.0,
+          "note": ""
+        },
+        {
+          "reported_head": "choice-type",
+          "reported_average_f1": 0.73,
+          "pdf_page": 19.0,
+          "note": ""
+        },
+        {
+          "reported_head": "third-party-entity",
+          "reported_average_f1": 0.73,
+          "pdf_page": 19.0,
+          "note": "Published heading retained; third-party-entity table lists action-like values"
+        },
+        {
+          "reported_head": "access-type",
+          "reported_average_f1": 0.62,
+          "pdf_page": 19.0,
+          "note": ""
+        },
+        {
+          "reported_head": "audience-type",
+          "reported_average_f1": 0.97,
+          "pdf_page": 19.0,
+          "note": ""
+        },
+        {
+          "reported_head": "choice-scope",
+          "reported_average_f1": 0.59,
+          "pdf_page": 19.0,
+          "note": ""
+        },
+        {
+          "reported_head": "action-first-party",
+          "reported_average_f1": 0.65,
+          "pdf_page": 19.0,
+          "note": ""
+        },
+        {
+          "reported_head": "does-does-not",
+          "reported_average_f1": 0.86,
+          "pdf_page": 19.0,
+          "note": ""
+        },
+        {
+          "reported_head": "retention-period",
+          "reported_average_f1": 0.73,
+          "pdf_page": 19.0,
+          "note": ""
+        }
+      ],
+      "aligned": [
+        {
+          "category": "First Party Collection/Use",
+          "paper_table1_f1": 0.8,
+          "paper_support": 1267.0,
+          "TF-IDF + logistic regression": 0.8115746019781231,
+          "replication_support": 594.0,
+          "BERT": 0.8380563549425546,
+          "RoBERTa": 0.8536791770363663,
+          "LegalBERT": 0.8524350649350649,
+          "PrivBERT": 0.878186329799233
+        },
+        {
+          "category": "Third Party Sharing/Collection",
+          "paper_table1_f1": 0.81,
+          "paper_support": 963.0,
+          "TF-IDF + logistic regression": 0.8378993896902971,
+          "replication_support": 452.0,
+          "BERT": 0.8610519002731594,
+          "RoBERTa": 0.8711228065237888,
+          "LegalBERT": 0.8471458415673875,
+          "PrivBERT": 0.8990063902832741
+        },
+        {
+          "category": "User Choice/Control",
+          "paper_table1_f1": 0.75,
+          "paper_support": 455.0,
+          "TF-IDF + logistic regression": 0.7911765653701137,
+          "replication_support": 237.0,
+          "BERT": 0.7896418586073759,
+          "RoBERTa": 0.7838792266266443,
+          "LegalBERT": 0.7947682453512526,
+          "PrivBERT": 0.7978428763879475
+        },
+        {
+          "category": "Data Security",
+          "paper_table1_f1": 0.87,
+          "paper_support": 202.0,
+          "TF-IDF + logistic regression": 0.8557690381530958,
+          "replication_support": 149.0,
+          "BERT": 0.8437186936485674,
+          "RoBERTa": 0.8409015578389128,
+          "LegalBERT": 0.8450458342775325,
+          "PrivBERT": 0.8676037920889179
+        },
+        {
+          "category": "International and Specific Audiences",
+          "paper_table1_f1": 0.95,
+          "paper_support": 156.0,
+          "TF-IDF + logistic regression": 0.9201519647527958,
+          "replication_support": 129.0,
+          "BERT": 0.9265971418462258,
+          "RoBERTa": 0.9204033613445378,
+          "LegalBERT": 0.9283564267767854,
+          "PrivBERT": 0.9386768060836501
+        },
+        {
+          "category": "Access, Edit and Deletion",
+          "paper_table1_f1": 0.82,
+          "paper_support": 134.0,
+          "TF-IDF + logistic regression": 0.831213370957239,
+          "replication_support": 89.0,
+          "BERT": 0.8392360276184261,
+          "RoBERTa": 0.8427295166116948,
+          "LegalBERT": 0.8295943438800581,
+          "PrivBERT": 0.8577857167393769
+        },
+        {
+          "category": "Policy Change",
+          "paper_table1_f1": 0.92,
+          "paper_support": 120.0,
+          "TF-IDF + logistic regression": 0.8462848055705335,
+          "replication_support": 64.0,
+          "BERT": 0.8591166527160266,
+          "RoBERTa": 0.8525980383150612,
+          "LegalBERT": 0.8610101744186047,
+          "PrivBERT": 0.8450389633568591
+        },
+        {
+          "category": "Data Retention",
+          "paper_table1_f1": 0.71,
+          "paper_support": 93.0,
+          "TF-IDF + logistic regression": 0.7599811305920277,
+          "replication_support": 65.0,
+          "BERT": 0.7402597402597403,
+          "RoBERTa": 0.833267169511711,
+          "LegalBERT": 0.8283066860465116,
+          "PrivBERT": 0.8490290229721512
+        },
+        {
+          "category": "Do Not Track",
+          "paper_table1_f1": 0.97,
+          "paper_support": 16.0,
+          "TF-IDF + logistic regression": 0.9205283393734248,
+          "replication_support": 11.0,
+          "BERT": 0.9760155898665868,
+          "RoBERTa": 0.9760155898665868,
+          "LegalBERT": 0.9760155898665868,
+          "PrivBERT": 1.0
+        }
+      ],
+      "heads": [
+        {
+          "head": "does_does_not",
+          "TF-IDF + logistic regression": 0.7258169934640523,
+          "BERT": 0.688002342911067,
+          "RoBERTa": 0.6421486147700401,
+          "LegalBERT": 0.6810800948731983,
+          "PrivBERT": 0.7704599056603774
+        },
+        {
+          "head": "collection_mode",
+          "TF-IDF + logistic regression": 0.6338328908985674,
+          "BERT": 0.5619056142282649,
+          "RoBERTa": 0.6356699134448726,
+          "LegalBERT": 0.57761279468974,
+          "PrivBERT": 0.6677604041640809
+        },
+        {
+          "head": "action_first_party",
+          "TF-IDF + logistic regression": 0.34980342468822817,
+          "BERT": 0.1476539855602855,
+          "RoBERTa": 0.1486730343837009,
+          "LegalBERT": 0.14721611721611721,
+          "PrivBERT": 0.151677890024478
+        },
+        {
+          "head": "identifiability",
+          "TF-IDF + logistic regression": 0.6298137634911052,
+          "BERT": 0.22290385046761269,
+          "RoBERTa": 0.25151825028271696,
+          "LegalBERT": 0.21553753138917325,
+          "PrivBERT": 0.3147022135205857
+        },
+        {
+          "head": "personal_information_type",
+          "TF-IDF + logistic regression": 0.5671163651779525,
+          "BERT": 0.06566413661228451,
+          "RoBERTa": 0.0861873338814193,
+          "LegalBERT": 0.08742149403494538,
+          "PrivBERT": 0.10157131865645598
+        },
+        {
+          "head": "purpose",
+          "TF-IDF + logistic regression": 0.6671259357628441,
+          "BERT": 0.06648852903461014,
+          "RoBERTa": 0.08179312846148985,
+          "LegalBERT": 0.07229330215331048,
+          "PrivBERT": 0.1286294735954564
+        },
+        {
+          "head": "user_type",
+          "TF-IDF + logistic regression": 0.44630520861503126,
+          "BERT": 0.3283522091722595,
+          "RoBERTa": 0.3461793251923484,
+          "LegalBERT": 0.3204900801471554,
+          "PrivBERT": 0.36473534875553376
+        },
+        {
+          "head": "choice_type",
+          "TF-IDF + logistic regression": 0.5447642316191071,
+          "BERT": 0.16224015874008188,
+          "RoBERTa": 0.23924936099291422,
+          "LegalBERT": 0.22452250696343168,
+          "PrivBERT": 0.27506715605245535
+        },
+        {
+          "head": "choice_scope",
+          "TF-IDF + logistic regression": 0.4454499890385078,
+          "BERT": 0.17374007242804465,
+          "RoBERTa": 0.20188577559175044,
+          "LegalBERT": 0.1772188564399791,
+          "PrivBERT": 0.2101842490408466
+        },
+        {
+          "head": "third_party_entity",
+          "TF-IDF + logistic regression": 0.49568007176334944,
+          "BERT": 0.180816426202153,
+          "RoBERTa": 0.20711193568336425,
+          "LegalBERT": 0.15999077247255158,
+          "PrivBERT": 0.2953099386185466
+        },
+        {
+          "head": "action_third_party",
+          "TF-IDF + logistic regression": 0.5153306230296449,
+          "BERT": 0.13610683102208526,
+          "RoBERTa": 0.16940917336097436,
+          "LegalBERT": 0.14157610835498857,
+          "PrivBERT": 0.28667981881784477
+        },
+        {
+          "head": "access_type",
+          "TF-IDF + logistic regression": 0.18939794773128107,
+          "BERT": 0.09466344864574953,
+          "RoBERTa": 0.09478991596638656,
+          "LegalBERT": 0.11340192374675133,
+          "PrivBERT": 0.10243933588761174
+        },
+        {
+          "head": "access_scope",
+          "TF-IDF + logistic regression": 0.33858106206694866,
+          "BERT": 0.2344009920454889,
+          "RoBERTa": 0.24272070812951316,
+          "LegalBERT": 0.22352235223522351,
+          "PrivBERT": 0.24364801864801863
+        },
+        {
+          "head": "retention_period",
+          "TF-IDF + logistic regression": 0.2600954600954601,
+          "BERT": 0.15875,
+          "RoBERTa": 0.2685858585858586,
+          "LegalBERT": 0.24381280505311514,
+          "PrivBERT": 0.17767923133776792
+        },
+        {
+          "head": "retention_purpose",
+          "TF-IDF + logistic regression": 0.27551485710563295,
+          "BERT": 0.04880952380952381,
+          "RoBERTa": 0.09895833333333333,
+          "LegalBERT": 0.1358678086619263,
+          "PrivBERT": 0.13664596273291924
+        },
+        {
+          "head": "security_measure",
+          "TF-IDF + logistic regression": 0.3695744263545269,
+          "BERT": 0.07651515151515151,
+          "RoBERTa": 0.09352904285500971,
+          "LegalBERT": 0.08804232804232803,
+          "PrivBERT": 0.10280324467081683
+        },
+        {
+          "head": "change_type",
+          "TF-IDF + logistic regression": 0.480262658689625,
+          "BERT": 0.30196078431372547,
+          "RoBERTa": 0.31087378640776697,
+          "LegalBERT": 0.2997142857142857,
+          "PrivBERT": 0.3113725490196078
+        },
+        {
+          "head": "notification_type",
+          "TF-IDF + logistic regression": 0.36599326599326604,
+          "BERT": 0.23672883787661406,
+          "RoBERTa": 0.2194231471339905,
+          "LegalBERT": 0.25753968253968257,
+          "PrivBERT": 0.27583043722120004
+        },
+        {
+          "head": "do_not_track_policy",
+          "TF-IDF + logistic regression": 0.20588235294117646,
+          "BERT": 0.23684210526315788,
+          "RoBERTa": 0.23684210526315788,
+          "LegalBERT": 0.23684210526315788,
+          "PrivBERT": 0.225
+        },
+        {
+          "head": "audience_type",
+          "TF-IDF + logistic regression": 0.625985886259859,
+          "BERT": 0.5450467811758134,
+          "RoBERTa": 0.5209659621424327,
+          "LegalBERT": 0.5460925039872409,
+          "PrivBERT": 0.6049571135898445
+        }
+      ],
+      "categories": [
+        {
+          "category": "First Party Collection/Use",
+          "TF-IDF + logistic regression": 0.7714033539276258,
+          "BERT": 0.8058925476603119,
+          "RoBERTa": 0.8222811671087533,
+          "LegalBERT": 0.8196428571428571,
+          "PrivBERT": 0.8531468531468531
+        },
+        {
+          "category": "Third Party Sharing/Collection",
+          "TF-IDF + logistic regression": 0.7756482525366404,
+          "BERT": 0.8028673835125448,
+          "RoBERTa": 0.8223463687150838,
+          "LegalBERT": 0.7887640449438202,
+          "PrivBERT": 0.8584686774941995
+        },
+        {
+          "category": "User Choice/Control",
+          "TF-IDF + logistic regression": 0.6493506493506493,
+          "BERT": 0.6441441441441441,
+          "RoBERTa": 0.6382978723404256,
+          "LegalBERT": 0.6532438478747203,
+          "PrivBERT": 0.6575963718820862
+        },
+        {
+          "category": "Data Retention",
+          "TF-IDF + logistic regression": 0.5391304347826087,
+          "BERT": 0.5,
+          "RoBERTa": 0.6818181818181818,
+          "LegalBERT": 0.671875,
+          "PrivBERT": 0.7107438016528925
+        },
+        {
+          "category": "Data Security",
+          "TF-IDF + logistic regression": 0.740484429065744,
+          "BERT": 0.717391304347826,
+          "RoBERTa": 0.7142857142857143,
+          "LegalBERT": 0.7231270358306189,
+          "PrivBERT": 0.7631578947368421
+        },
+        {
+          "category": "International and Specific Audiences",
+          "TF-IDF + logistic regression": 0.8535564853556485,
+          "BERT": 0.8661417322834646,
+          "RoBERTa": 0.8549019607843137,
+          "LegalBERT": 0.8688524590163934,
+          "PrivBERT": 0.888
+        },
+        {
+          "category": "Do Not Track",
+          "TF-IDF + logistic regression": 0.8421052631578947,
+          "BERT": 0.9523809523809523,
+          "RoBERTa": 0.9523809523809523,
+          "LegalBERT": 0.9523809523809523,
+          "PrivBERT": 1.0
+        },
+        {
+          "category": "Policy Change",
+          "TF-IDF + logistic regression": 0.706766917293233,
+          "BERT": 0.7313432835820896,
+          "RoBERTa": 0.7194244604316546,
+          "LegalBERT": 0.734375,
+          "PrivBERT": 0.7050359712230215
+        },
+        {
+          "category": "Access, Edit and Deletion",
+          "TF-IDF + logistic regression": 0.6823529411764706,
+          "BERT": 0.6976744186046512,
+          "RoBERTa": 0.7058823529411765,
+          "LegalBERT": 0.6810810810810811,
+          "PrivBERT": 0.7325581395348837
+        },
+        {
+          "category": "Other",
+          "TF-IDF + logistic regression": 0.7210776545166403,
+          "BERT": 0.717219589257504,
+          "RoBERTa": 0.7379421221864951,
+          "LegalBERT": 0.7205764611689351,
+          "PrivBERT": 0.7781456953642384
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "cv",
+      "label": "Training-policy cross-validation",
+      "path": "comparison/cv_report.csv",
+      "query": {
+        "sql": "SELECT * FROM results",
+        "language": "sql",
+        "engine": "SQLite",
+        "tables_used": [
+          "results"
+        ],
+        "description": "Exact retrieval of comparison rows. Local metrics are recomputed from actual predictions; paper rows are transcribed from the supplied Harkous et al. PDF, pages 7, 18 and 19, visually checked against the tables."
+      }
+    },
+    {
+      "id": "overall",
+      "label": "Matched original evaluation scores",
+      "path": "comparison/overall_report.csv",
+      "query": {
+        "sql": "SELECT * FROM results",
+        "language": "sql",
+        "engine": "SQLite",
+        "tables_used": [
+          "results"
+        ],
+        "description": "Exact retrieval of comparison rows. Local metrics are recomputed from actual predictions; paper rows are transcribed from the supplied Harkous et al. PDF, pages 7, 18 and 19, visually checked against the tables."
+      }
+    },
+    {
+      "id": "heads",
+      "label": "Attribute-head comparison",
+      "path": "comparison/heads_report.csv",
+      "query": {
+        "sql": "SELECT * FROM results",
+        "language": "sql",
+        "engine": "SQLite",
+        "tables_used": [
+          "results"
+        ],
+        "description": "Exact retrieval of comparison rows. Local metrics are recomputed from actual predictions; paper rows are transcribed from the supplied Harkous et al. PDF, pages 7, 18 and 19, visually checked against the tables."
+      }
+    },
+    {
+      "id": "categories",
+      "label": "Positive-label F1 by category",
+      "path": "comparison/categories_report.csv",
+      "query": {
+        "sql": "SELECT * FROM results",
+        "language": "sql",
+        "engine": "SQLite",
+        "tables_used": [
+          "results"
+        ],
+        "description": "Exact retrieval of comparison rows. Local metrics are recomputed from actual predictions; paper rows are transcribed from the supplied Harkous et al. PDF, pages 7, 18 and 19, visually checked against the tables."
+      }
+    },
+    {
+      "id": "filtered",
+      "label": "Matched duplicate-filtered evaluation",
+      "path": "comparison/filtered_report.csv",
+      "query": {
+        "sql": "SELECT * FROM results",
+        "language": "sql",
+        "engine": "SQLite",
+        "tables_used": [
+          "results"
+        ],
+        "description": "Exact retrieval of comparison rows. Local metrics are recomputed from actual predictions; paper rows are transcribed from the supplied Harkous et al. PDF, pages 7, 18 and 19, visually checked against the tables."
+      }
+    },
+    {
+      "id": "paper_categories",
+      "label": "Original paper category results",
+      "path": "comparison/paper_categories_report.csv",
+      "query": {
+        "sql": "SELECT * FROM results",
+        "language": "sql",
+        "engine": "SQLite",
+        "tables_used": [
+          "results"
+        ],
+        "description": "Exact retrieval of comparison rows. Local metrics are recomputed from actual predictions; paper rows are transcribed from the supplied Harkous et al. PDF, pages 7, 18 and 19, visually checked against the tables."
+      }
+    },
+    {
+      "id": "aligned",
+      "label": "Paper Table 1 and metric-aligned local diagnostic",
+      "path": "comparison/aligned_report.csv",
+      "query": {
+        "sql": "SELECT * FROM results",
+        "language": "sql",
+        "engine": "SQLite",
+        "tables_used": [
+          "results"
+        ],
+        "description": "Exact retrieval of comparison rows. Local metrics are recomputed from actual predictions; paper rows are transcribed from the supplied Harkous et al. PDF, pages 7, 18 and 19, visually checked against the tables."
+      }
+    },
+    {
+      "id": "paper_attributes",
+      "label": "Original paper selected attribute averages",
+      "path": "comparison/paper_attributes_report.csv",
+      "query": {
+        "sql": "SELECT * FROM results",
+        "language": "sql",
+        "engine": "SQLite",
+        "tables_used": [
+          "results"
+        ],
+        "description": "Exact retrieval of comparison rows. Local metrics are recomputed from actual predictions; paper rows are transcribed from the supplied Harkous et al. PDF, pages 7, 18 and 19, visually checked against the tables."
+      }
+    }
+  ]
+}
