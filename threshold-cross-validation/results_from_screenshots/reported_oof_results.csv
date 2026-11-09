@@ -1,0 +1,5 @@
+model,global_threshold,oof_macro_f1_at_0_50,oof_macro_f1_global,absolute_change
+BERT,0.51,0.736958,0.737604,0.000646
+LegalBERT,0.50,0.752129,0.752129,0.000000
+RoBERTa,0.55,0.753620,0.757702,0.004082
+PrivBERT,0.55,0.792053,0.793778,0.001725

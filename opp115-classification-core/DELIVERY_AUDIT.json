@@ -1,0 +1,423 @@
+{
+  "overall_status": "passed",
+  "summary": {
+    "passed": 51,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "name": "PrivBERT: archive SHA-256 and sidecar",
+      "status": "passed",
+      "evidence": "35e5f2a569cbaa76761756df903c7a99869c70c14bcc1e6fd2962eb3e17bd69f"
+    },
+    {
+      "name": "PrivBERT: archive byte count",
+      "status": "passed",
+      "evidence": 2838958
+    },
+    {
+      "name": "PrivBERT: safe unique ZIP paths",
+      "status": "passed",
+      "evidence": 257
+    },
+    {
+      "name": "PrivBERT: ZIP integrity",
+      "status": "passed",
+      "evidence": null
+    },
+    {
+      "name": "PrivBERT: all manifest payload hashes",
+      "status": "passed",
+      "evidence": 256
+    },
+    {
+      "name": "PrivBERT: external notebook matches ZIP",
+      "status": "passed",
+      "evidence": null
+    },
+    {
+      "name": "PrivBERT: external manifest matches ZIP payload manifest",
+      "status": "passed",
+      "evidence": null
+    },
+    {
+      "name": "PrivBERT: clean unexecuted notebook",
+      "status": "passed",
+      "evidence": 7
+    },
+    {
+      "name": "PrivBERT: pinned model identity",
+      "status": "passed",
+      "evidence": {
+        "name": "mukund/privbert",
+        "revision": "48228b4661fa8252bdb39ca44a4d9758f6b37f88",
+        "model_type": "roberta",
+        "pooling_strategy": "roberta_first_token_dense_tanh"
+      }
+    },
+    {
+      "name": "PrivBERT: shared hierarchy contract",
+      "status": "passed",
+      "evidence": null
+    },
+    {
+      "name": "PrivBERT: labeled smoke evidence",
+      "status": "passed",
+      "evidence": {
+        "provenance": "verified supplied reference evidence",
+        "model_name": "hf-internal-testing/tiny-random-roberta",
+        "hierarchical_macro_f1": 0.07250579597956802,
+        "training_examples_used": 8,
+        "evaluation_examples_used": 32,
+        "optimizer_steps": 1
+      }
+    },
+    {
+      "name": "PrivBERT: source unit tests",
+      "status": "passed",
+      "evidence": {
+        "passed": 49,
+        "failed": 0
+      }
+    },
+    {
+      "name": "BERT: archive SHA-256 and sidecar",
+      "status": "passed",
+      "evidence": "487c07302074df7f629abda7dcc423500eb42093ae45f8b0c9de1529656776f3"
+    },
+    {
+      "name": "BERT: archive byte count",
+      "status": "passed",
+      "evidence": 2841088
+    },
+    {
+      "name": "BERT: safe unique ZIP paths",
+      "status": "passed",
+      "evidence": 257
+    },
+    {
+      "name": "BERT: ZIP integrity",
+      "status": "passed",
+      "evidence": null
+    },
+    {
+      "name": "BERT: all manifest payload hashes",
+      "status": "passed",
+      "evidence": 256
+    },
+    {
+      "name": "BERT: external notebook matches ZIP",
+      "status": "passed",
+      "evidence": null
+    },
+    {
+      "name": "BERT: external manifest matches ZIP payload manifest",
+      "status": "passed",
+      "evidence": null
+    },
+    {
+      "name": "BERT: clean unexecuted notebook",
+      "status": "passed",
+      "evidence": 7
+    },
+    {
+      "name": "BERT: pinned model identity",
+      "status": "passed",
+      "evidence": {
+        "name": "google-bert/bert-base-uncased",
+        "revision": "86b5e0934494bd15c9632b12f734a8a67f723594",
+        "model_type": "bert",
+        "pooling_strategy": "bert_cls_dense_tanh"
+      }
+    },
+    {
+      "name": "BERT: shared hierarchy contract",
+      "status": "passed",
+      "evidence": null
+    },
+    {
+      "name": "BERT: labeled smoke evidence",
+      "status": "passed",
+      "evidence": {
+        "provenance": "fresh adaptation smoke run",
+        "model_name": "google/bert_uncased_L-2_H-128_A-2",
+        "hierarchical_macro_f1": 0.11716259148758994,
+        "training_examples_used": 8,
+        "evaluation_examples_used": 32,
+        "optimizer_steps": 1
+      }
+    },
+    {
+      "name": "BERT: source unit tests",
+      "status": "passed",
+      "evidence": {
+        "passed": 49,
+        "failed": 0
+      }
+    },
+    {
+      "name": "RoBERTa: archive SHA-256 and sidecar",
+      "status": "passed",
+      "evidence": "0491035af7b69d591bfae3184c073b88a6dd99c34273247622717a6ed39d5723"
+    },
+    {
+      "name": "RoBERTa: archive byte count",
+      "status": "passed",
+      "evidence": 2838365
+    },
+    {
+      "name": "RoBERTa: safe unique ZIP paths",
+      "status": "passed",
+      "evidence": 257
+    },
+    {
+      "name": "RoBERTa: ZIP integrity",
+      "status": "passed",
+      "evidence": null
+    },
+    {
+      "name": "RoBERTa: all manifest payload hashes",
+      "status": "passed",
+      "evidence": 256
+    },
+    {
+      "name": "RoBERTa: external notebook matches ZIP",
+      "status": "passed",
+      "evidence": null
+    },
+    {
+      "name": "RoBERTa: external manifest matches ZIP payload manifest",
+      "status": "passed",
+      "evidence": null
+    },
+    {
+      "name": "RoBERTa: clean unexecuted notebook",
+      "status": "passed",
+      "evidence": 7
+    },
+    {
+      "name": "RoBERTa: pinned model identity",
+      "status": "passed",
+      "evidence": {
+        "name": "FacebookAI/roberta-base",
+        "revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+        "model_type": "roberta",
+        "pooling_strategy": "roberta_first_token_dense_tanh"
+      }
+    },
+    {
+      "name": "RoBERTa: shared hierarchy contract",
+      "status": "passed",
+      "evidence": null
+    },
+    {
+      "name": "RoBERTa: labeled smoke evidence",
+      "status": "passed",
+      "evidence": {
+        "provenance": "fresh adaptation smoke run",
+        "model_name": "hf-internal-testing/tiny-random-roberta",
+        "hierarchical_macro_f1": 0.07250579597956802,
+        "training_examples_used": 8,
+        "evaluation_examples_used": 32,
+        "optimizer_steps": 1
+      }
+    },
+    {
+      "name": "RoBERTa: source unit tests",
+      "status": "passed",
+      "evidence": {
+        "passed": 49,
+        "failed": 0
+      }
+    },
+    {
+      "name": "LegalBERT: archive SHA-256 and sidecar",
+      "status": "passed",
+      "evidence": "06a1a4b1d0a353b5cb472067923ace7fb63377ba4d1d2ba9f5804b43879d8c8f"
+    },
+    {
+      "name": "LegalBERT: archive byte count",
+      "status": "passed",
+      "evidence": 2841686
+    },
+    {
+      "name": "LegalBERT: safe unique ZIP paths",
+      "status": "passed",
+      "evidence": 257
+    },
+    {
+      "name": "LegalBERT: ZIP integrity",
+      "status": "passed",
+      "evidence": null
+    },
+    {
+      "name": "LegalBERT: all manifest payload hashes",
+      "status": "passed",
+      "evidence": 256
+    },
+    {
+      "name": "LegalBERT: external notebook matches ZIP",
+      "status": "passed",
+      "evidence": null
+    },
+    {
+      "name": "LegalBERT: external manifest matches ZIP payload manifest",
+      "status": "passed",
+      "evidence": null
+    },
+    {
+      "name": "LegalBERT: clean unexecuted notebook",
+      "status": "passed",
+      "evidence": 7
+    },
+    {
+      "name": "LegalBERT: pinned model identity",
+      "status": "passed",
+      "evidence": {
+        "name": "nlpaueb/legal-bert-base-uncased",
+        "revision": "15b570cbf88259610b082a167dacc190124f60f6",
+        "model_type": "bert",
+        "pooling_strategy": "legal_bert_cls_dense_tanh"
+      }
+    },
+    {
+      "name": "LegalBERT: shared hierarchy contract",
+      "status": "passed",
+      "evidence": null
+    },
+    {
+      "name": "LegalBERT: labeled smoke evidence",
+      "status": "passed",
+      "evidence": {
+        "provenance": "fresh adaptation smoke run",
+        "model_name": "google/bert_uncased_L-2_H-128_A-2",
+        "hierarchical_macro_f1": 0.11716259148758994,
+        "training_examples_used": 8,
+        "evaluation_examples_used": 32,
+        "optimizer_steps": 1
+      }
+    },
+    {
+      "name": "LegalBERT: source unit tests",
+      "status": "passed",
+      "evidence": {
+        "passed": 49,
+        "failed": 0
+      }
+    },
+    {
+      "name": "four-model evaluator parity",
+      "status": "passed",
+      "evidence": {
+        "failed": 0,
+        "passed": 29,
+        "skipped": 0
+      }
+    },
+    {
+      "name": "LegalBERT saved-classifier round trip",
+      "status": "passed",
+      "evidence": {
+        "category_logits_shape": [
+          2,
+          10
+        ],
+        "attribute_logits_shape": [
+          2,
+          138
+        ],
+        "serialization": "safetensors"
+      }
+    },
+    {
+      "name": "PrivBERT archive exactly preserves supplied source",
+      "status": "passed",
+      "evidence": "35e5f2a569cbaa76761756df903c7a99869c70c14bcc1e6fd2962eb3e17bd69f"
+    }
+  ],
+  "failures": [],
+  "models": {
+    "PrivBERT": {
+      "archive": "bert_opp115_colab_workspace.zip",
+      "sha256": "35e5f2a569cbaa76761756df903c7a99869c70c14bcc1e6fd2962eb3e17bd69f",
+      "bytes": 2838958,
+      "entries": 257,
+      "payload_files": 256,
+      "full_checkpoint": "mukund/privbert",
+      "revision": "48228b4661fa8252bdb39ca44a4d9758f6b37f88",
+      "model_type": "roberta",
+      "pooling_strategy": "roberta_first_token_dense_tanh",
+      "unit_tests_passed": 49,
+      "smoke": {
+        "provenance": "verified supplied reference evidence",
+        "model_name": "hf-internal-testing/tiny-random-roberta",
+        "hierarchical_macro_f1": 0.07250579597956802,
+        "training_examples_used": 8,
+        "evaluation_examples_used": 32,
+        "optimizer_steps": 1
+      }
+    },
+    "BERT": {
+      "archive": "bert_opp115_colab_workspace.zip",
+      "sha256": "487c07302074df7f629abda7dcc423500eb42093ae45f8b0c9de1529656776f3",
+      "bytes": 2841088,
+      "entries": 257,
+      "payload_files": 256,
+      "full_checkpoint": "google-bert/bert-base-uncased",
+      "revision": "86b5e0934494bd15c9632b12f734a8a67f723594",
+      "model_type": "bert",
+      "pooling_strategy": "bert_cls_dense_tanh",
+      "unit_tests_passed": 49,
+      "smoke": {
+        "provenance": "fresh adaptation smoke run",
+        "model_name": "google/bert_uncased_L-2_H-128_A-2",
+        "hierarchical_macro_f1": 0.11716259148758994,
+        "training_examples_used": 8,
+        "evaluation_examples_used": 32,
+        "optimizer_steps": 1
+      }
+    },
+    "RoBERTa": {
+      "archive": "roberta_opp115_colab_workspace.zip",
+      "sha256": "0491035af7b69d591bfae3184c073b88a6dd99c34273247622717a6ed39d5723",
+      "bytes": 2838365,
+      "entries": 257,
+      "payload_files": 256,
+      "full_checkpoint": "FacebookAI/roberta-base",
+      "revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+      "model_type": "roberta",
+      "pooling_strategy": "roberta_first_token_dense_tanh",
+      "unit_tests_passed": 49,
+      "smoke": {
+        "provenance": "fresh adaptation smoke run",
+        "model_name": "hf-internal-testing/tiny-random-roberta",
+        "hierarchical_macro_f1": 0.07250579597956802,
+        "training_examples_used": 8,
+        "evaluation_examples_used": 32,
+        "optimizer_steps": 1
+      }
+    },
+    "LegalBERT": {
+      "archive": "legal_bert_opp115_colab_workspace.zip",
+      "sha256": "06a1a4b1d0a353b5cb472067923ace7fb63377ba4d1d2ba9f5804b43879d8c8f",
+      "bytes": 2841686,
+      "entries": 257,
+      "payload_files": 256,
+      "full_checkpoint": "nlpaueb/legal-bert-base-uncased",
+      "revision": "15b570cbf88259610b082a167dacc190124f60f6",
+      "model_type": "bert",
+      "pooling_strategy": "legal_bert_cls_dense_tanh",
+      "unit_tests_passed": 49,
+      "smoke": {
+        "provenance": "fresh adaptation smoke run",
+        "model_name": "google/bert_uncased_L-2_H-128_A-2",
+        "hierarchical_macro_f1": 0.11716259148758994,
+        "training_examples_used": 8,
+        "evaluation_examples_used": 32,
+        "optimizer_steps": 1
+      }
+    }
+  },
+  "research_results_claimed": false,
+  "note": "Smoke metrics verify execution only; they are not full-model experimental results."
+}

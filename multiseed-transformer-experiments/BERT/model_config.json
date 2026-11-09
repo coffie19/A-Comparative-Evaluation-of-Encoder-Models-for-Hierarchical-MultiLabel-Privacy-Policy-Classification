@@ -1,0 +1,20 @@
+{
+  "model": "BERT",
+  "model_type": "bert",
+  "backend": "bert_opp115_classification",
+  "full": {
+    "name": "google-bert/bert-base-uncased",
+    "revision": "86b5e0934494bd15c9632b12f734a8a67f723594"
+  },
+  "smoke": {
+    "name": "google/bert_uncased_L-2_H-128_A-2",
+    "revision": "30b0a37ccaaa32f332884b96992754e246e48c5f"
+  },
+  "seeds": [
+    17011,
+    29023,
+    41047,
+    53069,
+    65089
+  ]
+}

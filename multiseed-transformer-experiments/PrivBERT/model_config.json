@@ -1,0 +1,20 @@
+{
+  "model": "PrivBERT",
+  "model_type": "roberta",
+  "backend": "bert_opp115_classification",
+  "full": {
+    "name": "mukund/privbert",
+    "revision": "48228b4661fa8252bdb39ca44a4d9758f6b37f88"
+  },
+  "smoke": {
+    "name": "hf-internal-testing/tiny-random-roberta",
+    "revision": "73def02fc9f13169a1ce21ad4602aae38d7cbd5a"
+  },
+  "seeds": [
+    17011,
+    29023,
+    41047,
+    53069,
+    65089
+  ]
+}

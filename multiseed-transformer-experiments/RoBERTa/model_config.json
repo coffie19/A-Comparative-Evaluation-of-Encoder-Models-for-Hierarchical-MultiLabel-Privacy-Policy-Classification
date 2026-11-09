@@ -1,0 +1,20 @@
+{
+  "model": "RoBERTa",
+  "model_type": "roberta",
+  "backend": "roberta_opp115_classification",
+  "full": {
+    "name": "FacebookAI/roberta-base",
+    "revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b"
+  },
+  "smoke": {
+    "name": "hf-internal-testing/tiny-random-roberta",
+    "revision": "73def02fc9f13169a1ce21ad4602aae38d7cbd5a"
+  },
+  "seeds": [
+    17011,
+    29023,
+    41047,
+    53069,
+    65089
+  ]
+}

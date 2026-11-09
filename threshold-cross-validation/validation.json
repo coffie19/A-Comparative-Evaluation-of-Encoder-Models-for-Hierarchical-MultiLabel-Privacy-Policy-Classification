@@ -1,0 +1,24 @@
+{
+  "status": "prepared_and_locally_validated; full GPU folds not executed",
+  "models": [
+    "BERT",
+    "RoBERTa",
+    "LegalBERT",
+    "PrivBERT"
+  ],
+  "folds": 5,
+  "policies_per_validation_fold": 13,
+  "training_policies": 65,
+  "untouched_test_policies": 50,
+  "folds_identical_across_models": true,
+  "train_test_policy_ids_disjoint": true,
+  "training_segments_covered_out_of_fold_when_complete": 2352,
+  "unit_tests": {
+    "passed": 3,
+    "failed": 0
+  },
+  "archive_integrity": "passed for all four packages",
+  "notebook_syntax": "passed for all four notebooks",
+  "prepare_only_validation": "passed for all four models",
+  "requires_for_results": "CUDA execution of 20 fold fits plus access to the saved five-seed checkpoints"
+}

@@ -1,0 +1,35 @@
+{
+  "source_archive": "C:\\Users\\AI\\Downloads\\privbert\\bert_opp115_colab_workspace.zip",
+  "source_archive_sha256": "35e5f2a569cbaa76761756df903c7a99869c70c14bcc1e6fd2962eb3e17bd69f",
+  "source_notebook": "C:\\Users\\AI\\Downloads\\privbert\\bert_opp115_colab.ipynb",
+  "source_notebook_sha256": "4c196ec34d685ea07a6524a7e4c9c62ed3a1868aa40dd2b7487adbcdee73c58e",
+  "source_notebook_matches_archive": true,
+  "source_payload_files_verified": 256,
+  "privbert_archive_rebuilt_to_exact_source_sha256": true,
+  "models": {
+    "PrivBERT": {
+      "checkpoint": "mukund/privbert",
+      "revision": "48228b4661fa8252bdb39ca44a4d9758f6b37f88",
+      "source": "https://huggingface.co/mukund/privbert"
+    },
+    "BERT": {
+      "checkpoint": "google-bert/bert-base-uncased",
+      "revision": "86b5e0934494bd15c9632b12f734a8a67f723594",
+      "source": "https://huggingface.co/google-bert/bert-base-uncased"
+    },
+    "RoBERTa": {
+      "checkpoint": "FacebookAI/roberta-base",
+      "revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+      "source": "https://huggingface.co/FacebookAI/roberta-base"
+    },
+    "LegalBERT": {
+      "checkpoint": "nlpaueb/legal-bert-base-uncased",
+      "revision": "15b570cbf88259610b082a167dacc190124f60f6",
+      "source": "https://huggingface.co/nlpaueb/legal-bert-base-uncased",
+      "adaptation_source": "supplied PrivBERT hierarchy and evaluation implementation"
+    }
+  },
+  "adaptation_completed": "2026-09-01",
+  "source_files_modified": false,
+  "full_training_or_research_results_claimed": false
+}

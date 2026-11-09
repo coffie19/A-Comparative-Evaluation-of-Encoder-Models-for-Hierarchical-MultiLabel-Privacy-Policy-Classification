@@ -1,0 +1,24 @@
+{
+  "attribute_logits_shape": [
+    2,
+    138
+  ],
+  "category_logits_shape": [
+    2,
+    10
+  ],
+  "checkpoint_serialization": "safetensors",
+  "checks": {
+    "attribute_head_count": true,
+    "attribute_shape": true,
+    "attribute_value_count": true,
+    "category_count": true,
+    "category_shape": true,
+    "model_type": true,
+    "pooling_strategy": true,
+    "serialization": true
+  },
+  "model_type": "bert",
+  "pooling_strategy": "legal_bert_cls_dense_tanh",
+  "status": "passed"
+}

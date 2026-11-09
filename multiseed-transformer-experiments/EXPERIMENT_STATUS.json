@@ -1,0 +1,13 @@
+{
+  "status": "prepared_not_trained",
+  "full_runs_completed": 0,
+  "full_runs_required": 20,
+  "seeds": [
+    17011,
+    29023,
+    41047,
+    53069,
+    65089
+  ],
+  "results": null
+}

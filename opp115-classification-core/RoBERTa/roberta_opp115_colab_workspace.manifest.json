@@ -1,0 +1,1969 @@
+{
+  "annotation_csv_files": 115,
+  "annotation_rows": 23194,
+  "archive_bytes": 2838365,
+  "archive_file": "roberta_opp115_colab_workspace.zip",
+  "archive_layout": "project files at root; canonical data under data/opp115",
+  "archive_sha256": "0491035af7b69d591bfae3184c073b88a6dd99c34273247622717a6ed39d5723",
+  "attribute_head_count": 20,
+  "attribute_heads": [
+    "does_does_not",
+    "collection_mode",
+    "action_first_party",
+    "identifiability",
+    "personal_information_type",
+    "purpose",
+    "user_type",
+    "choice_type",
+    "choice_scope",
+    "third_party_entity",
+    "action_third_party",
+    "access_type",
+    "access_scope",
+    "retention_period",
+    "retention_purpose",
+    "security_measure",
+    "change_type",
+    "notification_type",
+    "do_not_track_policy",
+    "audience_type"
+  ],
+  "attribute_value_vocabulary_scope": "65 training policies only",
+  "categories": [
+    "First Party Collection/Use",
+    "Third Party Sharing/Collection",
+    "User Choice/Control",
+    "Data Retention",
+    "Data Security",
+    "International and Specific Audiences",
+    "Do Not Track",
+    "Policy Change",
+    "Access, Edit and Deletion",
+    "Other"
+  ],
+  "category_count": 10,
+  "checkpoint_serialization": "safetensors",
+  "classification_threshold": 0.5,
+  "classifier_dropout": 0.15,
+  "classifier_output_directory": "roberta-opp115-hierarchy-classifier",
+  "classifier_result_file": "roberta_opp115_hierarchy_classification_results.json",
+  "colab_classification_summary_pattern": "colab_roberta_hierarchy_classification_{MODE}.json",
+  "default_mode": "full",
+  "default_run_pretraining": false,
+  "excluded_local_only_content": [
+    ".venv* and Python caches",
+    "IDE, Git, Codex, and agent metadata",
+    "logs and generated corpus.txt",
+    "the superseded flat 20-label taxonomy and its legacy results",
+    "legacy FastText and unrelated model-pipeline files",
+    "prior models, checkpoints, and run directories",
+    "duplicate OPP-115 representations outside annotations/sanitized_policies"
+  ],
+  "files": [
+    {
+      "bytes": 42589,
+      "path": "roberta_opp115_colab.ipynb",
+      "sha256": "17d98d6469c7715762a528e06df5a6d5339c3c3f3c20872bd907710baa80dcea"
+    },
+    {
+      "bytes": 32612,
+      "path": "roberta_opp115_pretraining.py",
+      "sha256": "1c511a4a2c04a245ccf9844f844045cd59e10f5049e68aa2b97e293ecb8e8230"
+    },
+    {
+      "bytes": 55766,
+      "path": "roberta_opp115_classification.py",
+      "sha256": "2561c0dfec0dda424a019cfab1fef3a7c426d4f6419f9fd850f368fa1b6bd8e5"
+    },
+    {
+      "bytes": 36830,
+      "path": "opp115_hierarchy.py",
+      "sha256": "5a09a11c0d8309dd096dd3fe9303d9da4faf6e288601b62ddea99f90640dd25b"
+    },
+    {
+      "bytes": 1607,
+      "path": "opp115_policy_split.py",
+      "sha256": "44ca8709e22163985a4d61556e7db18f6b26425b2023c7b3d5effe8ec6824273"
+    },
+    {
+      "bytes": 40628,
+      "path": "opp115_csv_loader.py",
+      "sha256": "7c3851110e85a61a94dab61c0a43a6d9bcb95cd10c46704b2d35f1422b66ef39"
+    },
+    {
+      "bytes": 24908,
+      "path": "ml_layer_embeddings.py",
+      "sha256": "a47b8e84a96928a2a998358277545cf3612a7948a24298994cba583d2fef93a3"
+    },
+    {
+      "bytes": 24297,
+      "path": "evaluation.py",
+      "sha256": "5fb7b0285c85f6367b27d517d72bb4067012f37b6a9c4a6ddeddd6b60ea4c5f2"
+    },
+    {
+      "bytes": 9869,
+      "path": "config.py",
+      "sha256": "82e6e877b6d270bbc70ce306fffccfa0cd0407731e9b39a3fffa395f038d9f21"
+    },
+    {
+      "bytes": 142,
+      "path": "requirements_colab_roberta_opp115.txt",
+      "sha256": "e828b497bbc310afa55166fb17f426f589983aa98b35b21ecbb5dbfbb4f75fd6"
+    },
+    {
+      "bytes": 197,
+      "path": "requirements_roberta_opp115.txt",
+      "sha256": "bfe72fe8564b6ae35aa5b547573604fb8ecf60b0ce6a19191ee884f5a464fd9c"
+    },
+    {
+      "bytes": 6586,
+      "path": "README_ROBERTA_OPP115.md",
+      "sha256": "e3b3dfa47db2d2f8cd4d12f13a4fd1cbbbcc7d796a80192e0d10892c35abe3bd"
+    },
+    {
+      "bytes": 41150,
+      "path": "scripts/build_roberta_opp115_colab_notebook.py",
+      "sha256": "3bb52f8535353ccc7775ec23e34ff1baf0ea78f8d2c31c1f0fe3b956054b09e5"
+    },
+    {
+      "bytes": 15342,
+      "path": "scripts/build_roberta_opp115_colab_workspace.py",
+      "sha256": "2f1b23f7caaae77395ef6f11a31d6ded0dac8ca954c0a0586e349c4699881755"
+    },
+    {
+      "bytes": 1384,
+      "path": "tests/test_evaluation_metrics.py",
+      "sha256": "e9a4bd046dcd1e54ad70a2265b9e226c35d3e956a8dc857ff2e5bd140705c57e"
+    },
+    {
+      "bytes": 4511,
+      "path": "tests/test_opp115_csv_loader.py",
+      "sha256": "07163a529678a99cd42f826adc6ad1bd0b96be079d058708b10b8420fa214018"
+    },
+    {
+      "bytes": 1138,
+      "path": "tests/test_opp115_policy_split.py",
+      "sha256": "8d5bcb74ba97c2ca46256393fa74f25ec5bea75abf8dbbc2611c61ef129a6437"
+    },
+    {
+      "bytes": 11256,
+      "path": "tests/test_opp115_hierarchy.py",
+      "sha256": "1c9eda43c1d9ad564212bdc06a1b0f2f17783296c01b56510af88c6366b44619"
+    },
+    {
+      "bytes": 17924,
+      "path": "tests/test_roberta_opp115_classification.py",
+      "sha256": "e9d76fd120204413d67096e7ad0aa769728c880a83170d0e35168947cdfe32a0"
+    },
+    {
+      "bytes": 6331,
+      "path": "tests/test_roberta_opp115_pretraining.py",
+      "sha256": "fffe9f78ab02cebb5fa13252d6df586702b0a01dae67c8fd01c14835882068f9"
+    },
+    {
+      "bytes": 15437,
+      "path": "tests/test_roberta_colab_bundle.py",
+      "sha256": "6412fca910b8f0c21ef43eddf94ea013fe156b9d0fdd91d66660813b8e5927c7"
+    },
+    {
+      "bytes": 33939,
+      "path": "results/roberta_opp115_hierarchy_data_summary.json",
+      "sha256": "afd978276caf752a503a83e9493bcb228f8d149bfcd71b6a324c430dd3a0fadc"
+    },
+    {
+      "bytes": 225211,
+      "path": "results/roberta_opp115_hierarchy_smoke_summary.json",
+      "sha256": "933e0fb6cc1e0c67500a1bacd9945922abeb5034227d829e6a1c8b16e66c4ee6"
+    },
+    {
+      "bytes": 3480,
+      "path": "results/roberta_opp115_pretraining_data_summary.json",
+      "sha256": "3c3f2e3cbd859278421e2a0ce7be4d76575daa89a34396df3d6d5a3d99446036"
+    },
+    {
+      "bytes": 4435,
+      "path": "results/roberta_opp115_pretraining_smoke_summary.json",
+      "sha256": "13acbab88bb6139d829049df8310706e78e60fe8d60e053b34776a1623eee253"
+    },
+    {
+      "bytes": 61320,
+      "path": "data/opp115/annotations/1017_sci-news.com.csv",
+      "sha256": "de8484bb591f1ec572991bd5a422d2fc46059bd45ee2d13139a37aa2810250c8"
+    },
+    {
+      "bytes": 232676,
+      "path": "data/opp115/annotations/1028_redorbit.com.csv",
+      "sha256": "b71b201246d1af46dd0bb19471da2d02aee3da3c6bb86df3c4bf6e97ef83f9fb"
+    },
+    {
+      "bytes": 311428,
+      "path": "data/opp115/annotations/1034_aol.com.csv",
+      "sha256": "97f456ed15f66afdc6d9e3b83222ac1495c1e8da69d1d2a1bdd41450863b11dd"
+    },
+    {
+      "bytes": 554103,
+      "path": "data/opp115/annotations/1050_honda.com.csv",
+      "sha256": "4883dcfe68e280b84fb52baf437fa7452d0e6bd8f4f93adb59d05cf7ad3763b7"
+    },
+    {
+      "bytes": 360473,
+      "path": "data/opp115/annotations/105_amazon.com.csv",
+      "sha256": "7fa5b7450ff73f3fa61a82e18f6593bbcca38c528fa91849f31db7d0c41628b0"
+    },
+    {
+      "bytes": 276531,
+      "path": "data/opp115/annotations/1070_wnep.com.csv",
+      "sha256": "8ffbf8cd15c73fab48d6acacc3edbda58ffcd679a98e323aa50687586aa3f176"
+    },
+    {
+      "bytes": 229030,
+      "path": "data/opp115/annotations/1083_highgearmedia.com.csv",
+      "sha256": "c8df4b3cc173fec1a7e1bc0a29a117241020fc910c26286a9104a86ca9ebf632"
+    },
+    {
+      "bytes": 318107,
+      "path": "data/opp115/annotations/1089_freep.com.csv",
+      "sha256": "893a96c85c8d83db106b6a969448fe3c42565e93100356aa83a0826e091c7f23"
+    },
+    {
+      "bytes": 309460,
+      "path": "data/opp115/annotations/1099_enthusiastnetwork.com.csv",
+      "sha256": "3be80a45f91092a4b79793c811fc678bff5d23734f960c6704b91e023c602e00"
+    },
+    {
+      "bytes": 320878,
+      "path": "data/opp115/annotations/1106_allstate.com.csv",
+      "sha256": "9900030345b3b322acee24be4fc52182cce8631f9820b819f6aba47f9a495957"
+    },
+    {
+      "bytes": 294680,
+      "path": "data/opp115/annotations/1164_acbj.com.csv",
+      "sha256": "4e3708f464a50b0176149108651e1a163296c85ff3d71bf40dafa1713220c97b"
+    },
+    {
+      "bytes": 55055,
+      "path": "data/opp115/annotations/1205_opensecrets.org.csv",
+      "sha256": "149913c97f2ab9f5b6e0d0799564db2362808f31bf3fee345c432d7d3d5442d8"
+    },
+    {
+      "bytes": 93860,
+      "path": "data/opp115/annotations/1206_dcccd.edu.csv",
+      "sha256": "79f61e99201521606ba35cf3c1f506a29b13ebc137f03620f6c9b88fd9da3f88"
+    },
+    {
+      "bytes": 29880,
+      "path": "data/opp115/annotations/1221_gwdocs.com.csv",
+      "sha256": "1ef5f03603b7cab076c92eab60079f2d9734a1ec37e592739325bce084e5fce9"
+    },
+    {
+      "bytes": 110090,
+      "path": "data/opp115/annotations/1224_austincc.edu.csv",
+      "sha256": "c33ab13c9ff90603a2d56326b673caa7c93f308f941277152d2e2b00271e14fb"
+    },
+    {
+      "bytes": 170957,
+      "path": "data/opp115/annotations/1252_cincymuseum.org.csv",
+      "sha256": "d85a43e298729e6a549c128edfe7f4b0d6ca049b36285e93443f559491c85790"
+    },
+    {
+      "bytes": 383077,
+      "path": "data/opp115/annotations/1259_fool.com.csv",
+      "sha256": "494828678aabc240956baee13bca1d236db844aaf8a7e92c5d6fd31bbfa4a031"
+    },
+    {
+      "bytes": 97814,
+      "path": "data/opp115/annotations/1261_zacks.com.csv",
+      "sha256": "6b684b35f339b3fffc0f97781c724b408fa8343806fd23e02a98f5a6020e73bf"
+    },
+    {
+      "bytes": 97544,
+      "path": "data/opp115/annotations/1264_citizen.org.csv",
+      "sha256": "d537473c47637ea76242700768e91355356bdfd4d981e67098897c98c43f1d1c"
+    },
+    {
+      "bytes": 482800,
+      "path": "data/opp115/annotations/1300_bankofamerica.com.csv",
+      "sha256": "ee1fdf41b3dc0cdb58636d38c6c226dd2090217d99b005d4ef16da961456e7d9"
+    },
+    {
+      "bytes": 373962,
+      "path": "data/opp115/annotations/1306_chasepaymentech.com.csv",
+      "sha256": "d1fcbba9d5d8bf8ab8acca852a465cdc31dbd2e72466ff35809c241d3dacd39b"
+    },
+    {
+      "bytes": 372939,
+      "path": "data/opp115/annotations/133_fortune.com.csv",
+      "sha256": "bb1577596555b933711c9f4aa180acbe75257741f27fa66460bc9726f8022ca0"
+    },
+    {
+      "bytes": 336500,
+      "path": "data/opp115/annotations/135_instagram.com.csv",
+      "sha256": "d37f4390e4c2ed90798f2d247770cb06c777edf5ec024e3389c2d7aac87b39e7"
+    },
+    {
+      "bytes": 138313,
+      "path": "data/opp115/annotations/1360_thehill.com.csv",
+      "sha256": "01ec6e10284d52766603ea4136c88eb129c7ed2cfc2c6e397eb7844641b5a454"
+    },
+    {
+      "bytes": 181288,
+      "path": "data/opp115/annotations/1361_yahoo.com.csv",
+      "sha256": "4981f108cbb7b2cb75d380f4a33840151061f05540bef54e5764147be1bc02e9"
+    },
+    {
+      "bytes": 221331,
+      "path": "data/opp115/annotations/1419_miaminewtimes.com.csv",
+      "sha256": "c1105fd68054bd91ba245756cc55473bc328723b5b22b928a3bf586c1fdc2c70"
+    },
+    {
+      "bytes": 276352,
+      "path": "data/opp115/annotations/144_style.com.csv",
+      "sha256": "342c99e27c348b7e3a00d451e35f8c62b4165a22895b9d3aff00fe1693d1f84b"
+    },
+    {
+      "bytes": 437805,
+      "path": "data/opp115/annotations/1468_rockstargames.com.csv",
+      "sha256": "dd9bc7e77465d0a1bb70f714601dce36f3d9f9fde9058f62e2fa110dabca62b2"
+    },
+    {
+      "bytes": 136614,
+      "path": "data/opp115/annotations/1470_steampowered.com.csv",
+      "sha256": "e07261ba221ac61672d8063b0ab98bf73ff6a17da4aa9c53429f7f1259aabc2a"
+    },
+    {
+      "bytes": 178962,
+      "path": "data/opp115/annotations/1498_ticketmaster.com.csv",
+      "sha256": "500529a4b072725756d0ba4b931c87b97894fec3b45f9818d3cb79ce1c4f2ac2"
+    },
+    {
+      "bytes": 348269,
+      "path": "data/opp115/annotations/1510_jibjab.com.csv",
+      "sha256": "233279fd7380d3c0fe3b97dd902112e559cd9c0627bdea8ab94edea6f997b401"
+    },
+    {
+      "bytes": 297068,
+      "path": "data/opp115/annotations/1539_geocaching.com.csv",
+      "sha256": "f0c88df4df53cb3c8563a115a0bee0e0555ed1408f4ed41c04c169ee94a7d5b0"
+    },
+    {
+      "bytes": 214579,
+      "path": "data/opp115/annotations/1545_taylorswift.com.csv",
+      "sha256": "76e4bdb0a0e965f11a59da428b419d4cc501b620b2ce82387dcf8fb03f550d5f"
+    },
+    {
+      "bytes": 240733,
+      "path": "data/opp115/annotations/1582_msn.com.csv",
+      "sha256": "b3aa83eea3fe70446084e3bccb5d91f99c7bfa5233a1b1bab657eed021903cca"
+    },
+    {
+      "bytes": 197078,
+      "path": "data/opp115/annotations/1610_post-gazette.com.csv",
+      "sha256": "1a703320f2924388858f9e9aa8ae7ee53eacc85a0f9e36f441f759ca0c49f6cd"
+    },
+    {
+      "bytes": 403813,
+      "path": "data/opp115/annotations/1618_sltrib.com.csv",
+      "sha256": "350b0dd17d472d37c6e17d80a766c7597bb2ded83b01cfc39679c152c8ce3365"
+    },
+    {
+      "bytes": 439622,
+      "path": "data/opp115/annotations/1636_sidearmsports.com.csv",
+      "sha256": "8491a5810045b8872f83f1cf0eb34678684ac8b8582d63930011570b9f419e57"
+    },
+    {
+      "bytes": 75965,
+      "path": "data/opp115/annotations/1637_dailyillini.com.csv",
+      "sha256": "95ed10f407b162cc34e8880c8c26aa6230f217ac7cd71b2b8be197ec871af938"
+    },
+    {
+      "bytes": 147836,
+      "path": "data/opp115/annotations/164_adweek.com.csv",
+      "sha256": "94b68718a16a7f6e2fd7e99b1a5b0d8d4385f7b633e96b661f033bf01f7e813b"
+    },
+    {
+      "bytes": 295877,
+      "path": "data/opp115/annotations/1666_wsmv.com.csv",
+      "sha256": "e56574a907dd16643e8febc2da7f7013980a4158db893eaf236a8f17d715e6da"
+    },
+    {
+      "bytes": 467898,
+      "path": "data/opp115/annotations/1673_tulsaworld.com.csv",
+      "sha256": "da7a6dffbb69c36b5f72a6cf8982aa89f343ee5d990e00b2856ca56021bbdd2e"
+    },
+    {
+      "bytes": 355118,
+      "path": "data/opp115/annotations/1683_dailynews.com.csv",
+      "sha256": "0e17eb25b9a3c923f6f8bfe39884ce0882f6c242cc9781e846a3dd036b1227e4"
+    },
+    {
+      "bytes": 247342,
+      "path": "data/opp115/annotations/1694_lids.com.csv",
+      "sha256": "80685f9166ad51ecfed61b140b750ef65d34d3c899b9200e4a89843a36568135"
+    },
+    {
+      "bytes": 222326,
+      "path": "data/opp115/annotations/1703_sports-reference.com.csv",
+      "sha256": "a8a34fdf719fd0d59508b24f94b02527b06bb4c5b6d36d3eadd1d2747bc7d06d"
+    },
+    {
+      "bytes": 341068,
+      "path": "data/opp115/annotations/1708_foxsports.com.csv",
+      "sha256": "0a0c43912c8d6936b592c632199b72ac9cc6f31634a24ddb56fe39db67cd0b0d"
+    },
+    {
+      "bytes": 702014,
+      "path": "data/opp115/annotations/1713_latinpost.com.csv",
+      "sha256": "15be1c443848cabff6498053aa46415a2b3515dba314cd2a7333fd76aceb3c9c"
+    },
+    {
+      "bytes": 291466,
+      "path": "data/opp115/annotations/175_mlb.mlb.com.csv",
+      "sha256": "f01c816a959b2ec6c3f06a07552469983c15b8c6b17bbc5dd996e162324b29d5"
+    },
+    {
+      "bytes": 294616,
+      "path": "data/opp115/annotations/186_abcnews.com.csv",
+      "sha256": "e9ffc95d66d7091b46a2de0a286e3d12ff781a9a1649ca94f6814325ebdc1647"
+    },
+    {
+      "bytes": 333947,
+      "path": "data/opp115/annotations/200_washingtonpost.com.csv",
+      "sha256": "32aabf861144a04d90758607a50414016acdc9e565e08ff8d9fcaa11b6a15ead"
+    },
+    {
+      "bytes": 148131,
+      "path": "data/opp115/annotations/202_foodallergy.org.csv",
+      "sha256": "3ddc7a8355d97f80cb6f47657938c6a945908127c5cd56de5994ced3a63e33bc"
+    },
+    {
+      "bytes": 281227,
+      "path": "data/opp115/annotations/207_reference.com.csv",
+      "sha256": "1db0957c1a6114ccd89eb73f5d3bd65d051477baa7fd8cf9f093b53eda88fe3c"
+    },
+    {
+      "bytes": 271899,
+      "path": "data/opp115/annotations/20_theatlantic.com.csv",
+      "sha256": "d551d2c2b5b25104402c315baa9580d1bb0ff5c29789dd08a58f3342f1c8b3f2"
+    },
+    {
+      "bytes": 207961,
+      "path": "data/opp115/annotations/21_imdb.com.csv",
+      "sha256": "3e1d4af01baf48c693b74565ae9ef43d91b8682516db278d9273671d58f9e066"
+    },
+    {
+      "bytes": 174804,
+      "path": "data/opp115/annotations/228_gawker.com.csv",
+      "sha256": "b1ca280dc23adbdfed44b54a44f24d4d4141ea4f8446fa56dcd00f129b152678"
+    },
+    {
+      "bytes": 447312,
+      "path": "data/opp115/annotations/26_nytimes.com.csv",
+      "sha256": "8cd39894c41c8b5d324599285f36c8a0ac31a07961159ed1a321192d750b1345"
+    },
+    {
+      "bytes": 326291,
+      "path": "data/opp115/annotations/303_reddit.com.csv",
+      "sha256": "e2987385e1a3b9a2ccf25f219df410116022fdd0b20eaf05be3336b4bc09c8a6"
+    },
+    {
+      "bytes": 292533,
+      "path": "data/opp115/annotations/320_timeinc.com.csv",
+      "sha256": "127900e27dc5bf456ce151271b3ac5ea35e5499dece57875d7aa5461f8fc5a59"
+    },
+    {
+      "bytes": 175756,
+      "path": "data/opp115/annotations/325_ocregister.com.csv",
+      "sha256": "1a332332bd6bbf61e05895a2d2864178c245666290cbc09f502016d58ceac2eb"
+    },
+    {
+      "bytes": 267279,
+      "path": "data/opp115/annotations/32_voxmedia.com.csv",
+      "sha256": "c176caca91c867f01155242449746993a9c3934ca4cbe9be2f5420db04f48a33"
+    },
+    {
+      "bytes": 148661,
+      "path": "data/opp115/annotations/331_tgifridays.com.csv",
+      "sha256": "94c5ed79ab85833145c442919b19669449aa08ca9896be27482bbebe808c143b"
+    },
+    {
+      "bytes": 416345,
+      "path": "data/opp115/annotations/33_nbcuniversal.com.csv",
+      "sha256": "42f7bfcc0cb46d70c45dc4dd562941c32be3c533b299cb72c9bf53d58b558add"
+    },
+    {
+      "bytes": 377719,
+      "path": "data/opp115/annotations/348_walmart.com.csv",
+      "sha256": "b82e01c0e80d6336082e205a80e1ff24359e97518929477af99b817f4e4dbc87"
+    },
+    {
+      "bytes": 363306,
+      "path": "data/opp115/annotations/359_vikings.com.csv",
+      "sha256": "a02795d6ec88b83f07480212d7d2c861ceb6231c8f88fdf1676a196f9763ad89"
+    },
+    {
+      "bytes": 331427,
+      "path": "data/opp115/annotations/394_newsbusters.org.csv",
+      "sha256": "c8857d4a1481ca08fd5fd5b219ab73e733bdfb4a88b0aaa83d68542a4b9f5dc7"
+    },
+    {
+      "bytes": 147287,
+      "path": "data/opp115/annotations/414_washingtonian.com.csv",
+      "sha256": "03c275cf92cbbbc25213bbdbd4ea485cc533da48d2799b89911a89a0d39ddbd7"
+    },
+    {
+      "bytes": 725193,
+      "path": "data/opp115/annotations/453_barnesandnoble.com.csv",
+      "sha256": "8dd33e8755e851eb58e5b5b5914f09e94d81b599330f319822acb71abc5db7c8"
+    },
+    {
+      "bytes": 82855,
+      "path": "data/opp115/annotations/456_boardgamegeek.com.csv",
+      "sha256": "46ad0dbdd7023c0078f94684957d1aaf4adf3cd78d10f7db8a2913aaea4e5f3a"
+    },
+    {
+      "bytes": 109090,
+      "path": "data/opp115/annotations/481_fredericknewspost.com.csv",
+      "sha256": "6260355d602f60c84af38e751e3002e3b899a17e2b2e97df2a8f0735eb77cf7a"
+    },
+    {
+      "bytes": 203568,
+      "path": "data/opp115/annotations/503_buffalowildwings.com.csv",
+      "sha256": "adc288a4278b4bf615c4f581ca2c0174c5eb8caacd5baf84f022beb9ddf31a58"
+    },
+    {
+      "bytes": 391888,
+      "path": "data/opp115/annotations/517_kaleidahealth.org.csv",
+      "sha256": "58a8b7ec16292b9174ca12a58f5dc4dc22864193f28830cd72a01e0081ef78f0"
+    },
+    {
+      "bytes": 93255,
+      "path": "data/opp115/annotations/523_usa.gov.csv",
+      "sha256": "4130e24d8eb5a8e2cc7e5989dbcb326819de8bb380d97e47465e44474d13b5b2"
+    },
+    {
+      "bytes": 275633,
+      "path": "data/opp115/annotations/531_archives.gov.csv",
+      "sha256": "15c89f7b938a5e0797080ddda809d4c804ba444eaa4057c20148be29c680f297"
+    },
+    {
+      "bytes": 99022,
+      "path": "data/opp115/annotations/541_ifsa-butler.org.csv",
+      "sha256": "0a8a57231dd196b819463e811e9dc5d47b2b2cbd062e91193bae334be2a1a927"
+    },
+    {
+      "bytes": 152802,
+      "path": "data/opp115/annotations/559_www.loc.gov.csv",
+      "sha256": "a2f02b59d48484f7be03a48d51ba8bf1ee8d1209102ffeb980b82ae43edadd87"
+    },
+    {
+      "bytes": 95810,
+      "path": "data/opp115/annotations/571_abita.com.csv",
+      "sha256": "4a36d18567657e60b440606568c34f22eca54b514f6c050e2e0c2b9c05c059dd"
+    },
+    {
+      "bytes": 127489,
+      "path": "data/opp115/annotations/581_coffeereview.com.csv",
+      "sha256": "7fb9acd4afae3c9669ce7d8ca229f7c7b0e561770e2a55e5938c43c99b2fe351"
+    },
+    {
+      "bytes": 26114,
+      "path": "data/opp115/annotations/584_communitycoffee.com.csv",
+      "sha256": "22d70282ee9629bebd633ef16a468e5c6c29be40bc1df038600e3b8b98b61537"
+    },
+    {
+      "bytes": 138111,
+      "path": "data/opp115/annotations/586_cariboucoffee.com.csv",
+      "sha256": "a4711416efc7e3bcf96094455d3f541127f4584a4bc3644c25aaab894d5df73b"
+    },
+    {
+      "bytes": 476201,
+      "path": "data/opp115/annotations/58_esquire.com.csv",
+      "sha256": "d5e54556c2b52c5d1054710974ecd091624610ea6d60e8ab2531a15e85b82277"
+    },
+    {
+      "bytes": 346719,
+      "path": "data/opp115/annotations/591_google.com.csv",
+      "sha256": "310cc2842c414bc414a82f73cf3a73345c04ca7f5a0486c8793a00d1131e2e98"
+    },
+    {
+      "bytes": 75027,
+      "path": "data/opp115/annotations/59_liquor.com.csv",
+      "sha256": "00c2acc1a67a88704a27e195787803765b232e96ce377efc0299d3b0ce78446e"
+    },
+    {
+      "bytes": 129005,
+      "path": "data/opp115/annotations/627_dairyqueen.com.csv",
+      "sha256": "8fcd8b90c463caad558e49e4f59aa5e00c5532d187d73aa13ef4c634f60b5ab4"
+    },
+    {
+      "bytes": 270543,
+      "path": "data/opp115/annotations/635_playstation.com.csv",
+      "sha256": "6702a127facdae8c5b72feffa9a4749942d335d2b55d721323b646042e231ade"
+    },
+    {
+      "bytes": 304828,
+      "path": "data/opp115/annotations/640_gamestop.com.csv",
+      "sha256": "e803470edfe8f03b39e48fdb7da220d62c83f5d1ad403f364c32c447a8a9d0da"
+    },
+    {
+      "bytes": 89527,
+      "path": "data/opp115/annotations/641_cbsinteractive.com.csv",
+      "sha256": "941331a578340e7a3fa757d0f92b6baa3698fc3305d557c465f68c267267d7c6"
+    },
+    {
+      "bytes": 123787,
+      "path": "data/opp115/annotations/642_thefreedictionary.com.csv",
+      "sha256": "ac56c857f2662b96ccca1a16463a0222c06ad0a83f16dfdb98776448a6ce1597"
+    },
+    {
+      "bytes": 456988,
+      "path": "data/opp115/annotations/652_randomhouse.com.csv",
+      "sha256": "030484f6d38a4b784c9c89f9138f31a4c2658209558af538a45a81cb722cd777"
+    },
+    {
+      "bytes": 52834,
+      "path": "data/opp115/annotations/676_restaurantnews.com.csv",
+      "sha256": "e26d7445150fe3e483a8b0ae124a3f1e8a7b3eaef60324667fab9b3ac8ff88a5"
+    },
+    {
+      "bytes": 326425,
+      "path": "data/opp115/annotations/686_military.com.csv",
+      "sha256": "28aa2cdf0ecf616537e695aa926dbd0e3c70e1b3c56050c9abca9753b6c6ee03"
+    },
+    {
+      "bytes": 16316,
+      "path": "data/opp115/annotations/701_tangeroutlet.com.csv",
+      "sha256": "8046523f321d8c1b5085d6c1c8e5b15251c614a5d0e43f46971d3d9279961857"
+    },
+    {
+      "bytes": 578828,
+      "path": "data/opp115/annotations/70_meredith.com.csv",
+      "sha256": "21102463a97af925ebcef9b65689bef5a1982fc15899cd99d1e3c96eabf319f9"
+    },
+    {
+      "bytes": 30464,
+      "path": "data/opp115/annotations/723_dogbreedinfo.com.csv",
+      "sha256": "8800aa2086772d7b0f34ba176b36cefda8ed7df63b35c35668ed1cd43a37bff3"
+    },
+    {
+      "bytes": 187841,
+      "path": "data/opp115/annotations/744_minecraft.gamepedia.com.csv",
+      "sha256": "cbdd5e4eeba3f40fb6921b9fa8f272122af93f2ccea904725aeeac7ddb36c052"
+    },
+    {
+      "bytes": 19374,
+      "path": "data/opp115/annotations/745_eatchicken.com.csv",
+      "sha256": "1f3c25a6beb9cb323af00de032be57f368fc6d9465de5781a1251da11a6db16f"
+    },
+    {
+      "bytes": 374234,
+      "path": "data/opp115/annotations/746_kraftrecipes.com.csv",
+      "sha256": "7dd6eb6ba91062340945df274440f1a38da216f17b89b8026264ed0745cda243"
+    },
+    {
+      "bytes": 113491,
+      "path": "data/opp115/annotations/760_si.edu.csv",
+      "sha256": "a54b61a0c93c875bee7c5f9e5e7f7af3aaf7ac5782b4c9504f214c2de258f1f8"
+    },
+    {
+      "bytes": 54227,
+      "path": "data/opp115/annotations/777_education.jlab.org.csv",
+      "sha256": "a491d4d9c1679a57d98a8f9c344facff737e571bf1b721b24069daccfc42db23"
+    },
+    {
+      "bytes": 95196,
+      "path": "data/opp115/annotations/807_lodgemfg.com.csv",
+      "sha256": "a149900720ca0fbc71e1aa1323927bb22dbf52969c2ba038dedb9f110c3b90df"
+    },
+    {
+      "bytes": 38903,
+      "path": "data/opp115/annotations/817_ironhorsevineyards.com.csv",
+      "sha256": "b7a0a8b1c727738adf4f03682b69456008bf213d8c76e9854e8c6dabc8c38f56"
+    },
+    {
+      "bytes": 364605,
+      "path": "data/opp115/annotations/82_sheknows.com.csv",
+      "sha256": "b62ecd358c9b08c4360763ccfce9dc107c6724ba846c756cac55497cf6ccb0dc"
+    },
+    {
+      "bytes": 287771,
+      "path": "data/opp115/annotations/856_sciencemag.org.csv",
+      "sha256": "7e0fadb5f96f3bcdc7e27fd331801e29c9b50264bcda772e9f27bb6ef853e20c"
+    },
+    {
+      "bytes": 183249,
+      "path": "data/opp115/annotations/862_disinfo.com.csv",
+      "sha256": "88a0820a2518e07b7593a99e31c961297e56b09bc12d54d0bf89033d16535945"
+    },
+    {
+      "bytes": 206561,
+      "path": "data/opp115/annotations/883_ted.com.csv",
+      "sha256": "f28a9eb0932a407ad36347d1f46a824593a2031dd81c3a036b121eeb121aa437"
+    },
+    {
+      "bytes": 14173,
+      "path": "data/opp115/annotations/884_naturalnews.com.csv",
+      "sha256": "d66be1c9d918a6fdd4e17ce28211d496390b1b24b63539acbee97f853a647091"
+    },
+    {
+      "bytes": 324406,
+      "path": "data/opp115/annotations/891_everydayhealth.com.csv",
+      "sha256": "facf0419c3f5faf12cc0bd427808f1d7eee5dad479d1fcdecccf2c5eaa1771e1"
+    },
+    {
+      "bytes": 81473,
+      "path": "data/opp115/annotations/898_uptodate.com.csv",
+      "sha256": "24618bbb0cbf83044934108d13ce859bf86f2327b66a32426dc70e9b1fa711dd"
+    },
+    {
+      "bytes": 88380,
+      "path": "data/opp115/annotations/907_earthkam.org.csv",
+      "sha256": "2c4a96a6231aadd20d10ef1bff0a774914be9d7b9fe702cdcd50743bb7c82824"
+    },
+    {
+      "bytes": 45244,
+      "path": "data/opp115/annotations/919_uh.edu.csv",
+      "sha256": "4379b97798778fe2b90843dde21466e47e91ea7d199fd1534b85e9d84539a23b"
+    },
+    {
+      "bytes": 161979,
+      "path": "data/opp115/annotations/928_stlouisfed.org.csv",
+      "sha256": "56e276240a4fa80c4ea25fb36acaec34f91ab067967f93aa551acb238073fb4e"
+    },
+    {
+      "bytes": 247157,
+      "path": "data/opp115/annotations/93_pbs.org.csv",
+      "sha256": "81ca22814a41a9f9c292adb6a11ebaacc0b552e673d855d6bd4ba1d0fb9cf17d"
+    },
+    {
+      "bytes": 575621,
+      "path": "data/opp115/annotations/940_internetbrands.com.csv",
+      "sha256": "39497a4b52c48f41663059ba2d7d0a01331a9813b9176e471e8b5112da12696f"
+    },
+    {
+      "bytes": 492908,
+      "path": "data/opp115/annotations/962_lynda.com.csv",
+      "sha256": "f03dc64f6febee52be4b24d6aa4edb0bead73a7432ae31355042640a3146690e"
+    },
+    {
+      "bytes": 15216,
+      "path": "data/opp115/annotations/988_solarviews.com.csv",
+      "sha256": "cc8cc56777357182a8895b9906fa15ba98b84898359231c29b8604cc984af3ab"
+    },
+    {
+      "bytes": 286441,
+      "path": "data/opp115/annotations/98_neworleansonline.com.csv",
+      "sha256": "1e6d505e42170f1fac335e738adeefa282512356bbaae0cf8b4030d6c10df401"
+    },
+    {
+      "bytes": 45056,
+      "path": "data/opp115/annotations/995_mohegansun.com.csv",
+      "sha256": "dfb138ab0a6d00162bf345e7f7ecde625884f1fba591c0fcc720a2ac5a5ab721"
+    },
+    {
+      "bytes": 3499,
+      "path": "data/opp115/sanitized_policies/1017_sci-news.com.html",
+      "sha256": "8f61c2ce5f172edea0539a1f281086d8f974f91412036e2a2aaaa8596ae94eac"
+    },
+    {
+      "bytes": 17723,
+      "path": "data/opp115/sanitized_policies/1028_redorbit.com.html",
+      "sha256": "33bdbc0a4823e55d0ffca061e15791c655c3b17a641bc17292385df13861c82c"
+    },
+    {
+      "bytes": 18771,
+      "path": "data/opp115/sanitized_policies/1034_aol.com.html",
+      "sha256": "4c455759fca4914206a1c770127cbdfe3b491e6341ffcbce314527aa0be1a591"
+    },
+    {
+      "bytes": 40900,
+      "path": "data/opp115/sanitized_policies/1050_honda.com.html",
+      "sha256": "de1b26144832e7cd17de273487a5a51f289aaded3e8bb0704871318d33c1cc49"
+    },
+    {
+      "bytes": 19552,
+      "path": "data/opp115/sanitized_policies/105_amazon.com.html",
+      "sha256": "baf7ae91edcb8afbd0903b2fafe8877e55e1ecdc946082c1e2f0bcdc7b9b8dbc"
+    },
+    {
+      "bytes": 18533,
+      "path": "data/opp115/sanitized_policies/1070_wnep.com.html",
+      "sha256": "b4a18f1695ad5eb45092ddc3b8eb0243c77884ec0195612bda21597b6673da95"
+    },
+    {
+      "bytes": 14457,
+      "path": "data/opp115/sanitized_policies/1083_highgearmedia.com.html",
+      "sha256": "1ffc48221831cf106e47c1f90499567e31027e84c9784e6fda4ea19d8e69a6a3"
+    },
+    {
+      "bytes": 18898,
+      "path": "data/opp115/sanitized_policies/1089_freep.com.html",
+      "sha256": "206089705893d07c87e1f6860631f56efe69072b9b87aaeee584734cf28e3414"
+    },
+    {
+      "bytes": 21934,
+      "path": "data/opp115/sanitized_policies/1099_enthusiastnetwork.com.html",
+      "sha256": "1237cc3e6682146df11db36c416eb21545108a2b96f755b059c7c4f4239252da"
+    },
+    {
+      "bytes": 22802,
+      "path": "data/opp115/sanitized_policies/1106_allstate.com.html",
+      "sha256": "5618088ded00457ef417189dca7ce36690ac933ca508b30afce94cb23bbc4515"
+    },
+    {
+      "bytes": 18836,
+      "path": "data/opp115/sanitized_policies/1164_acbj.com.html",
+      "sha256": "81f40d945f45466f77a24f8483c2cb673b4e8e4be77bac115d233a45a29d199b"
+    },
+    {
+      "bytes": 2242,
+      "path": "data/opp115/sanitized_policies/1205_opensecrets.org.html",
+      "sha256": "69c7fb011083f8a0b6a26052947ffa8a6c4dc0ae1a5016910c230e225b161d99"
+    },
+    {
+      "bytes": 6873,
+      "path": "data/opp115/sanitized_policies/1206_dcccd.edu.html",
+      "sha256": "dd062ae70a608b0d97532635cf530bb8022e3be11b3a15a432a15dfda6d5332c"
+    },
+    {
+      "bytes": 1903,
+      "path": "data/opp115/sanitized_policies/1221_gwdocs.com.html",
+      "sha256": "4f1ca07896c402a37627f4d58e5adb1421e53b8cd1b92a81b36077059a71fe35"
+    },
+    {
+      "bytes": 6170,
+      "path": "data/opp115/sanitized_policies/1224_austincc.edu.html",
+      "sha256": "1d6be22f467d74ad9f7197898860cb521d04a355d1ed8981353cfce628886174"
+    },
+    {
+      "bytes": 9730,
+      "path": "data/opp115/sanitized_policies/1252_cincymuseum.org.html",
+      "sha256": "0396e1ddf1c56b4dc41a259848a9a309061976c7f30637304a6e85f2aff7bece"
+    },
+    {
+      "bytes": 26063,
+      "path": "data/opp115/sanitized_policies/1259_fool.com.html",
+      "sha256": "dd3c22091d6357fbaebe4adefa550c75e1cf62927281a7db33aee466941aa574"
+    },
+    {
+      "bytes": 7125,
+      "path": "data/opp115/sanitized_policies/1261_zacks.com.html",
+      "sha256": "fea74970bc7dfd6b2a27eced153777d5be8d386f492bc646d126c2e13a539ed4"
+    },
+    {
+      "bytes": 5175,
+      "path": "data/opp115/sanitized_policies/1264_citizen.org.html",
+      "sha256": "7f6340e76d451a0866bbafa66a1fb1a20f3274f34a8db968ed66ade50382ee49"
+    },
+    {
+      "bytes": 27948,
+      "path": "data/opp115/sanitized_policies/1300_bankofamerica.com.html",
+      "sha256": "a738c9803b97748cb4423d9ee69c04d22dbdd231b575c2b6dccae21f48f98e9e"
+    },
+    {
+      "bytes": 23587,
+      "path": "data/opp115/sanitized_policies/1306_chasepaymentech.com.html",
+      "sha256": "a53674c53c2ef5e55bab17f1f735815792349c1053ca52a89de7eadab0c19fb8"
+    },
+    {
+      "bytes": 19068,
+      "path": "data/opp115/sanitized_policies/133_fortune.com.html",
+      "sha256": "587d059cfdfb517a9e51a9463ab39fa11845addee5d86b72531de16ccc186603"
+    },
+    {
+      "bytes": 19746,
+      "path": "data/opp115/sanitized_policies/135_instagram.com.html",
+      "sha256": "1fb058d86c1b962f07fee875354701ccd8d3b3b0eb89ffd05da4885f39486291"
+    },
+    {
+      "bytes": 9779,
+      "path": "data/opp115/sanitized_policies/1360_thehill.com.html",
+      "sha256": "abc1d91c867976e60150166fe4aa6f8f57621d09d3e240b86155a993f448e16e"
+    },
+    {
+      "bytes": 9846,
+      "path": "data/opp115/sanitized_policies/1361_yahoo.com.html",
+      "sha256": "8b6968f64e29f0d56905a5cc57b60829cc441a437a31a02789962782d1a346f1"
+    },
+    {
+      "bytes": 13642,
+      "path": "data/opp115/sanitized_policies/1419_miaminewtimes.com.html",
+      "sha256": "910e62bdbae674c9d05cc1896dba6daf3cbbd950175de805d6ca5a3e5d0541e5"
+    },
+    {
+      "bytes": 18120,
+      "path": "data/opp115/sanitized_policies/144_style.com.html",
+      "sha256": "fc49887dee3d5073fec991c5788881ec2dbb68949746118a3c94f94a266e3974"
+    },
+    {
+      "bytes": 40027,
+      "path": "data/opp115/sanitized_policies/1468_rockstargames.com.html",
+      "sha256": "347f25042b238f687a3406a6d44a928e0255e03c7d7922c60206eaabb2343637"
+    },
+    {
+      "bytes": 10683,
+      "path": "data/opp115/sanitized_policies/1470_steampowered.com.html",
+      "sha256": "d0283ff89570a665062e211af61459ca67613e43404a25c54288b60e1d161a7d"
+    },
+    {
+      "bytes": 11373,
+      "path": "data/opp115/sanitized_policies/1498_ticketmaster.com.html",
+      "sha256": "cbf6b8d0992284062fdeec0a54b313a323040a8a6176f14c9e282c54aac5c522"
+    },
+    {
+      "bytes": 27092,
+      "path": "data/opp115/sanitized_policies/1510_jibjab.com.html",
+      "sha256": "67891cbaec734473829f713e2ac26fac5e468037dabd5635620b112d0598ba6b"
+    },
+    {
+      "bytes": 15427,
+      "path": "data/opp115/sanitized_policies/1539_geocaching.com.html",
+      "sha256": "c01581f9dc2e5fe010e28fb63202161283265452fcd32151e8bc5cec07948421"
+    },
+    {
+      "bytes": 16276,
+      "path": "data/opp115/sanitized_policies/1545_taylorswift.com.html",
+      "sha256": "5ab70e2462db8aa90356813717afe8566e2719d3f633637d1e9a728cb7d8b7ec"
+    },
+    {
+      "bytes": 12574,
+      "path": "data/opp115/sanitized_policies/1582_msn.com.html",
+      "sha256": "cce005c59a527b6d824974fbd7d713e43ae9a415b30c86200ba6706ba3a83b01"
+    },
+    {
+      "bytes": 13412,
+      "path": "data/opp115/sanitized_policies/1610_post-gazette.com.html",
+      "sha256": "0c0cbce54397a439a622a5bee33d9594023c572968482c7e45c5de5c9f854a98"
+    },
+    {
+      "bytes": 22039,
+      "path": "data/opp115/sanitized_policies/1618_sltrib.com.html",
+      "sha256": "c731c5ea62ca90512e23e6fc2b5eef1fc9538c4e54291ea574d9c546d93125ca"
+    },
+    {
+      "bytes": 21368,
+      "path": "data/opp115/sanitized_policies/1636_sidearmsports.com.html",
+      "sha256": "fbf6b8a8d6c246deba920f252ef489af63735b4bd6c3b5b13e220136bd48e582"
+    },
+    {
+      "bytes": 4914,
+      "path": "data/opp115/sanitized_policies/1637_dailyillini.com.html",
+      "sha256": "c1e736c6d6e9f776646f6963718edbe1a2c51ed7970c0c9b16fdeb8dc6015f61"
+    },
+    {
+      "bytes": 8649,
+      "path": "data/opp115/sanitized_policies/164_adweek.com.html",
+      "sha256": "94abdf5b6163b5b8efd03f0b64b3f7389e9cdc36b4b238b4d49870e3c9c2fa56"
+    },
+    {
+      "bytes": 15127,
+      "path": "data/opp115/sanitized_policies/1666_wsmv.com.html",
+      "sha256": "26f55927336d925e43942e430af7ede7b2362fc770a46919af7eb2b875df358b"
+    },
+    {
+      "bytes": 20388,
+      "path": "data/opp115/sanitized_policies/1673_tulsaworld.com.html",
+      "sha256": "d41eb0006176efe5551e1778513c7c7f8be32c75fe099001845e5f95689384a2"
+    },
+    {
+      "bytes": 22955,
+      "path": "data/opp115/sanitized_policies/1683_dailynews.com.html",
+      "sha256": "cbae0dc9f72042520c9edc347ca3235ca36f9bec74c6b1f009c5ecdcedf7f566"
+    },
+    {
+      "bytes": 15314,
+      "path": "data/opp115/sanitized_policies/1694_lids.com.html",
+      "sha256": "e08264dd57d5429bf718c59e42f6eee8c62712fac27ee6305ac9837919d9a4c4"
+    },
+    {
+      "bytes": 11342,
+      "path": "data/opp115/sanitized_policies/1703_sports-reference.com.html",
+      "sha256": "0c2abae0ed6f152e64f81c0e252d301d02145c56562616d67b34cd222f384b26"
+    },
+    {
+      "bytes": 20570,
+      "path": "data/opp115/sanitized_policies/1708_foxsports.com.html",
+      "sha256": "356982bb4a0ef75fefdb3095da9ae0939639487f8c6142dfdd2b5df19f9ad666"
+    },
+    {
+      "bytes": 49061,
+      "path": "data/opp115/sanitized_policies/1713_latinpost.com.html",
+      "sha256": "8f0d59e704d6962210aee2556275ac578bcf4bd61ef56bc3a96235cb7f6b9420"
+    },
+    {
+      "bytes": 21282,
+      "path": "data/opp115/sanitized_policies/175_mlb.mlb.com.html",
+      "sha256": "77884707e7b21edeb8975b1e1287b42a0c6e6da0e88368af785c968d901ccd00"
+    },
+    {
+      "bytes": 21399,
+      "path": "data/opp115/sanitized_policies/186_abcnews.com.html",
+      "sha256": "cdf2d24ec644456e8543795b7081e1635e253cabdb47c8d8392abe5bf923381d"
+    },
+    {
+      "bytes": 19850,
+      "path": "data/opp115/sanitized_policies/200_washingtonpost.com.html",
+      "sha256": "071e82f3e1c1e2f0af27c416b5d7dd7a7560626a7f4e12ee34a8593c38e32864"
+    },
+    {
+      "bytes": 9994,
+      "path": "data/opp115/sanitized_policies/202_foodallergy.org.html",
+      "sha256": "1a52f56f67941b733c1bdcfaa52803a2f2e4ec1b719e98c5ff8bc9a00b58a697"
+    },
+    {
+      "bytes": 16431,
+      "path": "data/opp115/sanitized_policies/207_reference.com.html",
+      "sha256": "ea1d5665be192ba095a1552e6bacd2a7fe85858a2939acdcc06e4d6336a1f70a"
+    },
+    {
+      "bytes": 23157,
+      "path": "data/opp115/sanitized_policies/20_theatlantic.com.html",
+      "sha256": "360acfdec78daf2a61f0da6bd844c628dc61855ab7b274cc1d30ba2c2559f9fb"
+    },
+    {
+      "bytes": 13652,
+      "path": "data/opp115/sanitized_policies/21_imdb.com.html",
+      "sha256": "78691a48559c74e233beb21be66144a42d535549b1b186d6849510e3a3abf9b9"
+    },
+    {
+      "bytes": 13266,
+      "path": "data/opp115/sanitized_policies/228_gawker.com.html",
+      "sha256": "74f0a538b0dfc59e7f97526638af869f8c75b475d2551b97c31478bf321a6491"
+    },
+    {
+      "bytes": 24830,
+      "path": "data/opp115/sanitized_policies/26_nytimes.com.html",
+      "sha256": "ee4d3f3147288a2d3e189df8c0ccff83be383fd39db934f0a33aaeb9b0220f26"
+    },
+    {
+      "bytes": 20987,
+      "path": "data/opp115/sanitized_policies/303_reddit.com.html",
+      "sha256": "9a778caf4694aa00850a35002fc84b213f9fa95cbf0b21b2a844c5a73aad0484"
+    },
+    {
+      "bytes": 19949,
+      "path": "data/opp115/sanitized_policies/320_timeinc.com.html",
+      "sha256": "b1791e179b5dcef4cce91955c90019492736c9ac84da828d34415847c8652eb2"
+    },
+    {
+      "bytes": 10735,
+      "path": "data/opp115/sanitized_policies/325_ocregister.com.html",
+      "sha256": "79b5485c3fc773c2f858cfd51312ec2e8f9a55f156f23a571a3460a9141b4c70"
+    },
+    {
+      "bytes": 16053,
+      "path": "data/opp115/sanitized_policies/32_voxmedia.com.html",
+      "sha256": "8d921b1a15b9d37043f4cb2dbfea60178d6acd9dfc5ff944c9610639200d226c"
+    },
+    {
+      "bytes": 9067,
+      "path": "data/opp115/sanitized_policies/331_tgifridays.com.html",
+      "sha256": "4267733fac4224a08bb9a0d659223983e61225e526f4e4e2718969380f4f7db8"
+    },
+    {
+      "bytes": 27583,
+      "path": "data/opp115/sanitized_policies/33_nbcuniversal.com.html",
+      "sha256": "0e7029b1b17cedc12848e1479df073ee4dafb2ba9c9989d3d2e44d09df31e420"
+    },
+    {
+      "bytes": 27156,
+      "path": "data/opp115/sanitized_policies/348_walmart.com.html",
+      "sha256": "e72e3a812fdbf154b5647e8ab205cc56bbb91bb120a1341c99c99fdcfc3f7b88"
+    },
+    {
+      "bytes": 22108,
+      "path": "data/opp115/sanitized_policies/359_vikings.com.html",
+      "sha256": "a0c7eaa86e3bd104fc9fcaaddb255e6b0aafd42e45e883cad519dd6b9e2369b9"
+    },
+    {
+      "bytes": 19432,
+      "path": "data/opp115/sanitized_policies/394_newsbusters.org.html",
+      "sha256": "a27fcfb35655b86ca798c33c33519a663334b3010af0c6b53022faba378bcd7f"
+    },
+    {
+      "bytes": 11426,
+      "path": "data/opp115/sanitized_policies/414_washingtonian.com.html",
+      "sha256": "073868a8e947f3eeedb8dd06dfe721f12faeaf0e192ffd4f06dcad9d14d0528e"
+    },
+    {
+      "bytes": 52504,
+      "path": "data/opp115/sanitized_policies/453_barnesandnoble.com.html",
+      "sha256": "610a89d86f07412d49188f5f8e3a37923ebd801f78d650f4f14a83969694c11d"
+    },
+    {
+      "bytes": 2877,
+      "path": "data/opp115/sanitized_policies/456_boardgamegeek.com.html",
+      "sha256": "411e032e1e68c0777833d841bf4359d4a34477de87f8f8e3c1b97b125586d04a"
+    },
+    {
+      "bytes": 7334,
+      "path": "data/opp115/sanitized_policies/481_fredericknewspost.com.html",
+      "sha256": "9a8e3763a3724f607139abd90dc154d79ea839f22e9e3301ba439fc2b25ca5ff"
+    },
+    {
+      "bytes": 10684,
+      "path": "data/opp115/sanitized_policies/503_buffalowildwings.com.html",
+      "sha256": "0804490a7242c68219bce950a7ddea61d2c0e8bc4aeaa7ed3541d99f5f03c5d3"
+    },
+    {
+      "bytes": 37633,
+      "path": "data/opp115/sanitized_policies/517_kaleidahealth.org.html",
+      "sha256": "1598781b3792eb45ec06e4e337b00378a1aa8141efd49c37d4a7b9408a7b5691"
+    },
+    {
+      "bytes": 7855,
+      "path": "data/opp115/sanitized_policies/523_usa.gov.html",
+      "sha256": "24aa7f48a3cf0bb940cbfda99c12ab81ec60b87c9bf5529fb1ecc7c5b4eddbba"
+    },
+    {
+      "bytes": 26253,
+      "path": "data/opp115/sanitized_policies/531_archives.gov.html",
+      "sha256": "6726fed4f45f1305ecfb2c5de666f8a63135bbd05481261ec9736c0d085e4fe9"
+    },
+    {
+      "bytes": 5137,
+      "path": "data/opp115/sanitized_policies/541_ifsa-butler.org.html",
+      "sha256": "02fa4601a33d24782025115f2f3208c621650ba73dca96255ecb1376c17d71f0"
+    },
+    {
+      "bytes": 10875,
+      "path": "data/opp115/sanitized_policies/559_www.loc.gov.html",
+      "sha256": "aa4b5b4114354c91c3a0506c8d4462c761cc93498d456427b0185f6e279647bc"
+    },
+    {
+      "bytes": 5054,
+      "path": "data/opp115/sanitized_policies/571_abita.com.html",
+      "sha256": "63c563844cbb2606ce8bc5fe5d54f72c6884b9be5916ccaee3611354280e83bf"
+    },
+    {
+      "bytes": 6112,
+      "path": "data/opp115/sanitized_policies/581_coffeereview.com.html",
+      "sha256": "b30b3bbb885222620251b120f79d2d7e1a97263df7ac3d5125dd281021ce3065"
+    },
+    {
+      "bytes": 1266,
+      "path": "data/opp115/sanitized_policies/584_communitycoffee.com.html",
+      "sha256": "e572a1e027401ee2e731c51e3f3ffed20d3d698273fc44253efa142967694cb1"
+    },
+    {
+      "bytes": 11017,
+      "path": "data/opp115/sanitized_policies/586_cariboucoffee.com.html",
+      "sha256": "81fe81389f48f7253bf615229e693e590465d81f2caded0d5f520b0dd5fb3f20"
+    },
+    {
+      "bytes": 31779,
+      "path": "data/opp115/sanitized_policies/58_esquire.com.html",
+      "sha256": "7aac9e43941bffa4dc260f808f3253e024a449ac34944468d612ec0af05a9031"
+    },
+    {
+      "bytes": 19275,
+      "path": "data/opp115/sanitized_policies/591_google.com.html",
+      "sha256": "107dd4903e080d20b2f539ccdbdd0f118160a8a308bdf70f75912cf9adec70c4"
+    },
+    {
+      "bytes": 6065,
+      "path": "data/opp115/sanitized_policies/59_liquor.com.html",
+      "sha256": "082f0975a1b6dd27f47f7c87fd174b7fe30d3f75c3309fd3c2335579c26266c9"
+    },
+    {
+      "bytes": 7968,
+      "path": "data/opp115/sanitized_policies/627_dairyqueen.com.html",
+      "sha256": "445c02456592934eec39f4a9431e689a9fb4d2224cdd00f879d152799ba70cbf"
+    },
+    {
+      "bytes": 21373,
+      "path": "data/opp115/sanitized_policies/635_playstation.com.html",
+      "sha256": "56e471d401e30882541215c7b03cc3a7cc259d61e88396989978cf5b395ee611"
+    },
+    {
+      "bytes": 24606,
+      "path": "data/opp115/sanitized_policies/640_gamestop.com.html",
+      "sha256": "816a05b9745dd5cca30c7553511237e580ab4b236e57c34d7f017cf69d0596f7"
+    },
+    {
+      "bytes": 5369,
+      "path": "data/opp115/sanitized_policies/641_cbsinteractive.com.html",
+      "sha256": "a863c6e9da6f1dd132e81441aaefb1eba19f67d2c86c8ea2f582f6049fbd15f9"
+    },
+    {
+      "bytes": 7532,
+      "path": "data/opp115/sanitized_policies/642_thefreedictionary.com.html",
+      "sha256": "ac4d55b2856712aed7229856f210d5412968611e6d499c31e51565579976e589"
+    },
+    {
+      "bytes": 26267,
+      "path": "data/opp115/sanitized_policies/652_randomhouse.com.html",
+      "sha256": "5f665600bd7f3e2561a1d216cbba5ddbace5da5413ece29cd6ff34db9740c18a"
+    },
+    {
+      "bytes": 2356,
+      "path": "data/opp115/sanitized_policies/676_restaurantnews.com.html",
+      "sha256": "f7a91154d8761818021bbf398aa948548fd6c258f5775d4b663fd27831b6f061"
+    },
+    {
+      "bytes": 21992,
+      "path": "data/opp115/sanitized_policies/686_military.com.html",
+      "sha256": "0425b8d94af2b131799cbf044a79b22ae1ac19a93dc009b7fd391c885e47569c"
+    },
+    {
+      "bytes": 553,
+      "path": "data/opp115/sanitized_policies/701_tangeroutlet.com.html",
+      "sha256": "f5db2f7529918a026dfe894db14a56d2a61dbfe47079176c7f72e093dab95364"
+    },
+    {
+      "bytes": 35074,
+      "path": "data/opp115/sanitized_policies/70_meredith.com.html",
+      "sha256": "7de5438702604bebe08bfc2e8ac87fdfd22273a13c40da13fd6a11fe43b01a68"
+    },
+    {
+      "bytes": 1403,
+      "path": "data/opp115/sanitized_policies/723_dogbreedinfo.com.html",
+      "sha256": "c3aa3852ec0fdd215bd742ef9b7d5ad0cf42a0465a7bceddeb0532c2858d4aa0"
+    },
+    {
+      "bytes": 16400,
+      "path": "data/opp115/sanitized_policies/744_minecraft.gamepedia.com.html",
+      "sha256": "169d6a47890bf881eaf0cd180c5ab3a5f44e6c41e95230989a3086bed23725af"
+    },
+    {
+      "bytes": 1179,
+      "path": "data/opp115/sanitized_policies/745_eatchicken.com.html",
+      "sha256": "df24189957c3f7970d5e7066bbd39241a523b7bb487eab2cf764e6ca5aba9b5e"
+    },
+    {
+      "bytes": 16481,
+      "path": "data/opp115/sanitized_policies/746_kraftrecipes.com.html",
+      "sha256": "23e633f3d6a41952cc39b518431fb54b153eefd220d3836385ba3e74b16eddd7"
+    },
+    {
+      "bytes": 10056,
+      "path": "data/opp115/sanitized_policies/760_si.edu.html",
+      "sha256": "c553a7c61a48d0d8486bfeda96450876a3504b0c3fb75e49f996037cc6615081"
+    },
+    {
+      "bytes": 3225,
+      "path": "data/opp115/sanitized_policies/777_education.jlab.org.html",
+      "sha256": "70a66683f313418da1fde6099b2772167a1ab0911ff1be8813fbb3fbd87d77fc"
+    },
+    {
+      "bytes": 8880,
+      "path": "data/opp115/sanitized_policies/807_lodgemfg.com.html",
+      "sha256": "85f7d84068cbc01c51122e55ffc4cfc3a0cd970032c4d2f4f5a8ffc3448dab8a"
+    },
+    {
+      "bytes": 2826,
+      "path": "data/opp115/sanitized_policies/817_ironhorsevineyards.com.html",
+      "sha256": "7bf72ffbaff63c2b2645cb6897f0e650acd6395c3fd4c552729367935a2bdf7b"
+    },
+    {
+      "bytes": 25751,
+      "path": "data/opp115/sanitized_policies/82_sheknows.com.html",
+      "sha256": "e26d2cf22939be1ca54e6839e57c67cd996d58fed0511390730dff70e9a3ae0b"
+    },
+    {
+      "bytes": 17850,
+      "path": "data/opp115/sanitized_policies/856_sciencemag.org.html",
+      "sha256": "8e1eaf39c81b3208cbda4b400e0d6ec51f150bd11b177bac9c324bd63ad10e1b"
+    },
+    {
+      "bytes": 11896,
+      "path": "data/opp115/sanitized_policies/862_disinfo.com.html",
+      "sha256": "9aa10483bb4a09df841ce0c99b3f79d7b2ab8b9ae9249cb464687a7da5c663d5"
+    },
+    {
+      "bytes": 7944,
+      "path": "data/opp115/sanitized_policies/883_ted.com.html",
+      "sha256": "e1c7b2117d83e73bcd2a1bcbf7bcf2951722282e3e3e06b33c20eb980955a3e1"
+    },
+    {
+      "bytes": 778,
+      "path": "data/opp115/sanitized_policies/884_naturalnews.com.html",
+      "sha256": "eeae1ff72d98672094a6a4f0e405bdc3c838f955dc64c122776ce966dd3775b1"
+    },
+    {
+      "bytes": 23747,
+      "path": "data/opp115/sanitized_policies/891_everydayhealth.com.html",
+      "sha256": "8d6ea6dcee42a76eb758f02af35b918475595a8a61bc8f3420c44327979906d2"
+    },
+    {
+      "bytes": 3572,
+      "path": "data/opp115/sanitized_policies/898_uptodate.com.html",
+      "sha256": "8156afd77005aa147b0a35a70298eb1bc099c1be4453abb9278a6651390d43af"
+    },
+    {
+      "bytes": 4840,
+      "path": "data/opp115/sanitized_policies/907_earthkam.org.html",
+      "sha256": "46fa93fe14c24bcb2a7ccfcba17d36e6e79a0f92c9b0a0365cc59aab7e5239b2"
+    },
+    {
+      "bytes": 2051,
+      "path": "data/opp115/sanitized_policies/919_uh.edu.html",
+      "sha256": "43936638a65938b8fea0ec953aa58ed9aabd37ed66a20fd66843d2e1394843da"
+    },
+    {
+      "bytes": 8919,
+      "path": "data/opp115/sanitized_policies/928_stlouisfed.org.html",
+      "sha256": "f2fecb4d25e5ce3dd06ffdb5431eaf1659004f0763a294102a5081a83ff46f2b"
+    },
+    {
+      "bytes": 15185,
+      "path": "data/opp115/sanitized_policies/93_pbs.org.html",
+      "sha256": "a25455d15e321c7f0dadb5dd2fc2658b22c2ec6fc8c360bbdc6cb5e7a7a94055"
+    },
+    {
+      "bytes": 37939,
+      "path": "data/opp115/sanitized_policies/940_internetbrands.com.html",
+      "sha256": "fd3d9276266fcf222b29e99cb786b33261b90a6c1093110fad11c6ab151fbce4"
+    },
+    {
+      "bytes": 32135,
+      "path": "data/opp115/sanitized_policies/962_lynda.com.html",
+      "sha256": "7ce5eb09b31bca95ffd8f000fbc84b52f610fe45874ead5c3946b6a8195d9390"
+    },
+    {
+      "bytes": 703,
+      "path": "data/opp115/sanitized_policies/988_solarviews.com.html",
+      "sha256": "5f6641d93543556739ac9b1f8bb01245eb2561598177810481c4121d24d69c97"
+    },
+    {
+      "bytes": 15947,
+      "path": "data/opp115/sanitized_policies/98_neworleansonline.com.html",
+      "sha256": "fa14391ab64333e7abe2e086a940179b90d634a2818572d4ee186a7653b79395"
+    },
+    {
+      "bytes": 2675,
+      "path": "data/opp115/sanitized_policies/995_mohegansun.com.html",
+      "sha256": "79294bf7c98b842ac90fd4d2653623954217e20bcf9e988e24c3a78491499636"
+    },
+    {
+      "bytes": 1587,
+      "path": "data/opp115/readme.txt",
+      "sha256": "535b906b9babc0032668064ded538bbc70bca7ce8c9fe637e6119894c4a40379"
+    }
+  ],
+  "fine_grained_label_count": 138,
+  "full_model": {
+    "model_card": "https://huggingface.co/FacebookAI/roberta-base",
+    "model_type": "roberta",
+    "name": "FacebookAI/roberta-base",
+    "revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+    "tokenizer_max_length": 512
+  },
+  "full_training_configuration": {
+    "batch_size": 8,
+    "effective_batch_size": 32,
+    "epochs": 5,
+    "gradient_accumulation_steps": 4,
+    "learning_rate": 2.5e-05,
+    "max_length": 384,
+    "padding": "dynamic_to_batch_multiple_of_8"
+  },
+  "grouped_policy_segments": 3792,
+  "held_out_unknown_attribute_values": {
+    "do_not_track_policy=honored": 1
+  },
+  "hierarchy_schema": {
+    "attribute_head_count": 20,
+    "attribute_heads": [
+      "does_does_not",
+      "collection_mode",
+      "action_first_party",
+      "identifiability",
+      "personal_information_type",
+      "purpose",
+      "user_type",
+      "choice_type",
+      "choice_scope",
+      "third_party_entity",
+      "action_third_party",
+      "access_type",
+      "access_scope",
+      "retention_period",
+      "retention_purpose",
+      "security_measure",
+      "change_type",
+      "notification_type",
+      "do_not_track_policy",
+      "audience_type"
+    ],
+    "attribute_slices": {
+      "access_scope": [
+        89,
+        95
+      ],
+      "access_type": [
+        80,
+        89
+      ],
+      "action_first_party": [
+        5,
+        15
+      ],
+      "action_third_party": [
+        74,
+        80
+      ],
+      "audience_type": [
+        133,
+        138
+      ],
+      "change_type": [
+        118,
+        123
+      ],
+      "choice_scope": [
+        59,
+        67
+      ],
+      "choice_type": [
+        50,
+        59
+      ],
+      "collection_mode": [
+        2,
+        5
+      ],
+      "do_not_track_policy": [
+        129,
+        133
+      ],
+      "does_does_not": [
+        0,
+        2
+      ],
+      "identifiability": [
+        15,
+        19
+      ],
+      "notification_type": [
+        123,
+        129
+      ],
+      "personal_information_type": [
+        19,
+        35
+      ],
+      "purpose": [
+        35,
+        46
+      ],
+      "retention_period": [
+        95,
+        100
+      ],
+      "retention_purpose": [
+        100,
+        108
+      ],
+      "security_measure": [
+        108,
+        118
+      ],
+      "third_party_entity": [
+        67,
+        74
+      ],
+      "user_type": [
+        46,
+        50
+      ]
+    },
+    "attribute_value_vocabulary": {
+      "access_scope": [
+        "other",
+        "other_data_about_user",
+        "profile_data",
+        "transactional_data",
+        "unspecified",
+        "user_account_data"
+      ],
+      "access_type": [
+        "deactivate_account",
+        "delete_account_full",
+        "delete_account_partial",
+        "edit_information",
+        "export",
+        "none",
+        "other",
+        "unspecified",
+        "view"
+      ],
+      "action_first_party": [
+        "collect_from_user_on_other_websites",
+        "collect_in_mobile_app",
+        "collect_on_mobile_website",
+        "collect_on_website",
+        "other",
+        "receive_from_other_parts_of_company_affiliates",
+        "receive_from_other_service_third_party_named",
+        "receive_from_other_service_third_party_unnamed",
+        "track_user_on_other_websites",
+        "unspecified"
+      ],
+      "action_third_party": [
+        "collect_on_first_party_website_app",
+        "other",
+        "receive_shared_with",
+        "see",
+        "track_on_first_party_website_app",
+        "unspecified"
+      ],
+      "audience_type": [
+        "californians",
+        "children",
+        "citizens_from_other_countries",
+        "europeans",
+        "other"
+      ],
+      "change_type": [
+        "in_case_of_merger_or_acquisition",
+        "non_privacy_relevant_change",
+        "other",
+        "privacy_relevant_change",
+        "unspecified"
+      ],
+      "choice_scope": [
+        "both",
+        "collection",
+        "first_party_collection",
+        "first_party_use",
+        "third_party_sharing_collection",
+        "third_party_use",
+        "unspecified",
+        "use"
+      ],
+      "choice_type": [
+        "browser_device_privacy_controls",
+        "dont_use_service_feature",
+        "first_party_privacy_controls",
+        "opt_in",
+        "opt_out_link",
+        "opt_out_via_contacting_company",
+        "other",
+        "third_party_privacy_controls",
+        "unspecified"
+      ],
+      "collection_mode": [
+        "explicit",
+        "implicit",
+        "unspecified"
+      ],
+      "do_not_track_policy": [
+        "mentioned_but_unclear_if_honored",
+        "not_honored",
+        "not_mentioned",
+        "other"
+      ],
+      "does_does_not": [
+        "does",
+        "does_not"
+      ],
+      "identifiability": [
+        "aggregated_or_anonymized",
+        "identifiable",
+        "other",
+        "unspecified"
+      ],
+      "notification_type": [
+        "general_notice_in_privacy_policy",
+        "general_notice_on_website",
+        "no_notification",
+        "other",
+        "personal_notice",
+        "unspecified"
+      ],
+      "personal_information_type": [
+        "computer_information",
+        "contact",
+        "cookies_and_tracking_elements",
+        "demographic",
+        "financial",
+        "generic_personal_information",
+        "health",
+        "ip_address_and_device_ids",
+        "location",
+        "other",
+        "personal_identifier",
+        "social_media_data",
+        "survey_data",
+        "unspecified",
+        "user_online_activities",
+        "user_profile"
+      ],
+      "purpose": [
+        "additional_service_feature",
+        "advertising",
+        "analytics_research",
+        "basic_service_feature",
+        "legal_requirement",
+        "marketing",
+        "merger_acquisition",
+        "other",
+        "personalization_customization",
+        "service_operation_and_security",
+        "unspecified"
+      ],
+      "retention_period": [
+        "indefinitely",
+        "limited",
+        "other",
+        "stated_period",
+        "unspecified"
+      ],
+      "retention_purpose": [
+        "advertising",
+        "analytics_research",
+        "legal_requirement",
+        "marketing",
+        "other",
+        "perform_service",
+        "service_operation_and_security",
+        "unspecified"
+      ],
+      "security_measure": [
+        "data_access_limitation",
+        "generic",
+        "other",
+        "privacy_review_audit",
+        "privacy_security_program",
+        "privacy_training",
+        "secure_data_storage",
+        "secure_data_transfer",
+        "secure_user_authentication",
+        "unspecified"
+      ],
+      "third_party_entity": [
+        "named_third_party",
+        "other",
+        "other_part_of_company_affiliate",
+        "other_users",
+        "public",
+        "unnamed_third_party",
+        "unspecified"
+      ],
+      "user_type": [
+        "other",
+        "unspecified",
+        "user_with_account",
+        "user_without_account"
+      ]
+    },
+    "category_count": 10,
+    "category_to_attributes": {
+      "Access, Edit and Deletion": [
+        "user_type",
+        "access_type",
+        "access_scope"
+      ],
+      "Data Retention": [
+        "personal_information_type",
+        "retention_period",
+        "retention_purpose"
+      ],
+      "Data Security": [
+        "security_measure"
+      ],
+      "Do Not Track": [
+        "do_not_track_policy"
+      ],
+      "First Party Collection/Use": [
+        "does_does_not",
+        "collection_mode",
+        "action_first_party",
+        "identifiability",
+        "personal_information_type",
+        "purpose",
+        "user_type",
+        "choice_type",
+        "choice_scope"
+      ],
+      "International and Specific Audiences": [
+        "audience_type"
+      ],
+      "Other": [],
+      "Policy Change": [
+        "change_type",
+        "notification_type"
+      ],
+      "Third Party Sharing/Collection": [
+        "does_does_not",
+        "identifiability",
+        "personal_information_type",
+        "purpose",
+        "user_type",
+        "choice_type",
+        "choice_scope",
+        "third_party_entity",
+        "action_third_party"
+      ],
+      "User Choice/Control": [
+        "personal_information_type",
+        "purpose",
+        "user_type",
+        "choice_type",
+        "choice_scope"
+      ]
+    },
+    "excluded_attribute_heads": [
+      "other_type",
+      "user_choice"
+    ],
+    "flattened_attribute_value_count": 138,
+    "high_level_categories": [
+      "First Party Collection/Use",
+      "Third Party Sharing/Collection",
+      "User Choice/Control",
+      "Data Retention",
+      "Data Security",
+      "International and Specific Audiences",
+      "Do Not Track",
+      "Policy Change",
+      "Access, Edit and Deletion",
+      "Other"
+    ],
+    "normalization_version": "opp115-slug-v1",
+    "raw_attribute_names": {
+      "access_scope": "Access Scope",
+      "access_type": "Access Type",
+      "action_first_party": "Action First-Party",
+      "action_third_party": "Action Third Party",
+      "audience_type": "Audience Type",
+      "change_type": "Change Type",
+      "choice_scope": "Choice Scope",
+      "choice_type": "Choice Type",
+      "collection_mode": "Collection Mode",
+      "do_not_track_policy": "Do Not Track policy",
+      "does_does_not": "Does/Does Not",
+      "identifiability": "Identifiability",
+      "notification_type": "Notification Type",
+      "personal_information_type": "Personal Information Type",
+      "purpose": "Purpose",
+      "retention_period": "Retention Period",
+      "retention_purpose": "Retention Purpose",
+      "security_measure": "Security Measure",
+      "third_party_entity": "Third Party Entity",
+      "user_type": "User Type"
+    },
+    "schema_sha256": "90627a25efe47a217e03a2f09431b3256bc254867cd8f9aee675a1eafbb93b9b",
+    "schema_version": "opp115-polisis-hierarchy-v1",
+    "training_policy_ids": [
+      "1017_sci-news.com",
+      "1028_redorbit.com",
+      "1034_aol.com",
+      "1050_honda.com",
+      "105_amazon.com",
+      "1070_wnep.com",
+      "1083_highgearmedia.com",
+      "1089_freep.com",
+      "1099_enthusiastnetwork.com",
+      "1106_allstate.com",
+      "1164_acbj.com",
+      "1205_opensecrets.org",
+      "1206_dcccd.edu",
+      "1221_gwdocs.com",
+      "1224_austincc.edu",
+      "1252_cincymuseum.org",
+      "1259_fool.com",
+      "1261_zacks.com",
+      "1264_citizen.org",
+      "1300_bankofamerica.com",
+      "1306_chasepaymentech.com",
+      "133_fortune.com",
+      "135_instagram.com",
+      "1360_thehill.com",
+      "1361_yahoo.com",
+      "1419_miaminewtimes.com",
+      "144_style.com",
+      "1468_rockstargames.com",
+      "1470_steampowered.com",
+      "1498_ticketmaster.com",
+      "1510_jibjab.com",
+      "1539_geocaching.com",
+      "1545_taylorswift.com",
+      "1582_msn.com",
+      "1610_post-gazette.com",
+      "1618_sltrib.com",
+      "1636_sidearmsports.com",
+      "1637_dailyillini.com",
+      "164_adweek.com",
+      "1666_wsmv.com",
+      "1673_tulsaworld.com",
+      "1683_dailynews.com",
+      "1694_lids.com",
+      "1703_sports-reference.com",
+      "1708_foxsports.com",
+      "1713_latinpost.com",
+      "175_mlb.mlb.com",
+      "186_abcnews.com",
+      "200_washingtonpost.com",
+      "202_foodallergy.org",
+      "207_reference.com",
+      "20_theatlantic.com",
+      "21_imdb.com",
+      "228_gawker.com",
+      "26_nytimes.com",
+      "303_reddit.com",
+      "320_timeinc.com",
+      "325_ocregister.com",
+      "32_voxmedia.com",
+      "331_tgifridays.com",
+      "33_nbcuniversal.com",
+      "348_walmart.com",
+      "359_vikings.com",
+      "394_newsbusters.org",
+      "414_washingtonian.com"
+    ]
+  },
+  "hierarchy_schema_sha256": "90627a25efe47a217e03a2f09431b3256bc254867cd8f9aee675a1eafbb93b9b",
+  "hierarchy_schema_version": "opp115-polisis-hierarchy-v1",
+  "multi_label_segments": 1963,
+  "payload_tree_sha256": "317f22a66b715c27d57845c40d17a8eab726c5b23c35bd545f2dabc4d72dd087",
+  "pooling_strategy": "roberta_first_token_dense_tanh",
+  "positive_class_weighting": {
+    "attribute_scope": "applicable training rows only",
+    "formula": "sqrt((negative + 1) / (positive + 1))",
+    "maximum": 10.0,
+    "minimum": 1.0
+  },
+  "pretraining_objective": "optional continued domain-adaptive MLM without NSP",
+  "primary_metric": "hierarchical_macro_f1",
+  "reported_metric_groups": "category, category-gated fine-grained, and independent attribute heads",
+  "sanitized_policy_files": 115,
+  "schema_version": 4,
+  "segment_aggregation": "union annotations by (policy filename stem, segment_id)",
+  "segment_split": {
+    "evaluation": 1440,
+    "training": 2352
+  },
+  "smoke_model": {
+    "model_type": "roberta",
+    "name": "hf-internal-testing/tiny-random-roberta",
+    "revision": "73def02fc9f13169a1ce21ad4602aae38d7cbd5a"
+  },
+  "target_hierarchical_macro_f1": 0.96,
+  "task": "hierarchical_fine_grained_segment_classification",
+  "whole_policy_split": {
+    "eval_policy_ids": [
+      "453_barnesandnoble.com",
+      "456_boardgamegeek.com",
+      "481_fredericknewspost.com",
+      "503_buffalowildwings.com",
+      "517_kaleidahealth.org",
+      "523_usa.gov",
+      "531_archives.gov",
+      "541_ifsa-butler.org",
+      "559_www.loc.gov",
+      "571_abita.com",
+      "581_coffeereview.com",
+      "584_communitycoffee.com",
+      "586_cariboucoffee.com",
+      "58_esquire.com",
+      "591_google.com",
+      "59_liquor.com",
+      "627_dairyqueen.com",
+      "635_playstation.com",
+      "640_gamestop.com",
+      "641_cbsinteractive.com",
+      "642_thefreedictionary.com",
+      "652_randomhouse.com",
+      "676_restaurantnews.com",
+      "686_military.com",
+      "701_tangeroutlet.com",
+      "70_meredith.com",
+      "723_dogbreedinfo.com",
+      "744_minecraft.gamepedia.com",
+      "745_eatchicken.com",
+      "746_kraftrecipes.com",
+      "760_si.edu",
+      "777_education.jlab.org",
+      "807_lodgemfg.com",
+      "817_ironhorsevineyards.com",
+      "82_sheknows.com",
+      "856_sciencemag.org",
+      "862_disinfo.com",
+      "883_ted.com",
+      "884_naturalnews.com",
+      "891_everydayhealth.com",
+      "898_uptodate.com",
+      "907_earthkam.org",
+      "919_uh.edu",
+      "928_stlouisfed.org",
+      "93_pbs.org",
+      "940_internetbrands.com",
+      "962_lynda.com",
+      "988_solarviews.com",
+      "98_neworleansonline.com",
+      "995_mohegansun.com"
+    ],
+    "evaluation": 50,
+    "train_policy_ids": [
+      "1017_sci-news.com",
+      "1028_redorbit.com",
+      "1034_aol.com",
+      "1050_honda.com",
+      "105_amazon.com",
+      "1070_wnep.com",
+      "1083_highgearmedia.com",
+      "1089_freep.com",
+      "1099_enthusiastnetwork.com",
+      "1106_allstate.com",
+      "1164_acbj.com",
+      "1205_opensecrets.org",
+      "1206_dcccd.edu",
+      "1221_gwdocs.com",
+      "1224_austincc.edu",
+      "1252_cincymuseum.org",
+      "1259_fool.com",
+      "1261_zacks.com",
+      "1264_citizen.org",
+      "1300_bankofamerica.com",
+      "1306_chasepaymentech.com",
+      "133_fortune.com",
+      "135_instagram.com",
+      "1360_thehill.com",
+      "1361_yahoo.com",
+      "1419_miaminewtimes.com",
+      "144_style.com",
+      "1468_rockstargames.com",
+      "1470_steampowered.com",
+      "1498_ticketmaster.com",
+      "1510_jibjab.com",
+      "1539_geocaching.com",
+      "1545_taylorswift.com",
+      "1582_msn.com",
+      "1610_post-gazette.com",
+      "1618_sltrib.com",
+      "1636_sidearmsports.com",
+      "1637_dailyillini.com",
+      "164_adweek.com",
+      "1666_wsmv.com",
+      "1673_tulsaworld.com",
+      "1683_dailynews.com",
+      "1694_lids.com",
+      "1703_sports-reference.com",
+      "1708_foxsports.com",
+      "1713_latinpost.com",
+      "175_mlb.mlb.com",
+      "186_abcnews.com",
+      "200_washingtonpost.com",
+      "202_foodallergy.org",
+      "207_reference.com",
+      "20_theatlantic.com",
+      "21_imdb.com",
+      "228_gawker.com",
+      "26_nytimes.com",
+      "303_reddit.com",
+      "320_timeinc.com",
+      "325_ocregister.com",
+      "32_voxmedia.com",
+      "331_tgifridays.com",
+      "33_nbcuniversal.com",
+      "348_walmart.com",
+      "359_vikings.com",
+      "394_newsbusters.org",
+      "414_washingtonian.com"
+    ],
+    "training": 65
+  },
+  "workspace": "RoBERTa OPP-115 Colab"
+}

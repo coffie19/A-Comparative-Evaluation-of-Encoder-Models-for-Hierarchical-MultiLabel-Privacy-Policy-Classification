@@ -1,0 +1,18 @@
+{
+  "BERT": {
+    "source_archive": "C:\\Users\\AI\\Downloads\\rematch\\BERT\\bert_opp115_colab_workspace.zip",
+    "sha256": "487c07302074df7f629abda7dcc423500eb42093ae45f8b0c9de1529656776f3"
+  },
+  "PrivBERT": {
+    "source_archive": "C:\\Users\\AI\\Downloads\\rematch\\PrivBERT\\bert_opp115_colab_workspace.zip",
+    "sha256": "35e5f2a569cbaa76761756df903c7a99869c70c14bcc1e6fd2962eb3e17bd69f"
+  },
+  "RoBERTa": {
+    "source_archive": "C:\\Users\\AI\\Downloads\\rematch\\RoBERTa\\roberta_opp115_colab_workspace.zip",
+    "sha256": "0491035af7b69d591bfae3184c073b88a6dd99c34273247622717a6ed39d5723"
+  },
+  "LegalBERT": {
+    "source_archive": "C:\\Users\\AI\\Downloads\\rematch\\LegalBERT\\legal_bert_opp115_colab_workspace.zip",
+    "sha256": "06a1a4b1d0a353b5cb472067923ace7fb63377ba4d1d2ba9f5804b43879d8c8f"
+  }
+}

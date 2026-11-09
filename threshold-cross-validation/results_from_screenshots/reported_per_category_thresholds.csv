@@ -1,0 +1,41 @@
+model,category,selected_threshold,oof_f1
+BERT,First Party Collection/Use,0.51,0.799781
+BERT,Third Party Sharing/Collection,0.52,0.807314
+BERT,User Choice/Control,0.41,0.657471
+BERT,Data Retention,0.51,0.447552
+BERT,Data Security,0.50,0.699764
+BERT,International and Specific Audiences,0.61,0.883610
+BERT,Do Not Track,0.58,0.950000
+BERT,Policy Change,0.71,0.801688
+BERT,"Access, Edit and Deletion",0.67,0.748971
+BERT,Other,0.39,0.699722
+LegalBERT,First Party Collection/Use,0.50,0.800000
+LegalBERT,Third Party Sharing/Collection,0.54,0.804094
+LegalBERT,User Choice/Control,0.39,0.665163
+LegalBERT,Data Retention,0.53,0.604027
+LegalBERT,Data Security,0.53,0.673575
+LegalBERT,International and Specific Audiences,0.49,0.887324
+LegalBERT,Do Not Track,0.50,0.950000
+LegalBERT,Policy Change,0.55,0.785425
+LegalBERT,"Access, Edit and Deletion",0.55,0.734082
+LegalBERT,Other,0.44,0.682412
+RoBERTa,First Party Collection/Use,0.56,0.818605
+RoBERTa,Third Party Sharing/Collection,0.50,0.828475
+RoBERTa,User Choice/Control,0.55,0.687915
+RoBERTa,Data Retention,0.55,0.558659
+RoBERTa,Data Security,0.63,0.712121
+RoBERTa,International and Specific Audiences,0.62,0.886256
+RoBERTa,Do Not Track,0.50,0.926829
+RoBERTa,Policy Change,0.73,0.801688
+RoBERTa,"Access, Edit and Deletion",0.60,0.739130
+RoBERTa,Other,0.38,0.709495
+PrivBERT,First Party Collection/Use,0.52,0.860298
+PrivBERT,Third Party Sharing/Collection,0.52,0.858930
+PrivBERT,User Choice/Control,0.50,0.701031
+PrivBERT,Data Retention,0.55,0.651163
+PrivBERT,Data Security,0.50,0.728111
+PrivBERT,International and Specific Audiences,0.54,0.900693
+PrivBERT,Do Not Track,0.31,0.930233
+PrivBERT,Policy Change,0.55,0.837945
+PrivBERT,"Access, Edit and Deletion",0.56,0.805861
+PrivBERT,Other,0.46,0.743321
